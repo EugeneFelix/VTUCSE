@@ -9,7 +9,7 @@ void palin();
 int main()
 {
 	int choice;
-	while (choice)
+	while (1)
 	{
 		printf("\n\n STACK OPERATIONS\n");
 		printf("\n1.PUSH\n2.POP\n3.PALINDROME\n4.DISPLAY\n5.EXIT\n");
