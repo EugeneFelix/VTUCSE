@@ -187,8 +187,8 @@ int main()
 	printf("binary search tree\n");
 	while (1)
 	{
-		printf("1.create\n2.inorder\n3.preorder\n4.postorder\n 5.search\n6.delete\n7.exit\n");
-		printf("enter your choice\n");
+		printf("1.Create\n2.Inorder\n3.Preorder\n4.Postorder\n 5.Search\n6.Delete\n7.EXIT[0]\n");
+		printf("Enter your choice\n");
 		scanf("%d", &ch);
 		switch (ch)
 		{
@@ -197,6 +197,20 @@ int main()
 			break;
 		case 2:
 			printf("inorder traversal\n");
+			if (root == NULL)
+				printf("tree empty\n");
+			else
+				postorder(root);
+			break;
+		case 3:
+			printf("preorder traversal\n");
+			if (root == NULL)
+				printf("tree empty\n");
+			else
+				preorder(root);
+			break;
+		case 4:
+			printf("postorder traversal\n");
 			if (root == NULL)
 				printf("tree empty\n");
 			else

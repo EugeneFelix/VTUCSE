@@ -1,4 +1,5 @@
-#include <stdio.h> #include<stdlib.h>
+#include "stdio.h"
+#include "stdlib.h"
 int a[10][10], src, visited1[10], visited2[10], n;
 void create();
 void bfs(int);
