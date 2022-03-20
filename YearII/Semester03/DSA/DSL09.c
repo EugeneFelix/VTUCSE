@@ -1,6 +1,6 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <math.h>
+#include "stdio.h"
+#include "stdlib.h"
+#include "math.h"
 struct node
 {
 	int coeff, expx, expy, expz, flag;
@@ -33,7 +33,6 @@ NODE insert_rear(int coeff, int expx, int expy, int expz, NODE head)
 	temp->link = head;
 	return head;
 }
-
 
 NODE read_poly(NODE head)
 {
@@ -122,7 +121,6 @@ NODE add_poly(NODE head1, NODE head2, NODE head3)
 	return head3;
 }
 
-
 void evaluate(NODE head)
 {
 	NODE temp;
@@ -138,8 +136,6 @@ void evaluate(NODE head)
 	}
 	printf("Polynomial evaluated result is %f\n", result);
 }
-
-
 
 int main()
 {
@@ -170,8 +166,8 @@ int main()
 			printf("\tEnter the first polynomial\n");
 			head1 = read_poly(head1);
 			printf("\tEter the second polynomial\n");
-			head2 = read_poly(head2);
-			
+			head2 = (head2);
+
 			head3 = add_poly(head1, head2, head3);
 			printf("\tThe first polynomial is\n");
 			display(head1);
@@ -186,5 +182,4 @@ int main()
 			printf("\t\tInvalid choice\n");
 		}
 	}
-	return 0;
 }
