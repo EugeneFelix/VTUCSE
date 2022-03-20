@@ -7,18 +7,34 @@ struct node
 	struct node *link;
 };
 typedef struct node *NODE;
-NODE getnode();
-NODE read_poly(NODE head);
-NODE insert_rear(int coeff, int expx, int expy, int expz, NODE head);
-void display(NODE head);
-NODE add_poly(NODE head1, NODE head2, NODE head3);
-void evaluate(NODE head);
+
 NODE getnode()
 {
 	NODE x;
 	x = (NODE)malloc(sizeof(struct node));
 	return x;
 }
+
+NODE insert_rear(int coeff, int expx, int expy, int expz, NODE head)
+{
+	NODE temp, cur;
+	temp = getnode();
+	temp->coeff = coeff;
+	temp->expx = expx;
+	temp->expy = expy;
+	temp->expz = expz;
+	temp->link = NULL;
+	cur = head->link;
+	while (cur->link != head)
+	{
+		cur = cur->link;
+	}
+	cur->link = temp;
+	temp->link = head;
+	return head;
+}
+
+
 NODE read_poly(NODE head)
 {
 	int expx, expy, expz, coeff, ch = 1;
@@ -38,24 +54,7 @@ NODE read_poly(NODE head)
 	}
 	return head;
 }
-NODE insert_rear(int coeff, int expx, int expy, int expz, NODE head)
-{
-	NODE temp, cur;
-	temp = getnode();
-	temp->coeff = coeff;
-	temp->expx = expx;
-	temp->expy = expy;
-	temp->expz = expz;
-	temp->link = NULL;
-	cur = head->link;
-	while (cur->link != head)
-	{
-		cur = cur->link;
-	}
-	cur->link = temp;
-	temp->link = head;
-	return head;
-}
+
 void display(NODE head)
 {
 	NODE temp;
@@ -122,6 +121,8 @@ NODE add_poly(NODE head1, NODE head2, NODE head3)
 	}
 	return head3;
 }
+
+
 void evaluate(NODE head)
 {
 	NODE temp;
@@ -137,6 +138,9 @@ void evaluate(NODE head)
 	}
 	printf("Polynomial evaluated result is %f\n", result);
 }
+
+
+
 int main()
 {
 	NODE head, head1, head2, head3;
@@ -167,6 +171,7 @@ int main()
 			head1 = read_poly(head1);
 			printf("\tEter the second polynomial\n");
 			head2 = read_poly(head2);
+			
 			head3 = add_poly(head1, head2, head3);
 			printf("\tThe first polynomial is\n");
 			display(head1);
