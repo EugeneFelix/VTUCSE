@@ -1,6 +1,6 @@
 #include "stdio.h"
 #include "stdlib.h"
-int a[10][10], start, visited1[10], visited2[10], n;
+int adjMat[10][10], start, bfsdone[10], dfsDone[10], n;
 
 void create()
 {
@@ -12,14 +12,14 @@ void create()
 	{
 		for (j = 1; j <= n; j++)
 		{
-			scanf("%d", &a[i][j]);
+			scanf("%d", &adjMat[i][j]);
 		}
 	}
 }
 void bfs(int start)
 {
 	int queue[10], f = 0, r = -1, i, j;
-	visited1[start] = 1;
+	bfsdone[start] = 1;
 	queue[++r] = start;
 	printf("Nodes reachable are \n");
 	while (f <= r)
@@ -29,9 +29,9 @@ void bfs(int start)
 		printf("%d\t", i);
 		for (j = 1; j <= n; j++)
 		{
-			if (a[i][j] == 1 && visited1[j] == 0)
+			if (adjMat[i][j] == 1 && bfsdone[j] == 0)
 			{
-				visited1[j] = 1;
+				bfsdone[j] = 1;
 				queue[++r] = j;
 			}
 		}
@@ -39,20 +39,20 @@ void bfs(int start)
 	printf("\n Vertices are not reachable \n");
 	for (i = 1; i <= n; i++)
 	{
-		if (visited1[i] == 0)
+		if (bfsdone[i] == 0)
 		{
 			printf("%d\t", i);
 		}
-		visited1[i] = 0;
+		bfsdone[i] = 0;
 	}
 }
 void dfs(int start)
 {
 	int j;
-	visited2[start] = 1;
+	dfsDone[start] = 1;
 	for (j = 1; j <= n; j++)
 	{
-		if (a[start][j] == 1 && visited2[j] == 0)
+		if (adjMat[start][j] == 1 && dfsDone[j] == 0)
 		{
 			printf("%d------->%d\n", start, j);
 			dfs(j);
@@ -88,7 +88,7 @@ int main()
 			dfs(start);
 			for (i = 1; i <= n; i++)
 			{
-				if (visited2[i] == 0)
+				if (dfsDone[i] == 0)
 				{
 					printf("Graph is not connected\n");
 					exit(0);
