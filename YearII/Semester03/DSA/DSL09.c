@@ -17,11 +17,6 @@ NODE getnode()
 {
 	NODE x;
 	x = (NODE)malloc(sizeof(struct node));
-	if (x == NULL)
-	{
-		printf("insufficient memory\n");
-		exit(0);
-	}
 	return x;
 }
 NODE read_poly(NODE head)
@@ -29,16 +24,16 @@ NODE read_poly(NODE head)
 	int expx, expy, expz, coeff, ch = 1;
 	while (ch != 0)
 	{
-		printf("enter the coeff\n");
+		printf("\tEnter the coeff\n");
 		scanf("%d", &coeff);
-		printf("enter power ofx\n");
+		printf("\tEnter power ofx\n");
 		scanf("%d", &expx);
-		printf("enter the power y\n");
+		printf("\tEnter the power y\n");
 		scanf("%d", &expy);
-		printf("enter the power z\n");
+		printf("\tEnter the power z\n");
 		scanf("%d", &expz);
 		head = insert_rear(coeff, expx, expy, expz, head);
-		printf("press 1 to enter one more item or 0 to end\n");
+		printf("\tPess 1 to enter one more item or 0 to end\n");
 		scanf("%d", &ch);
 	}
 	return head;
@@ -66,14 +61,14 @@ void display(NODE head)
 	NODE temp;
 	if (head->link == head)
 	{
-		printf("polynomial doesn't exixt\n");
+		printf("\t\tPolynomial doesn't exist!\n");
 	}
 	else
 	{
 		temp = head->link;
 		while (temp != head)
 		{
-			printf("%dx^%dy^%dz^%d", temp->coeff, temp->expx, temp->expy, temp->expz);
+			printf("\t\t%dx^%dy^%dz^%d", temp->coeff, temp->expx, temp->expy, temp->expz);
 			if (temp->link != head)
 			{
 				printf("+");
@@ -132,55 +127,59 @@ void evaluate(NODE head)
 	NODE temp;
 	int x, y, z;
 	double result = 0;
-	printf("enter x,y,z values\n");
+	printf("\tEnter x,y,z values\n");
 	scanf("%d%d%d", &x, &y, &z);
 	temp = head->link;
 	while (temp != head)
 	{
 		result = result + (temp->coeff * pow(x, temp->expx) * pow(y, temp->expy) * pow(z, temp->expz));
 		temp = temp->link;
-	} printf("Polynomial evaluated result is %f\n",result); }
-int main() {
-		NODE head, head1, head2, head3;
-		int ch;
-		head = getnode();
-		head1 = getnode();
-		head2 = getnode();
-		head3 = getnode();
-		head->link = head;
-		head1->link = head1;
-		head2->link = head2;
-		head3->link = head3;
-		while (1)
+	}
+	printf("Polynomial evaluated result is %f\n", result);
+}
+int main()
+{
+	NODE head, head1, head2, head3;
+	int ch;
+	head = getnode();
+	head1 = getnode();
+	head2 = getnode();
+	head3 = getnode();
+	head->link = head;
+	head1->link = head1;
+	head2->link = head2;
+	head3->link = head3;
+	while (1)
+	{
+		printf("\tMENU\n\t1.Evaluate polynomial\n\t2.Polynomial addition\n\t3.Exit\n");
+		printf("\tEnter your choice\n");
+		scanf("%d", &ch);
+		switch (ch)
 		{
-printf("\tMENU\n1.evaluate polynomial\n2.polynomail addition\n3.exit\n");
-printf("enter your choice\n");
-scanf("%d",&ch);
-switch(ch) {
-			case 1:
-				printf("enter polynomial to evaluate\n");
-				head = read_poly(head);
-				display(head);
-				evaluate(head);
-				break;
-			case 2:
-				printf("enter the first polynomial\n");
-				head1 = read_poly(head1);
-				printf("enter the second polynomial\n");
-				head2 = read_poly(head2);
-				head3 = add_poly(head1, head2, head3);
-				printf("first polynomial is\n");
-				display(head1);
-				printf("second polynomial is\n");
-				display(head2);
-				printf("the sum of 2 polynomials is\n");
-				display(head3);
-				break;
-			case 3:
-				exit(0);
-			default:
-				printf("invalid choice\n");
+		case 1:
+			printf("\tEnter polynomial to evaluate\n");
+			head = read_poly(head);
+			display(head);
+			evaluate(head);
+			break;
+		case 2:
+			printf("\tEnter the first polynomial\n");
+			head1 = read_poly(head1);
+			printf("\tEter the second polynomial\n");
+			head2 = read_poly(head2);
+			head3 = add_poly(head1, head2, head3);
+			printf("\tThe first polynomial is\n");
+			display(head1);
+			printf("\The second polynomial is\n");
+			display(head2);
+			printf("\The sum of 2 polynomials is\n");
+			display(head3);
+			break;
+		case 3:
+			exit(0);
+		default:
+			printf("\t\tInvalid choice\n");
 		}
-		}
-		return 0;
+	}
+	return 0;
 }

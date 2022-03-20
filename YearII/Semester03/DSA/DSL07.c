@@ -26,7 +26,7 @@ int countnodes(NODE first)
 NODE getnode(NODE first)
 {
 	NODE temp;
-	temp = (NODE)malloc(sizeof(struct student));
+	temp = malloc(sizeof(struct student));
 	printf("enter usn:\n");
 	scanf("%s", temp->usn);
 	printf("enter the name\n");
@@ -75,6 +75,9 @@ NODE create(NODE first)
 	}
 	return first;
 }
+
+
+
 NODE insert_front(NODE first)
 {
 	if (countnodes(first) == MAX)
@@ -83,6 +86,9 @@ NODE insert_front(NODE first)
 		first = create(first);
 	return first;
 }
+
+
+
 NODE insert_rear(NODE first)
 {
 	NODE temp, cur;
