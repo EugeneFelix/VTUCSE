@@ -128,7 +128,7 @@ void evaluate(NODE head)
 	double result = 0;
 	printf("\tEnter x,y,z values\n");
 	scanf("%d%d%d", &x, &y, &z);
-	temp = head->link;
+	temp = (*head).link;
 	while (temp != head)
 	{
 		result = result + (temp->coeff * pow(x, temp->expx) * pow(y, temp->expy) * pow(z, temp->expz));
@@ -151,7 +151,7 @@ int main()
 	head3->link = head3;
 	while (1)
 	{
-		printf("\tMENU\n\t1.Evaluate polynomial\n\t2.Polynomial addition\n\t3.Exit\n");
+		printf("\t-_-_-_-_-_-_-_-_-_-_MENU-_-_-_-_-_-_-_-_-_-_\n\t1.Evaluate polynomial\n\t2.Polynomial addition\n\t3.Exit\n");
 		printf("\tEnter your choice\n");
 		scanf("%d", &ch);
 		switch (ch)
