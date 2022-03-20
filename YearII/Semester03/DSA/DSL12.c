@@ -56,8 +56,7 @@ void display_hashtable(EMPLOYEE a[], int n)
 {
 	int i;
 	for (i = 0; i < n; i++)
-		printf("a[%d]=%d %s\n", i, a[i].id,
-			   a[i].name);
+		printf("a[%d]=%d %s\n", i, a[i].id, a[i].name);
 }
 int main()
 {
@@ -67,8 +66,8 @@ int main()
 	initial_hashtable(a);
 	while (1)
 	{
-		printf("\nMENU\n1.Insert\n2.Search\n3.Display\n4.Exit\ n");
-		printf("Enter your choice: ");
+		printf("\n\t-_-_-_-_-_-_-_-_-_-_MENU-_-_-_-_-_-_-_-_-_-_\n\t1.Insert\n\t2.Search\n\t3.Display\n\t4.Exit\n");
+		printf("\tEnter your choice: ");
 		scanf("%d", &ch);
 		switch (ch)
 		{
