@@ -168,6 +168,7 @@ NODE delete_item(NODE root)
 		}
 		if (parent == NULL)
 			return q;
+        //Why oh Why??
 		if (cur == parent->llink)
 		{
 			parent->llink = q;

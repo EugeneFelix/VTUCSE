@@ -1,12 +1,12 @@
 #include "stdio.h"
 #include "stdlib.h"
-int adjMat[10][10], start, bfsdone[10], dfsDone[10], n;
+int adjMat[10][10], start, bfsDone[10], dfsDone[10], n;
 
 void create()
 {
 	int i, j;
 	printf("Enter the Number of vertices:\n");
-	scanf("%d", &n);
+	scanf("\t%d", &n);
 	printf("Enter the adjacency vertices \n");
 	for (i = 1; i <= n; i++)
 	{
@@ -19,7 +19,7 @@ void create()
 void bfs(int start)
 {
 	int queue[10], f = 0, r = -1, i, j;
-	bfsdone[start] = 1;
+	bfsDone[start] = 1;
 	queue[++r] = start;
 	printf("Nodes reachable are \n");
 	while (f <= r)
@@ -29,9 +29,9 @@ void bfs(int start)
 		printf("%d\t", i);
 		for (j = 1; j <= n; j++)
 		{
-			if (adjMat[i][j] == 1 && bfsdone[j] == 0)
+			if (adjMat[i][j] == 1 && bfsDone[j] == 0)
 			{
-				bfsdone[j] = 1;
+				bfsDone[j] = 1;
 				queue[++r] = j;
 			}
 		}
@@ -39,11 +39,11 @@ void bfs(int start)
 	printf("\n Vertices are not reachable \n");
 	for (i = 1; i <= n; i++)
 	{
-		if (bfsdone[i] == 0)
+		if (bfsDone[i] == 0)
 		{
 			printf("%d\t", i);
 		}
-		bfsdone[i] = 0;
+		bfsDone[i] = 0;
 	}
 }
 void dfs(int start)
@@ -97,7 +97,8 @@ int main()
 			printf("Graph is connected \n");
 			break;
 		case 4:
-			exit(0);
+			printf("\nSad to see you go, Have a good one!\n");
+			exit(EXIT_SUCCESS);
 		default:
 			printf("Invalid Option !!\n");
 		}
