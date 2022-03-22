@@ -10,8 +10,7 @@ typedef struct node *NODE;
 
 NODE getnode()
 {
-	NODE x;
-	x = (NODE)malloc(sizeof(struct node));
+	NODE x = (NODE)malloc(sizeof(struct node));
 	return x;
 }
 
@@ -59,7 +58,7 @@ void display(NODE head)
 	NODE temp;
 	if (head->link == head)
 	{
-		printf("\t\tPolynomial doesn't exist!\n");
+		printf("\t\tPolynomial doesn't exist yet!\n");
 	}
 	else
 	{
@@ -79,8 +78,12 @@ void display(NODE head)
 NODE add_poly(NODE head1, NODE head2, NODE head3)
 {
 	NODE temp1, temp2;
-	int x1, x2, y1, y2, z1, z2, coeff1, coeff2, coeff;
+	int x1, x2, y1, y2, z1, z2; 
+	int coeff1, coeff2, coeff;
 	temp1 = head1->link;
+	
+	//While 01
+	
 	while (temp1 != head1)
 	{
 		x1 = temp1->expx;
@@ -113,7 +116,12 @@ NODE add_poly(NODE head1, NODE head2, NODE head3)
 		}
 		temp1 = temp1->link;
 	}
+	
+	
 	temp2 = head2->link;
+	
+	// While 02
+	
 	while (temp2 != head2)
 	{
 		if (temp2->flag == 0)
@@ -132,7 +140,7 @@ void evaluate(NODE head)
 	double result = 0;
 	printf("\tEnter x,y,z values\n");
 	scanf("%d%d%d", &x, &y, &z);
-	temp = (*head).link;
+	temp = head->link;
 	while (temp != head)
 	{
 		result = result + (temp->coeff * pow(x, temp->expx) * pow(y, temp->expy) * pow(z, temp->expz));
@@ -141,7 +149,7 @@ void evaluate(NODE head)
 	printf("Polynomial evaluated result is %f\n", result);
 }
 
-int main()
+int main(a)
 {
 	NODE head, head1, head2, head3;
 	int ch;

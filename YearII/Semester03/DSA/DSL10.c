@@ -147,6 +147,9 @@ NODE delete_item(NODE root)
 		printf("Key not found\n");
 		return root;
 	}
+	
+	//Search operation ends here.
+	
 	else
 	{
 		if (cur->llink == NULL)
