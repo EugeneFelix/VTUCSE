@@ -15,7 +15,7 @@ struct node
 	struct node *llink;
 	struct node *rlink;
 };
-typedef struct node* NODE;
+typedef struct node* NODE;   //NODE data type...
 
 int countnodes(NODE first)
 {
