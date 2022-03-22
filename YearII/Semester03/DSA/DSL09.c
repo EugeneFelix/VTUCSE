@@ -41,7 +41,7 @@ NODE read_poly(NODE head)
 	{
 		printf("\tEnter the coeff\n");
 		scanf("%d", &coeff);
-		printf("\tEnter power ofx\n");
+		printf("\tEnter power of x\n");
 		scanf("%d", &expx);
 		printf("\tEnter the power y\n");
 		scanf("%d", &expy);

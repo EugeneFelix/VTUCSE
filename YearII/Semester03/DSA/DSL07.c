@@ -70,13 +70,11 @@ NODE create(NODE first)
 	else
 	{
 		temp = getnode(first);
-		temp->link = first; // 
+		temp->link = first; //
 		first = temp;
 	}
 	return first;
 }
-
-
 
 NODE insert_front(NODE first)
 {
@@ -86,8 +84,6 @@ NODE insert_front(NODE first)
 		first = create(first);
 	return first;
 }
-
-
 
 NODE insert_rear(NODE first)
 {
@@ -106,22 +102,22 @@ NODE insert_rear(NODE first)
 		{
 			temp = getnode(first);
 			while (cur->link != NULL)
+			{
 				cur = cur->link;
+			}
 			cur->link = temp;
 		}
 	}
 	return first;
 }
 
-
-
 NODE insert_node(NODE first)
 {
 	int ch;
 	while (1)
 	{
-		printf("\nmenu\n 1:insert@front\n 2:insert@rear\n 3:exit\n");
-		printf("enter your choice:");
+		printf("\n\tMenu\n 1:insert@front\n 2:insert@rear\n 3:exit\n");
+		printf("\tEnter your choice:");
 		scanf("%d", &ch);
 		switch (ch)
 		{
@@ -138,17 +134,18 @@ NODE insert_node(NODE first)
 	}
 	return first;
 }
+
 NODE delete_front(NODE first)
 {
 	NODE temp;
 	if (first == NULL)
-		printf("list is empty/underflow!!\n");
+		printf("\tList is empty/underflow!!\n");
 	else
 	{
 		temp = first;
 		first = first->link;
 		free(temp);
-		printf("front node is deleted\n");
+		printf("\tFront node is deleted\n");
 	}
 	return first;
 }
@@ -159,13 +156,13 @@ NODE delete_rear(NODE first)
 	prev = NULL;
 	if (first == NULL)
 	{
-		printf("list is empty/underflow!!\n");
+		printf("\tList is empty/underflow!!\n");
 		return first;
 	}
 	if (first->link == NULL)
 	{
 		free(first);
-		printf("last node deleted\n");
+		printf("\tLast node deleted\n");
 		return NULL;
 	}
 	else
