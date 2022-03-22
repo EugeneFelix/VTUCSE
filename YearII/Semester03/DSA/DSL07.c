@@ -62,7 +62,7 @@ void display(NODE first)
 NODE create(NODE first)
 {
 	NODE temp;
-	if (first == NULL)
+	if (first == NULL) // first node to be inserted i,e, List is Empty!!
 	{
 		temp = getnode(first);
 		first = temp;
@@ -70,7 +70,7 @@ NODE create(NODE first)
 	else
 	{
 		temp = getnode(first);
-		temp->link = first;
+		temp->link = first; // 
 		first = temp;
 	}
 	return first;
@@ -94,7 +94,7 @@ NODE insert_rear(NODE first)
 	NODE temp, cur;
 	cur = first;
 	if (countnodes(first) == MAX)
-		printf("\nlist is full:!");
+		printf("\n\tList is full:!");
 	else
 	{
 		if (first == NULL)
@@ -112,6 +112,9 @@ NODE insert_rear(NODE first)
 	}
 	return first;
 }
+
+
+
 NODE insert_node(NODE first)
 {
 	int ch;
