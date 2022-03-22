@@ -16,6 +16,8 @@ void create()
 		}
 	}
 }
+
+
 void bfs(int start)
 {
 	int queue[10], f = 0, r = -1, i, j;
@@ -46,6 +48,8 @@ void bfs(int start)
 		bfsDone[i] = 0;
 	}
 }
+
+
 void dfs(int start)
 {
 	int j;

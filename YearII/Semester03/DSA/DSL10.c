@@ -11,13 +11,13 @@ NODE create(NODE root)
 {
 	int i, n, item;
 	NODE temp, prev, cur;
-	printf("enter no. of nodes\n");
+	printf("Enter the number of nodes\n");
 	scanf("%d", &n);
 	for (i = 0; i < n; i++)
 	{
 		temp = (NODE)malloc(sizeof(struct node));
-		printf("\nenter thr node value\n");
-		scanf("%d", &item);
+		printf("\nEnter thr node value\n");
+		scanf("\t%d", &item);
 		temp->info = item;
 		temp->llink = NULL;
 		temp->rlink = NULL;
@@ -32,20 +32,20 @@ NODE create(NODE root)
 			while (cur != NULL)
 			{
 				prev = cur;
-				if (item < (cur->info))
+				if (item < prev->info)
 					cur = cur->llink;
 				else
 					cur = cur->rlink;
 			}
-			if (item < (prev->info))
+			if(item < prev->info)
 				prev->llink = temp;
 			else
-				prev->rlink = temp;
+				prev-> rlink = temp;
 		}
 	}
 	return root;
 }
-void inorder(NODE root)
+void inorder(NODE root) //R always after L
 {
 	if (root == NULL)
 	{
@@ -54,7 +54,7 @@ void inorder(NODE root)
 	else
 	{
 		inorder(root->llink);
-		printf("%d\t", root->info);
+		printf("\t%d\t", root->info);
 		inorder(root->rlink);
 	}
 }
@@ -66,7 +66,7 @@ void preorder(NODE root)
 	}
 	else
 	{
-		printf("%d\t", root->info);
+		printf("\t%d\t", root->info);
 		preorder(root->llink);
 		preorder(root->rlink);
 	}
@@ -81,7 +81,7 @@ void postorder(NODE root)
 	{
 		postorder(root->llink);
 		postorder(root->rlink);
-		printf("%d\t", root->info);
+		printf("\t%d\t", root->info);
 	}
 	return;
 }
@@ -147,9 +147,9 @@ NODE delete_item(NODE root)
 		printf("Key not found\n");
 		return root;
 	}
-	
+
 	//Search operation ends here.
-	
+
 	else
 	{
 		if (cur->llink == NULL)
@@ -171,7 +171,7 @@ NODE delete_item(NODE root)
 		}
 		if (parent == NULL)
 			return q;
-        //Why oh Why??
+		//Why oh Why??
 		if (cur == parent->llink)
 		{
 			parent->llink = q;
@@ -197,7 +197,7 @@ int main()
 		switch (ch)
 		{
 		case 1:
-			root = create(root);
+			//root = create(root);
 			break;
 		case 2:
 			printf("inorder traversal\n");

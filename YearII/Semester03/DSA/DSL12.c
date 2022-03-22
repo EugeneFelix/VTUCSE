@@ -66,7 +66,9 @@ int main()
 	initial_hashtable(a);
 	while (1)
 	{
-		printf("\n\t-_-_-_-_-_-_-_-_-_-_MENU-_-_-_-_-_-_-_-_-_-_\n\t1.Insert\n\t2.Search\n\t3.Display\n\t4.Exit\n");
+		printf("\n\t-_-_-_-_-_-_-_-_-_-_MENU-_-_-_\
+-_-_-_-_-_-_-_\n\t1.Insert\n\t2.Search\n\t\
+3.Display\n\t4.Exit\n");
 		printf("\tEnter your choice: ");
 		scanf("%d", &ch);
 		switch (ch)
