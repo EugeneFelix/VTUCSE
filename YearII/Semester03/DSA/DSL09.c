@@ -8,7 +8,7 @@ struct node
 };
 typedef struct node *NODE;
 
-NODE getnode()
+NODE setnode()
 {
 	NODE x = (NODE)malloc(sizeof(struct node));
 	return x;
@@ -17,7 +17,7 @@ NODE getnode()
 NODE insert_rear(int coeff, int expx, int expy, int expz, NODE head)
 {
 	NODE temp, cur;
-	temp = getnode();
+	temp = setnode();
 	temp->coeff = coeff;
 	temp->expx = expx;
 	temp->expy = expy;
@@ -153,10 +153,10 @@ int main()
 {
 	NODE head, head1, head2, head3;
 	int ch;
-	head = getnode();
-	head1 = getnode();
-	head2 = getnode();
-	head3 = getnode();
+	head = setnode();
+	head1 = setnode();
+	head2 = setnode();
+	head3 = setnode();
 	head->link = head;
 	head1->link = head1;
 	head2->link = head2;

@@ -74,9 +74,7 @@ void preorder(NODE root)
 void postorder(NODE root)
 {
 	if (root == NULL)
-	{
 		return;
-	}
 	else
 	{
 		postorder(root->llink);
@@ -159,7 +157,7 @@ NODE delete_item(NODE root)
 		else if (cur->rlink == NULL)
 		{
 			q = cur->llink;
-		}
+		} //See if it is a leaf node.
 		else
 		{
 			suc = cur->rlink;
@@ -197,7 +195,7 @@ int main()
 		switch (ch)
 		{
 		case 1:
-			//root = create(root);
+			root = create(root);
 			break;
 		case 2:
 			printf("inorder traversal\n");
