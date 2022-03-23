@@ -31,7 +31,7 @@ void bfs(int start)
 		printf("%d\t", i);
 		for (j = 1; j <= n; j++)
 		{
-			if (adjMat[i][j] == 1 && !bfsDone[j])
+			if (adjMat[i][j] && !bfsDone[j])
 			{
 				bfsDone[j] = 1;
 				queue[++r] = j;
@@ -41,7 +41,7 @@ void bfs(int start)
 	printf("\n Vertices are not reachable \n");
 	for (i = 1; i <= n; i++)
 	{
-		if (bfsDone[i] == 0)
+		if (!bfsDone[i])
 		{
 			printf("%d\t", i);
 		}
