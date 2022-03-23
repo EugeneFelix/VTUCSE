@@ -32,7 +32,7 @@ NODE create(NODE root)
 			while (cur != NULL)
 			{
 				prev = cur;
-				if (item < prev->info)
+				if (item < cur->info)
 					cur = cur->llink;
 				else
 					cur = cur->rlink;
