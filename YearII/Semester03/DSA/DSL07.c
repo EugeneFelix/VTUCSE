@@ -70,7 +70,7 @@ NODE create(NODE first)
 	else
 	{
 		temp = getnode(first);
-		temp->link = first; //
+		temp->link = first;
 		first = temp;
 	}
 	return first;
