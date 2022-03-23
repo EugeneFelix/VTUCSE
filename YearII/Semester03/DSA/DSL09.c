@@ -149,7 +149,7 @@ void evaluate(NODE head)
 	printf("Polynomial evaluated result is %f\n", result);
 }
 
-int main(a)
+int main()
 {
 	NODE head, head1, head2, head3;
 	int ch;
