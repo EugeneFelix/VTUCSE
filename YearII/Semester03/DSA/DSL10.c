@@ -122,13 +122,13 @@ NODE search(NODE root)
 NODE delete_item(NODE root)
 {
 	int key;
-	NODE cur, parent, suc, q;
+	NODE cur, prev, suc, q;
 	if (root == NULL)
 	{
 		printf("Tree empty\n");
 		return root;
 	}
-	parent = NULL;
+	prev = NULL;
 	cur = root;
 	printf("Enter the element to be deleted");
 	scanf("%d", &key);
@@ -136,7 +136,7 @@ NODE delete_item(NODE root)
 	{
 		if (key == cur->info)
 			break;
-		parent = cur;
+		prev = cur;
 		if (key < cur->info)
 			cur = cur->llink;
 		else
@@ -169,16 +169,16 @@ NODE delete_item(NODE root)
 			}
 			q = cur->rlink;
 		}
-		if (parent == NULL)
+		if (prev == NULL)
 			return q;
 		//Why oh Why??
-		if (cur == parent->llink)
+		if (cur == prev->llink)
 		{
-			parent->llink = q;
+			prev->llink = q;
 		}
 		else
 		{
-			parent->rlink = q;
+			prev->rlink = q;
 		}
 		free(cur);
 	}

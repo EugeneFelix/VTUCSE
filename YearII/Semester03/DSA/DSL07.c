@@ -68,7 +68,7 @@ NODE create(NODE first)
 		first = temp;
 	}
 	else
-	{
+	{ //Only front insertion!
 		temp = getnode(first);
 		temp->link = first;
 		first = temp;
