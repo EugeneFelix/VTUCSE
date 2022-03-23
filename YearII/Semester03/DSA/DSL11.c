@@ -31,7 +31,7 @@ void bfs(int start)
 		printf("%d\t", i);
 		for (j = 1; j <= n; j++)
 		{
-			if (adjMat[i][j] == 1 && bfsDone[j] == 0)
+			if (adjMat[i][j] == 1 && !bfsDone[j])
 			{
 				bfsDone[j] = 1;
 				queue[++r] = j;

@@ -177,8 +177,8 @@ int main(a)
 		case 2:
 			printf("\tEnter the first polynomial\n");
 			head1 = read_poly(head1);
-			printf("\tEter the second polynomial\n");
-			head2 = (head2);
+			printf("\tEnter the second polynomial\n");
+			head2 = read_poly(head2);
 
 			head3 = add_poly(head1, head2, head3);
 			printf("\tThe first polynomial is\n");

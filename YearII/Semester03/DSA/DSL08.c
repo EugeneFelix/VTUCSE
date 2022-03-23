@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-int MAX = 4, count;
+signed int MAX = 4, count;
 
 struct node
 {
@@ -15,7 +15,7 @@ struct node
 	struct node *llink;
 	struct node *rlink;
 };
-typedef struct node* NODE;   //NODE data type...
+typedef struct node *NODE; //NODE data type...
 
 int countnodes(NODE first)
 {

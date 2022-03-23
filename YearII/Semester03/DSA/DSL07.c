@@ -90,7 +90,7 @@ NODE insert_rear(NODE first)
 	NODE temp, cur;
 	cur = first;
 	if (countnodes(first) == MAX)
-		printf("\n\tList is full:!");
+		printf("\n\tList is full!");
 	else
 	{
 		if (first == NULL)
