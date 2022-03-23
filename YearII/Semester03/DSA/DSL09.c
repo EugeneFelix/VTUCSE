@@ -78,12 +78,12 @@ void display(NODE head)
 NODE add_poly(NODE head1, NODE head2, NODE head3)
 {
 	NODE temp1, temp2;
-	int x1, x2, y1, y2, z1, z2; 
+	int x1, x2, y1, y2, z1, z2;
 	int coeff1, coeff2, coeff;
 	temp1 = head1->link;
-	
+
 	//While 01
-	
+
 	while (temp1 != head1)
 	{
 		x1 = temp1->expx;
@@ -116,12 +116,11 @@ NODE add_poly(NODE head1, NODE head2, NODE head3)
 		}
 		temp1 = temp1->link;
 	}
-	
-	
+
 	temp2 = head2->link;
-	
+
 	// While 02
-	
+
 	while (temp2 != head2)
 	{
 		if (temp2->flag == 0)
