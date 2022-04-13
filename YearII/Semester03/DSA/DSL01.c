@@ -1,17 +1,12 @@
-#include <stdio.h> #include<stdlib.h>
-int n, *a;
+#include <stdio.h>
+#include<stdlib.h>
+
+int n, a[99];
 int count = 0;
 void create()
 {
 	int i;
-	a = (int *)malloc(n * sizeof(int));
-	if (a == NULL)
-	{
-		printf("array not created\n");
-		exit(0);
-	}
-	printf("\n array created successfully");
-	printf("\n enter the elements of array\n");
+	printf("\n\t\tEnter the elements of array\n");
 	for (i = 0; i < n; i++)
 	{
 		scanf("%d", &a[i]);
@@ -22,7 +17,7 @@ void display()
 	int i;
 	for (i = 0; i < n; i++)
 	{
-		printf("%d\n", a[i]);
+		printf("\t\t%d\n", a[i]);
 	}
 }
 void insert(ele, pos)
@@ -36,25 +31,25 @@ void insert(ele, pos)
 	a[pos] = ele;
 	n++;
 }
-void delete (pos)
+void deleteElem (pos)
 {
 	int j, item;
 	item = a[pos];
-	printf("the deleted item is %d\n", item);
+	printf("the deleteElemd item is %d\n", item);
 	for (j = pos; j < n - 1; j++)
 	{
 		a[j] = a[j + 1];
 	}
 	n--;
 	if (n == 0)
-		printf("no element in the array\n");
+		printf("\t\tThe array is empty!\n");
 }
 int main()
 {
 	int ch, ele, pos;
 	while (1)
 	{
-		printf("enter the choice\n1:createarray\n2:display array\n3:insertionitem\n5:exit\n");
+		printf("\t\tEnter your choice\n\t\t1. Create a new Array\n\t\t2. Display contents of Array.\n\t\t3. Insert a new element.\n\t\t4. deleteElem an existing element.\n\t\t5. EXIT!\n");
 		scanf("%d", &ch);
 		switch (ch)
 		{
@@ -87,7 +82,7 @@ int main()
 			scanf("%d", &pos);
 			if ((pos >= 0) && (pos < n))
 			{
-				delete (pos);
+				deleteElem(pos);
 			}
 			else
 			{
