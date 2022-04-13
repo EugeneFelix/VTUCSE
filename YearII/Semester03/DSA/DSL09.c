@@ -38,6 +38,7 @@ NODE read_poly(NODE head)
 	int expx, expy, expz, coeff, ch = 1;
 	while (ch != 0)
 	{
+        printf("Please input your Polynomial\n");
 		printf("\tEnter the coeff\n");
 		scanf("%d", &coeff);
 		printf("\tEnter power of x\n");
