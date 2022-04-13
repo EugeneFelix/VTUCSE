@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include<stdlib.h>
+#include <stdlib.h>
 
 int n, a[99];
 int count = 0;
@@ -31,7 +31,7 @@ void insert(ele, pos)
 	a[pos] = ele;
 	n++;
 }
-void deleteElem (pos)
+void deleteElem(pos)
 {
 	int j, item;
 	item = a[pos];
@@ -65,7 +65,7 @@ int main()
 			printf("enter the element to be inserted\n");
 			scanf("%d", &ele);
 		label:
-			printf("\n enter the position to be inserted\n");
+			printf("\n\t\tEnter the position to be inserted\n");
 			scanf("%d", &pos);
 			if (pos >= 0 && pos < n)
 			{
@@ -78,7 +78,7 @@ int main()
 			break;
 		case 4:
 		label2:
-			printf("\n enter the position\n");
+			printf("\n\t\tEnter the position\n");
 			scanf("%d", &pos);
 			if ((pos >= 0) && (pos < n))
 			{
@@ -91,6 +91,7 @@ int main()
 			break;
 		default:
 			exit(0);
-		}}
-		 return 0;
+		}
 	}
+	return 0;
+}

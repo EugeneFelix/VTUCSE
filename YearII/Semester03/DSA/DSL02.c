@@ -1,4 +1,5 @@
-#include <stdio.h> #include<stdlib.h>
+#include <stdio.h>
+#include<stdlib.h>
 char str[100], pat[100], rep[100], ans[100];
 int i, j, c, m, k, flag = 0;
 void stringmatch()
