@@ -35,7 +35,7 @@ void deleteElem(pos)
 {
 	int j, item;
 	item = a[pos];
-	printf("the deleteElemd item is %d\n", item);
+	printf("The Deleted Element is %d\n", item);
 	for (j = pos; j < n - 1; j++)
 	{
 		a[j] = a[j + 1];
@@ -91,7 +91,7 @@ int main()
 			break;
 		default:
 			exit(0);
-		}
+		}a
 	}
 	return 0;
 }
