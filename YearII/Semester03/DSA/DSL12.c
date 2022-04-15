@@ -11,9 +11,7 @@ void initial_hashtable(EMPLOYEE a[])
 {
 	int i;
 	for (i = 0; i < HASH_SIZE; i++)
-	{
 		a[i].id = 0;
-	}
 }
 int H(int k)
 {
@@ -34,9 +32,7 @@ int insert_hashtable(int id, char name[], EMPLOYEE a[])
 		}
 	}
 	if (i == HASH_SIZE)
-	{
 		return 0;
-	}
 	return 0;
 }
 int search_hashtable(int key, EMPLOYEE a[])

@@ -69,7 +69,7 @@ int main()
 	while (1)
 	{
 		printf("\n\t1.Create\n\t 2.BFS\n\t 3.DFS\n\t 4.Exit \n");
-		printf("Enter your choice ");
+		printf("\t\t\tEnter your choice ");
 		scanf("%d", &ch);
 		switch (ch)
 		{
