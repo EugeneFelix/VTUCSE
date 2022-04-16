@@ -11,8 +11,8 @@ int main()
 	int choice;
 	while (1)
 	{
-		printf("\n\n STACK OPERATIONS\n");
-		printf("\n1.PUSH\n2.POP\n3.PALINDROME\n4.DISPLAY\n5.EXIT\n");
+		printf("\n\n \t\tSTACK OPERATIONS\n");
+		printf("\n\t\t1.PUSH\n\t\t2.POP\n\t\t3.PALINDROME\n\t\t4.DISPLAY\n\t\t5.EXIT\n");
 		printf("enter your choice:");
 		scanf("%d", &choice);
 		switch (choice)
@@ -35,7 +35,7 @@ int main()
 			exit(0);
 			break;
 		default:
-			printf("invalid choice\n");
+			printf("\t\tInvalid choice\n");
 			break;
 		}
 	}
@@ -46,14 +46,13 @@ void push()
 	int item;
 	if (top == (max_size - 1))
 	{
-		printf("\n STACK OVERFLOW\n");
+		printf("\n \t\tSTACK OVERFLOW\n");
 	}
 	else
 	{
-		printf("enter the element to be inserted\n");
+		printf("\t\tEnter the element to be inserted\n");
 		scanf("%d", &item);
-		top = top + 1;
-		stack[top] = item;
+		stack[++top] = item;
 		count++;
 	}
 }
@@ -61,13 +60,13 @@ void pop()
 {
 	if (top == -1)
 	{
-		printf("\n STACK UNDERFLOW\n");
+		printf("\n \t\tSTACK UNDERFLOW\n");
 	}
 	else
 	{
 		item = stack[top];
-		printf("\n\nthe popped element is:%d\t", stack[top]);
-		top = top - 1;
+		printf("\n\n\t\tthe popped element is:%d\t", stack[top]);
+		top--;
 		count--;
 	}
 }
@@ -82,23 +81,23 @@ void palin()
 		}
 	}
 	if (status >= count)
-		printf("A palindrome\n");
+		printf("\t\tStack is a palindrome\n");
 	else
-		printf("Not A Palindrome");
+		printf("\t\tStack is not A Palindrome");
 }
-	void display()
+void display()
+{
+	int i;
+	if (top == -1)
 	{
-		int i;
-		if (top == -1)
+		printf("NO elements in the stack\n");
+	}
+	else
+	{
+		printf("the stack elements are\n");
+		for (i = top; i >= 0; i--)
 		{
-			printf("NO elements in the stack\n");
-		}
-		else
-		{
-			printf("the stack elements are\n");
-			for (i = top; i >= 0; i--)
-			{
-				printf("%d\n", stack[i]);
-			}
+			printf("%d\n", stack[i]);
 		}
 	}
+}

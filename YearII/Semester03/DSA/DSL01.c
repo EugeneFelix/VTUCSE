@@ -91,7 +91,7 @@ int main()
 			break;
 		default:
 			exit(0);
-		}a
+		}
 	}
 	return 0;
 }
