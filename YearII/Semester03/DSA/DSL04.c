@@ -1,4 +1,6 @@
-#include <stdio.h> #include<stdlib.h> #include<string.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 int f(char symbol)
 {
 	switch (symbol)
@@ -66,9 +68,7 @@ void infix_postfix(char infix[], char postfix[])
 		}
 	}
 	while (s[top] != '#')
-	{
 		postfix[j++] = s[top--];
-	}
 	postfix[j] = '\0';
 }
 int main()

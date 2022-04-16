@@ -1,4 +1,7 @@
-#include <stdio.h> #include<string.h> #include<math.h> #include<ctype.h>
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <ctype.h>
 double compute(char symbol, double op1, double op2)
 {
 	switch (symbol)
@@ -41,6 +44,6 @@ int main()
 		}
 	}
 	res = s[top--];
-	printf("\n The result is : %f\n", res);
+	printf("\n The result is : %0.3f\n", res);
 	return 0;
 }
