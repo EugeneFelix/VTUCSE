@@ -24,10 +24,10 @@ double compute(char symbol, double op1, double op2)
 int main()
 {
 	double s[20], res, op1, op2;
-	int top = -1, i;
+	int i, top = -1;
 	char postfix[20], symbol;
-	printf("Enter the postfix expression : \n");
-	gets(postfix);
+	printf("\t\tEnter the postfix expression:\t");
+	scanf("\t\t%s", postfix);
 	for (i = 0; i < strlen(postfix); i++)
 	{
 		symbol = postfix[i];
@@ -44,6 +44,6 @@ int main()
 		}
 	}
 	res = s[top--];
-	printf("\n The result is : %0.3f\n", res);
+	printf("\t\tThe result is : %0.3f\n", res);
 	return 0;
 }
