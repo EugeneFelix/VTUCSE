@@ -79,7 +79,7 @@ NODE create(NODE first)
 NODE insert_front(NODE first)
 {
 	if (countnodes(first) == MAX)
-		printf("list is full/overflow!!\n");
+		printf("\t\tList is full/overflow!!\n");
 	else
 		first = create(first);
 	return first;

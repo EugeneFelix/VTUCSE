@@ -1,5 +1,5 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include "stdio.h"
+#include "stdlib.h"
 #define max_size 5
 int stack[max_size], top = -1, i, status = 0, count = 0, item;
 void push();
