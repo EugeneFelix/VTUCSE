@@ -74,10 +74,10 @@ void infix_postfix(char infix[], char postfix[])
 int main()
 {
 	char infix[50], postfix[50];
-	printf("enter the valid infix exp\n");
+	printf("\t\tEnter the valid infix expression\n");
 	scanf("%s", infix);
 	infix_postfix(infix, postfix);
-	printf("the postfix exp\n");
+	printf("\t\tThe postfix expression is\n");
 	printf("%s\n", postfix);
 	return 0;
 }
