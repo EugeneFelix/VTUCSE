@@ -11,13 +11,13 @@ struct student
 	struct student *link;
 };
 typedef struct student *NODE;
+
 int countnodes(NODE first)
 {
 	NODE temp;
 	count = 0;
 	temp = first;
-	while (temp != NULL)
-	{
+	while(temp != NULL) {
 		count++;
 		temp = temp->link;
 	}
@@ -45,7 +45,7 @@ void display(NODE first)
 {
 	NODE temp;
 	if (first == NULL)
-		printf("no student dat\n");
+		printf("\t\tNo student data\n");
 	else
 	{
 		temp = first;

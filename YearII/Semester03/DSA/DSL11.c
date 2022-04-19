@@ -9,12 +9,8 @@ void create()
 	scanf("\t%d", &n);
 	printf("Enter the adjacency vertices \n");
 	for (i = 1; i <= n; i++)
-	{
 		for (j = 1; j <= n; j++)
-		{
 			scanf("%d", &adjMat[i][j]);
-		}
-	}
 }
 
 void bfs(int start)
