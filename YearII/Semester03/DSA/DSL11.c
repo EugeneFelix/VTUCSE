@@ -15,18 +15,18 @@ void create()
 
 void bfs(int start)
 {
-	int queue[10], f = 0, r = -1, i, j;
+	int queue[10], f = 0, r = -1, roach, j;
 	bfsDone[start] = 1;
 	queue[++r] = start;
-	printf("Nodes reachable are \n");
-	while (f <= r)
+	printf("Nodes reachable are \n",);
+	while (f <= r) // Queue not empty.
 	{
-		i = queue[f];
+		roach = queue[f];
 		f++;
-		printf("%d\t", i);
+		printf("%d\t", roach);
 		for (j = 1; j <= n; j++)
 		{
-			if (adjMat[i][j] && !bfsDone[j])
+			if (adjMat[roach][j] && !bfsDone[j]) //if 1 in the matrix and not visited.
 			{
 				bfsDone[j] = 1;
 				queue[++r] = j;
@@ -34,12 +34,10 @@ void bfs(int start)
 		}
 	}
 	printf("\n Vertices are not reachable \n");
-	for (i = 1; i <= n; i++)
+	for (int i = 1; i <= n; i++)
 	{
 		if (!bfsDone[i])
-		{
 			printf("%d\t", i);
-		}
 		bfsDone[i] = 0;
 	}
 }
@@ -50,7 +48,7 @@ void dfs(int start)
 	dfsDone[start] = 1;
 	for (j = 1; j <= n; j++)
 	{
-		if (adjMat[start][j] == 1 && dfsDone[j] == 0)
+		if (adjMat[start][j] && !dfsDone[j])
 		{
 			printf("%d------->%d\n", start, j);
 			dfs(j);

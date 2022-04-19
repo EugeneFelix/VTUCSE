@@ -2,23 +2,19 @@
 #include <stdlib.h>
 
 int n, a[99];
-int count = 0;
+
 void create()
 {
 	int i;
 	printf("\n\t\tEnter the elements of array\n");
 	for (i = 0; i < n; i++)
-	{
 		scanf("%d", &a[i]);
-	}
 }
 void display()
 {
 	int i;
 	for (i = 0; i < n; i++)
-	{
 		printf("\t\t%d\n", a[i]);
-	}
 }
 void insert(ele, pos)
 {
@@ -37,9 +33,7 @@ void deleteElem(pos)
 	item = a[pos];
 	printf("The Deleted Element is %d\n", item);
 	for (j = pos; j < n - 1; j++)
-	{
 		a[j] = a[j + 1];
-	}
 	n--;
 	if (n == 0)
 		printf("\t\tThe array is empty!\n");

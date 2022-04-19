@@ -70,34 +70,41 @@ void pop()
 		count--;
 	}
 }
+
 void palin()
 {
 	int temp;
+	
+	
+	
+	
+	
 	for (i = 0, temp = count - 1; i < count, temp >= 0; i++, temp--)
-	{
 		if (stack[i] == stack[temp])
-		{
 			status++;
-		}
-	}
+			
+			
+			
+			
+			
 	if (status >= count)
-		printf("\t\tStack is a palindrome\n");
+		printf("\t\tStack is a Palindrome!\n");
 	else
-		printf("\t\tStack is not A Palindrome");
+		printf("\t\tStack is not a Palindrome!\n");
 }
 void display()
 {
 	int i;
 	if (top == -1)
 	{
-		printf("NO elements in the stack\n");
+		printf("\tNO elements in the stack\n");
 	}
 	else
 	{
-		printf("the stack elements are\n");
+		printf("\tThe stack elements are\n");
 		for (i = top; i >= 0; i--)
 		{
-			printf("%d\n", stack[i]);
+			printf("   %d  ", stack[i]);
 		}
 	}
 }

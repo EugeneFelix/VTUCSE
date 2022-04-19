@@ -14,11 +14,8 @@ void stringmatch()
 			if (pat[i] == '\0')
 			{
 				flag = 1;
-				for (k = 0; rep[k] != '\0'; k++)
-				{
+				for (k = 0; rep[k] != '\0'; k++, j++)
 					ans[j] = rep[k];
-					j++;
-				}
 				i = 0;
 				c = m;
 			}
