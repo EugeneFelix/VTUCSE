@@ -25,9 +25,7 @@ NODE insert_rear(int coeff, int expx, int expy, int expz, NODE head)
 	temp->link = NULL;
 	cur = head->link;
 	while (cur->link != head)
-	{
 		cur = cur->link;
-	}
 	cur->link = temp;
 	temp->link = head;
 	return head;
@@ -38,7 +36,7 @@ NODE read_poly(NODE head)
 	int expx, expy, expz, coeff, ch = 1;
 	while (ch != 0)
 	{
-        printf("Please input your Polynomial\n");
+		printf("Please input your Polynomial\n");
 		printf("\tEnter the coeff\n");
 		scanf("%d", &coeff);
 		printf("\tEnter power of x\n");
@@ -68,14 +66,13 @@ void display(NODE head)
 		{
 			printf("\t\t%dx^%dy^%dz^%d", temp->coeff, temp->expx, temp->expy, temp->expz);
 			if (temp->link != head)
-			{
 				printf("+");
-			}
 			temp = temp->link;
 		}
 		printf("\n");
 	}
 }
+
 NODE add_poly(NODE head1, NODE head2, NODE head3)
 {
 	NODE temp1, temp2;

@@ -22,9 +22,7 @@ NODE create(NODE root)
 		temp->llink = NULL;
 		temp->rlink = NULL;
 		if (root == NULL)
-		{
 			root = temp;
-		}
 		else
 		{
 			cur = root;
@@ -37,10 +35,10 @@ NODE create(NODE root)
 				else
 					cur = cur->rlink;
 			}
-			if(item < prev->info)
+			if (item < prev->info)
 				prev->llink = temp;
 			else
-				prev-> rlink = temp;
+				prev->rlink = temp;
 		}
 	}
 	return root;
