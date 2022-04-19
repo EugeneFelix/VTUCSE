@@ -21,6 +21,7 @@ double compute(char symbol, double op1, double op2)
 		return 0;
 	}
 }
+
 int main()
 {
 	double s[20], res, op1, op2;
@@ -32,9 +33,7 @@ int main()
 	{
 		symbol = postfix[i];
 		if (isdigit(symbol))
-		{
-			s[++top] = symbol - '0';
-		}
+			s[++top] = symbol - '0'; //Convert to int YOU DUMBASS!
 		else
 		{
 			op2 = s[top--];
@@ -44,6 +43,6 @@ int main()
 		}
 	}
 	res = s[top--];
-	printf("\t\tThe result is : %0.3f\n", res);
+		printf("\t\tThe result is : %0.3f\n", res);
 	return 0;
 }

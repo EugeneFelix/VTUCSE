@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #define MAXSIZE 4
-int ch, front = 0, rear = -1, count = 0;
+int front = 0, rear = -1, count = 0;
 char q[MAXSIZE], item;
-void insert()
+void insert(int item)
 {
 	if (count == MAXSIZE)
 		printf("\n Queue is full");
@@ -21,7 +21,7 @@ void delete ()
 	else
 	{
 		item = q[front];
-		printf("\n\t\tDeleted item is %c", item);
+		printf("\n\t\tDeleted item is %d", item);
 		front = (front + 1) % MAXSIZE;
 		count--;
 	}
@@ -37,14 +37,15 @@ void display()
 		printf("\n\t\tContent of Queue is \n");
 		for (i = 1; i <= count; i++)
 		{
-			printf("%c\t", q[j]);
+			printf("%d\t", q[j]);
 			j = (j + 1) % MAXSIZE;
 		}
 	}
 }
 int main()
 {
-	do
+	int ch;
+	while(1)
 	{
 		printf("\n\t\t1. Insert\nt\t\t2. Delete \n\t\t3. Display \n\t\t4. Exit \n");
 		printf("\t\tEnter the Choice:\t");
@@ -53,8 +54,8 @@ int main()
 		{
 		case 1:
 			printf("\t\tEnter the items to be inserted:\t");
-			scanf("%c", &item);
-			insert();
+			scanf("%d", &item);
+			insert(item);
 			break;
 		case 2:
 			delete ();
@@ -66,6 +67,6 @@ int main()
 			exit(0);
 			break;
 		}
-	} while (ch != 4);
+	}
 	return 0;
 }
