@@ -1,7 +1,7 @@
 #include "stdio.h"
 #include "stdlib.h"
 #define max_size 5
-int stack[max_size], top = -1, i, status = 0, count = 0, item;
+int stack[max_size], top = -1, i, status = 0, ss = 0;
 void push();
 void pop();
 void display();
@@ -41,53 +41,45 @@ int main()
 	}
 	return 0;
 }
+
+void peek()
+{
+	printf("The topmost element is %d\n", stack[top]);
+}
 void push()
 {
 	int item;
 	if (top == (max_size - 1))
-	{
 		printf("\n \t\tSTACK OVERFLOW\n");
-	}
 	else
 	{
 		printf("\t\tEnter the element to be inserted\n");
 		scanf("%d", &item);
 		stack[++top] = item;
-		count++;
+		ss++;
 	}
 }
 void pop()
 {
 	if (top == -1)
-	{
 		printf("\n \t\tSTACK UNDERFLOW\n");
-	}
 	else
 	{
-		item = stack[top];
-		printf("\n\n\t\tthe popped element is:%d\t", stack[top]);
+		peek();
 		top--;
-		count--;
+		ss--;
 	}
 }
 
 void palin()
 {
 	int temp;
-	
-	
-	
-	
-	
-	for (i = 0, temp = count - 1; i < count, temp >= 0; i++, temp--)
+
+	for (i = 0, temp = ss - 1; i < ss, temp >= 0; i++, temp--)
 		if (stack[i] == stack[temp])
 			status++;
-			
-			
-			
-			
-			
-	if (status >= count)
+
+	if (status >= ss)
 		printf("\t\tStack is a Palindrome!\n");
 	else
 		printf("\t\tStack is not a Palindrome!\n");
@@ -96,11 +88,10 @@ void display()
 {
 	int i;
 	if (top == -1)
-	{
 		printf("\tNO elements in the stack\n");
-	}
 	else
 	{
+		peek();
 		printf("\tThe stack elements are\n");
 		for (i = top; i >= 0; i--)
 		{
