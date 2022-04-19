@@ -104,9 +104,7 @@ NODE add_poly(NODE head1, NODE head2, NODE head3)
 			coeff = coeff1 + coeff2;
 			temp2->flag = 1;
 			if (coeff != 0)
-			{
 				head3 = insert_rear(coeff, x1, y1, z1, head3);
-			}
 		}
 		else
 		{
