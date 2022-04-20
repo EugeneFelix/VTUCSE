@@ -41,12 +41,8 @@ int main()
 	gets(rep);
 	stringmatch();
 	if (flag == 1)
-	{
 		printf("the resultant string is %s\n", ans);
-	}
 	else
-	{
 		printf("pattern string not found!!\n");
-	}
 	return 0;
 }
