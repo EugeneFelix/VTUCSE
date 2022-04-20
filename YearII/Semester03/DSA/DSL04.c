@@ -59,13 +59,9 @@ void infix_postfix(char infix[], char postfix[])
 			j++;
 		}
 		if (f(s[top]) != g(symbol))
-		{
 			s[++top] = symbol;
-		}
 		else
-		{
 			top--;
-		}
 	}
 	while (s[top] != '#')
 		postfix[j++] = s[top--];

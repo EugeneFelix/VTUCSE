@@ -33,7 +33,7 @@ int main()
 	{
 		symbol = postfix[i];
 		if (isdigit(symbol))
-			s[++top] = symbol - '0'; //Convert to int YOU DUMBASS!
+			s[++top] = symbol - '0';
 		else
 		{
 			op2 = s[top--];
