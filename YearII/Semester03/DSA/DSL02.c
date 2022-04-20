@@ -33,16 +33,16 @@ void stringmatch()
 }
 int main()
 {
-	printf("enter a main string\n");
+	printf("\tEnter a main string\n");
 	gets(str);
-	printf("enter the pattern;\n");
+	printf("\tEnter the pattern;\n");
 	gets(pat);
-	printf("enter a replace string\n");
+	printf("t\Enter a replace string\n");
 	gets(rep);
 	stringmatch();
 	if (flag == 1)
-		printf("the resultant string is %s\n", ans);
+		printf("\tThe resultant string is %s\n", ans);
 	else
-		printf("pattern string not found!!\n");
+		printf("\tThe pattern string was not found!!\n");
 	return 0;
 }
