@@ -3,7 +3,7 @@
 #define MAXSIZE 4
 int front = 0, rear = -1, count = 0;
 char q[MAXSIZE], item;
-void insert(int item)
+void insert()
 {
 	if (count == MAXSIZE)
 		printf("\n Queue is full");
@@ -20,8 +20,7 @@ void delete ()
 		printf("\n\t\tQueue is empty \n");
 	else
 	{
-		item = q[front];
-		printf("\n\t\tDeleted item is %d", item);
+		printf("\n\t\tDeleted item is %d", q[front]);
 		front = (front + 1) % MAXSIZE;
 		count--;
 	}
@@ -55,7 +54,7 @@ int main()
 		case 1:
 			printf("\t\tEnter the items to be inserted:\t");
 			scanf("%d", &item);
-			insert(item);
+			insert();
 			break;
 		case 2:
 			delete ();

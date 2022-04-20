@@ -71,7 +71,7 @@ void display(NODE first)
 }
 
 NODE create(NODE first)
-{
+{//insert rear
 	NODE temp, cur;
 	if (first == NULL)
 	{
@@ -110,8 +110,8 @@ NODE insert_front(NODE first)
 		else
 		{
 			temp = getnode();
+			first -> llink = temp;
 			temp->rlink = first;
-			first->llink = temp;
 			first = temp;
 		}
 	}

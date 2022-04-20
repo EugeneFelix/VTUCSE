@@ -107,9 +107,7 @@ NODE add_poly(NODE head1, NODE head2, NODE head3)
 				head3 = insert_rear(coeff, x1, y1, z1, head3);
 		}
 		else
-		{
 			head3 = insert_rear(coeff1, x1, y1, z1, head3);
-		}
 		temp1 = temp1->link;
 	}
 
@@ -120,9 +118,7 @@ NODE add_poly(NODE head1, NODE head2, NODE head3)
 	while (temp2 != head2)
 	{
 		if (temp2->flag == 0)
-		{
 			head3 = insert_rear(temp2->coeff, temp2->expx, temp2->expy, temp2->expz, head3);
-		}
 		temp2 = temp2->link;
 	}
 	return head3;

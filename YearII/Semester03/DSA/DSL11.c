@@ -18,7 +18,7 @@ void bfs(int start)
 	int queue[10], f = 0, r = -1, roach, j;
 	bfsDone[start] = 1;
 	queue[++r] = start;
-	printf("Nodes reachable are \n",);
+	printf("Nodes reachable are \n");
 	while (f <= r) // Queue not empty.
 	{
 		roach = queue[f];
