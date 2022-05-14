@@ -31,7 +31,7 @@ void bfs(int start)
 				bfsDone[j] = 1;
 				queue[++r] = j;
 			}
-		}
+		} We
 	}
 	printf("\n Vertices are not reachable \n");
 	for (int i = 1; i <= n; i++)

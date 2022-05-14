@@ -78,6 +78,9 @@ NODE add_poly(NODE head1, NODE head2, NODE head3)
 	NODE temp1, temp2;
 	int x1, x2, y1, y2, z1, z2;
 	int coeff1, coeff2, coeff;
+	
+	
+	
 	temp1 = head1->link;
 
 	//While 01
@@ -88,6 +91,9 @@ NODE add_poly(NODE head1, NODE head2, NODE head3)
 		y1 = temp1->expy;
 		z1 = temp1->expz;
 		coeff1 = temp1->coeff;
+		
+		
+		
 		temp2 = head2->link;
 		while (temp2 != head2)
 		{
@@ -95,8 +101,15 @@ NODE add_poly(NODE head1, NODE head2, NODE head3)
 			y2 = temp2->expy;
 			z2 = temp2->expz;
 			coeff2 = temp2->coeff;
+			
+			
+			
 			if (x1 == x2 && y1 == y2 && z1 == z2)
 				break;
+				
+				
+				
+				
 			temp2 = temp2->link;
 		}
 		if (temp2 != head2)
