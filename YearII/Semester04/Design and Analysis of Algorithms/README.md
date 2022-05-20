@@ -71,3 +71,45 @@
 	conquer method works along with its time
 	complexity analysis: worst case, average case and
 	best case.
+	
+	
+	6. Implement in Java, the 0/1 Knapsack problem
+	using (a) Dynamic Programming method (b) Greedy
+	method.
+	
+	
+	7. From a given vertex in a weighted connected
+	graph, find shortest paths to other vertices using
+	Dijkstra's algorithm. Write the program in Java.
+	
+	
+	8. Find Minimum Cost Spanning Tree of a given
+	connected undirected graph using Kruskal's
+	algorithm. Use Union-Find algorithms in your
+	program.
+	
+	
+	9. Find Minimum Cost Spanning Tree of a given
+	connected undirected graph using Prim's
+	algorithm.
+	
+	
+	10. Write Java programs to: 
+		(a) Implement All-Pairs Shortest Paths problem
+				using Floyd's algorithm.
+		(b) Implement Travelling Sales Person problem
+				using Dynamic programming.
+				
+				
+	11. Design and implement in Java to find a subset
+	of a given set S = {Sl, S2,.....,Sn} of n positive
+	integers whose SUM is equal to a given positive m
+	integer d. For example, if S ={1, 2, 5, 6, 8} and d= 9,
+	there are two solutions {1,2,6}and {1,8}. Display a
+	suitable message, if the given problem instance
+	doesn't have a solution.
+	
+	
+	12. Design and implement in Java to find all
+	Hamiltonian Cycles in a connected undirected
+	Graph G of n vertices using backtracking principle.
