@@ -36,4 +36,25 @@
 	character as “/”.
 	
 	3. A. Write a Java program to read two integers
-	**a** and **b**. Compute a/b and print, when b is 	not zero. Raise an exception when b is equal to zero.
+	**a** and **b**. Compute a/b and print, when b is
+	not zero. Raise an exception when b is equal to zero.
+	
+	B. Write a Java program that implements a multi
+	thread application that has three threads. First
+	thread generates a random integer for every 1
+	second; second thread computes the square of the
+	number andprints; third thread will print the value
+	of cube of the number.
+	
+	
+	4. Sort a given set of n integer elements using
+	Quick Sort method and compute its time
+	complexity. Run the program for varied values of
+	n> 5000 and record the time taken to sort. Plot a
+	graph of the time taken versus non graph sheet.
+	The elements can be read from a file or can be
+	generated using the random number generator.
+	Demonstrate using Java how the divide-and
+	conquer method works along with its time
+	complexity analysis: worst case, average case and
+	best case.
