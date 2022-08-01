@@ -35,10 +35,7 @@ public class QuickSort {
 
 
 	static int partition(int a[], int l, int r) {
-		int p, i, j;
-		i = l + 1;
-		j = r;
-		p = a[l];
+		int p = a[l], i= l +1, j = r;
 		while (i <= j) {
 			while (a[i] <= p) i++;
 			while (a[j] > p) j--;
