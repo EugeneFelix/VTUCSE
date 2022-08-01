@@ -27,12 +27,14 @@ class squareNum extends Thread {
 		System.out.println("Square of a Number " + n + " is:" + Math.pow(n, 2));
 	}
 }
+
 class cubeNum extends Thread {
 	int n;
+	public cubeNum(int a) {
+		n = a;
+	}
 	public void run() {
 		System.out.println("\nCube of a Number " + n + " is:" + Math.pow(n, 3));
-	} public cubeNum(int a) {
-		n = a;
 	}
 } 
 public class ThreadsDemo {
