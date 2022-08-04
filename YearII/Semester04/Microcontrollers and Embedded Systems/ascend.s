@@ -7,7 +7,7 @@ NCMP  LDR R3 [R2]
       ADD R2, R2, #04
       LDR R4, [R2]
       CMP R3, R4
-      BLT NOEXCHG
+      BLT NOEX
       STR R3, [R2]
       SUB R2, R2, #04
       STR R4, [R2]
