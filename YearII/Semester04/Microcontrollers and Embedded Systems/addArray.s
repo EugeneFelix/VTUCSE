@@ -11,7 +11,7 @@ LOOP
      SUB R1, R1, #1
      CMP R1, #0;
      BNE LOOP
-     ; Memory stuff
+     @Memory stuff
      MOV R6, #0X4000001C
 STOP B STOP
 END
