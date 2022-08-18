@@ -1,4 +1,8 @@
-      AREA LRG, CODE, READONLY
+;;;; r0 is used for loading addresses
+;;;; r1 is used to store result
+;;;; r2 and r3 hold values tp be compared.
+;;;; r5 holds count
+    AREA LRG, CODE, READONLY
       ENTRY
       MOV R5, #5
       LDR R0, A
