@@ -4,7 +4,7 @@
       LDR R0, A
       LDR R2, [R0]
 NEXT  ADD R0, #4
-      LDR E3, [R0]
+      LDR R3, [R0]
       CMP R2, R3
       BHS LARGE
       MOV R2, R3
