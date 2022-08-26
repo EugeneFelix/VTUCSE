@@ -1,5 +1,6 @@
 import java.util.Scanner;
 public class Prim {
+	static final int INF = 9999;
 	public void main(String[] args) {
 		int c[][] = new int[10][10];
 		int i, j;
@@ -14,19 +15,19 @@ public class Prim {
 			}
 		}
 		System.out.println("Minimum Spanning Tree Edges and costs are");
-		prims(c, n);
-	} static void prims(int c[][], int n) {
-		int ne, mincost;
+		djp(c, n);
+	}
+	
+	static void djp(int c[][], int n) {
+		int ne = 0, mincost = 0;
 		int v = 0, u = 0, i, j, min;
 		int visited[] = new int[10];
-		ne = 0;
-		mincost = 0;
-		for (i = 1; i <= n; i++) {
+		for (i = 1; i <= n; i++)
 			visited[i] = 0;
-		}
 		visited[1] = 1;
+		//////WAIT A WHILE///////
 		while (ne != (n - 1)) {
-			min = 999;
+			min = INF;
 			for (i = 1; i <= n; i++) {
 				for (j = 1; j <= n; j++) {
 					if (visited[i] == 1) {
@@ -44,8 +45,9 @@ public class Prim {
 				mincost = mincost + min;
 				System.out.println(u + "--->" + v + "=" + min);
 			}
-			c[u][v] = c[v][u] = 999;
+			c[u][v] = c[v][u] = INF;
 		}
-		System.out.println("Mincost=" + mincost);
+		//////END A WHILE//////
+		System.out.println("Minimum cost is " + mincost);
 	}
 }

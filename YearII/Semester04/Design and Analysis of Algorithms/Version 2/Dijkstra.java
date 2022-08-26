@@ -18,7 +18,7 @@ public class Dijkstra {
 	}
 	/* $¢$¢$¢$¢$¢$¢$¢ End Main $¢$¢$¢$¢$¢$¢$¢$ */
 	static void dijkstras(int cost[][], int n, int src) {
-		int count = 0, u = 0, v, min;
+		int count = 0, temp = 0, min;
 		int visited[] = new int[10];
 		int sptSet[] = new int[10];
 		for (int i = 1; i <= n; i++) // Initialise visited to 0.
@@ -27,24 +27,32 @@ public class Dijkstra {
 			sptSet[i] = cost[src][i];
 		visited[src] = 1; //Source is visited already.
 		sptSet[src] = 0; //Distance to itself is 0.
-		count++;
+		count++; //Count including src is 1 now.
 		while (count != n) { // While more vertices are present.
 			min = 999;
 			for (int i = 1; i <= n; i++)
 				if (visited[i] == 0)
 					if (sptSet[i] < min) { /* if edge exits */
 						min = sptSet[i];
-						u = i;
+						temp = i;
 					}
-			visited[u] = 1;
-			count++;
-			for (v = 1; v <= n; v++)
-				if (visited[v] == 0)
-					if (sptSet[u] + cost[u][v]
-				   	< sptSet[v]) /* then */
-						sptSet[v] = 
-						sptSet[u] + cost[u][v];
+					
+					
+			{
+				    visited[temp] = 1;
+		    		count++;
+			}
+			
+			
+			
+			for (int i = 1; i <= n; i++)
+				if (visited[i] == 0)
+					if (sptSet[i] > sptSet[temp] + cost[temp][i])
+						sptSet[i] = sptSet[temp] + cost[temp][i];
 		}
+		
+		
+		
 		System.out.println("The shortest distance between ");
 		for (int i = 1; i <= n; i++) {
 			System.out.println(src + "--->" + i + "=" + sptSet[i]);

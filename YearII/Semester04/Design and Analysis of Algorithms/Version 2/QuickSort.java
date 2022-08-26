@@ -1,5 +1,9 @@
 import java.util.*;
 public class QuickSort {
+	/*
+	*Sir Tony Hoare in 1959
+	* O(n²)/O(n logn)
+	*/
 	public void main(String[] args) {
 		int a[] = new int[100000];
 		int n, i;
@@ -24,21 +28,21 @@ public class QuickSort {
 		System.out.println("\n\t\the time taken to sort is " + (end - start) + "ns");
 	}
 
-
 	static void quicksort(int a[], int l, int r) {
 		if (l < r) {
-			int s = partition(a, l, r);
+			int s = partition(a, l, r); //Partition returns location j
 			quicksort(a, l, s - 1);
 			quicksort(a, s + 1, r);
 		}
 	}
 
-
 	static int partition(int a[], int l, int r) {
-		int p = a[l], i= l +1, j = r;
+		int p = a[l], i = l + 1, j = r;
 		while (i <= j) {
-			while (a[i] <= p) i++;
-			while (a[j] > p) j--;
+			while (a[i] <= p)
+				i++;
+			while (a[j] > p)
+				j--;
 			if (i < j)
 				swap(a, i, j);
 		}

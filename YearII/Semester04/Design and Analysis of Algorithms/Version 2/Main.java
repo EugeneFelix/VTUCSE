@@ -4,16 +4,41 @@ public class Main {
 	public static void main(String[] args) {
 		int choice;
 		Scanner scanner = new Scanner(System.in);
-		System.out.println("\t\tEnter program number... or 0 to exit if you are not in the mood...");
 		while (true) {
+			System.out.println("Enter program number, or please get out!" + 
+			                   "...\n" + 
+			                   "0. Kick me out!\n\n" +
+			                   "11. Student\n" + 
+			                   "12. Stacks\n" +
+			                   "21. Staff \n" + 
+			                   "22. Customer\n" + 
+			                   "31. Exceptions\n" + 
+			                   "32. Threads\n" + 
+			                   "4. QuickSort\n"+ 
+			                   "5. MergeSort\n" + 
+			                   "61. KnapSack Dynamic\n" + 
+			                   "62. KnapSack Greedy\n" + 
+			                   "7. Dijkstra\n" + 
+			                   "8. Kruskal\n" + 
+			                   "91. Floyd\n" + 
+			                   "92. TSP Dynamic\n" + 
+			                   "10. DJP\n" + 
+			                   "11 Subset\n" + 
+			                   "12. Hamiltonian Cycle\n");
 			choice = scanner.nextInt();
 			switch (choice) {
 			case 0:
+				System.out.println("You are officially kicked out, Goodbye!");
 				System.exit(1);
 				break;
-			/*case 1: Student st = new Student("Hello", "Hello", "Hello", "Hello");
-			               st.main(null);
-			               break;*/
+			case 1:
+				Students st = new Students("Hello", "Hello", "Hello", "Hello");
+				st.main(null);
+				break;
+			case 31:
+				ThreadsDemo td = new ThreadsDemo();
+				td.main(null);
+				break;
 			case 4:
 				QuickSort qs = new QuickSort();
 				qs.main(null);

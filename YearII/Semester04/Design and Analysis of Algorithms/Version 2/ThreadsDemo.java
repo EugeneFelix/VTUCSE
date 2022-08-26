@@ -18,6 +18,7 @@ class rThread extends Thread {
 		}
 	}
 }
+
 class squareNum extends Thread {
 	int n;
 	public squareNum(int a) {

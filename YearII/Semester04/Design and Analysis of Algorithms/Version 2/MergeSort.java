@@ -13,7 +13,9 @@ public class MergeSort {
 		for (int i = 0; i < size; i++)
 			System.out.println("\t\t" + a[i] + "\t");
 		start = System.nanoTime();
+		////////call mergeSort()//////////
 		mergesort(a, size);
+		//////////////////////////////////////
 		end = System.nanoTime();
 		System.out.println("\nthe sorted elements are\n");
 		for (int i = 0; i < size; i++)
@@ -33,9 +35,9 @@ public class MergeSort {
 		copy(a, mid, n, right, 0);
 		mergesort(left, mid);
 		mergesort(right, n - mid);
-		merge(left, right, a, mid, n - mid);
+		merge(a, left, right, mid, n - mid);
 	}
-	static void merge(int left[], int right[], int a[], int r, int s) {
+	static void merge(int a[], int left[], int right[],int r, int s) {
 		int i, j, k;
 		i = j = k = 0;
 		while (i < r && j < s) {
@@ -53,6 +55,8 @@ public class MergeSort {
 		else
 			copy(left, i, r, a, k);
 	}
+	
+	
 	static void copy(int a[], int x, int y, int b[], int k) {
 		while (x < y)
 			b[k++] = a[x++];
