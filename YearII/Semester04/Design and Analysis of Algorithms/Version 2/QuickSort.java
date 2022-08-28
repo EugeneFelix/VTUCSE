@@ -13,43 +13,37 @@ public class QuickSort {
 		n = in.nextInt();
 		Random rand = new Random();
 		for (i = 0; i < n; i++)
-			a[i] = rand.nextInt(100);
+			a[i] = rand.nextInt(1000);
 		System.out.println("Array elements to be sorted are");
-		for (i = 0; i < n; i++) {
+		for (i = 0; i < n; i++)
 			System.out.print(a[i] + "\t");
-		}
 		a[n] = 999;
 		start = System.nanoTime();
 		quicksort(a, 0, n - 1);
 		end = System.nanoTime();
 		System.out.println("\n\t\tThe sorted elements are");
 		for (i = 0; i < n; i++)
-			System.out.print(a[i] + "\t");
-		System.out.println("\n\t\the time taken to sort is " + (end - start) + "ns");
+			System.out.print(a[i] + "   ");
+			double time = end - start;
+			double ttime = time / 1_000_000_000;
+		System.out.println("\n\t\the time taken to sort is " + time+ "ns or " + ttime + "s");
 	}
 
-	static void quicksort(int a[], int l, int r) {
-		if (l < r) {
-			int s = partition(a, l, r); //Partition returns location j
-			quicksort(a, l, s - 1);
-			quicksort(a, s + 1, r);
+	static void quicksort(int a[], int lx, int rx) {
+		if (lx < rx) {
+			int pidx = partition(a, lx, rx);
+			quicksort(a, lx, pidx - 1);
+			quicksort(a, pidx + 1, rx);
 		}
 	}
-
 	static int partition(int a[], int l, int r) {
-		int p = a[l], i = l + 1, j = r;
-		while (i <= j) {
-			while (a[i] <= p)
-				i++;
-			while (a[j] > p)
-				j--;
-			if (i < j)
-				swap(a, i, j);
-		}
-		swap(a, l, j);
-		return j;
+		int p = l;
+		for (int j = l + 1; j <= r; j++)
+			if (a[j] < a[l])
+				swap(a, j, ++p);
+		swap(a, l, p);
+		return p;
 	}
-
 	static void swap(int a[], int i, int j) {
 		int temp;
 		temp = a[i];
