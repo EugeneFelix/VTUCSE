@@ -1,5 +1,5 @@
       ; Registers index
-      ; R0 number location
+      ;R0 number location
       ; R1 operation ROTAT
       ; R4  32-bit number.size
       ; R2 ones.size
@@ -8,7 +8,7 @@
       AREA COUNTZO, CODE, READONLY
       ENTRY
       LDR R0, MEMOR
-      LDR R1, [RO]
+      LDR R1, [RO] ;R1 ro play?
       MOV R4, #32
 ROTAT RORS R1, #1
       BCS ONES
@@ -25,4 +25,7 @@ NEXT  ADD R4, R4, #-1
       ADD R0, R0, #4
       STRB R3, [R0] 
 MEMOR DCD 0X40000000
-      END
+      ENt add .
+      Git commit -m commit
+      Git push origin main
+      D
