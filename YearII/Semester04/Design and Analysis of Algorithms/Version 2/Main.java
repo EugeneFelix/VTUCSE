@@ -5,26 +5,26 @@ public class Main {
 		int choice;
 		Scanner scanner = new Scanner(System.in);
 		while (true) {
-			System.out.println("Enter program number, or please get out!" + 
+			System.out.println("\t\t\tEnter program number, or please get out!" + 
 			                   "...\n" + 
-			                   "0. Kick me out!\n\n" +
-			                   "11. Student\n" + 
-			                   "12. Stacks\n" +
-			                   "21. Staff \n" + 
-			                   "22. Customer\n" + 
-			                   "31. Exceptions\n" + 
-			                   "32. Threads\n" + 
-			                   "4. QuickSort\n"+ 
-			                   "5. MergeSort\n" + 
-			                   "61. KnapSack Dynamic\n" + 
-			                   "62. KnapSack Greedy\n" + 
-			                   "7. Dijkstra\n" + 
-			                   "8. Kruskal\n" + 
-			                   "91. Floyd\n" + 
-			                   "92. TSP Dynamic\n" + 
-			                   "10. DJP\n" + 
-			                   "11 Subset\n" + 
-			                   "12. Hamiltonian Cycle\n");
+			                   "\t\t0. Kick me out!\n\n" +
+			                   "\t\t11. Student\n" + 
+			                   "\t\t12. Stacks\n" +
+			                   "\t\t21. Staff \n" + 
+			                   "\t\t22. Customer\n" + 
+			                   "\t\t31. Exceptions\n" + 
+			                   "\t\t32. Threads\n" + 
+			                   "\t4. QuickSort\n"+ 
+			                   "\t5. MergeSort\n" + 
+			                   "\t\t61. KnapSack Dynamic\n" + 
+			                   "\t\t62. KnapSack Greedy\n" + 
+			                   "\t7. Dijkstra\n" + 
+			                   "\t8. Kruskal\n" + 
+			                   "\t\t91. Floyd\n" + 
+			                   "\t\t92. TSP Dynamic\n" + 
+			                   "\t10. DJP\n" + 
+			                   "\t11 Subset\n" + 
+			                   "\t12. Hamiltonian Cycle\n");
 			choice = scanner.nextInt();
 			switch (choice) {
 			case 0:

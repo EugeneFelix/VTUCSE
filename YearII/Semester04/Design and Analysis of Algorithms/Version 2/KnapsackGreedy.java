@@ -29,8 +29,7 @@ public class KnapsackGreedy {
 		System.out.println("\t\tAfter sorting");
 		displayinfo(n, w, p, r);
 		//Call him Greedy.
-		knapsack(n, w, p, capacity);                                                                                              
-		in.close();
+		knapsack(n, w, p, capacity);
 	}
 	static void displayinfo(int n, float w[], float p[], float r[]) {
 		System.out.println("Item\tWeight\tProfit\tRatio");
