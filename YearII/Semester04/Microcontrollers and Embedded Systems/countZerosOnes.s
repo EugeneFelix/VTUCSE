@@ -1,3 +1,11 @@
+      ; Registers index
+      ; R0 number location
+      ; R1 operation ROTAT
+      ; R4  32-bit number.size
+      ; R2 ones.size
+      ; R3 zeros.size
+      ; 
+
       AREA COUNTZO, CODE, READONLY
       ENTRY
       LDR R0, MEMOR
