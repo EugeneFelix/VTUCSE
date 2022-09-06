@@ -4,7 +4,6 @@
       ; R4  32-bit number.size
       ; R2 ones.size
       ; R3 zeros.size
-      ; 
 
       AREA COUNTZO, CODE, READONLY
       ENTRY
