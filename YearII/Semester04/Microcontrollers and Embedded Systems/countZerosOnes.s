@@ -8,7 +8,7 @@
       AREA COUNTZO, CODE, READONLY
       ENTRY
       LDR R0, MEMOR
-      LDR R1, [RO] ;R1 ro play?
+      LDR R1, [RO] ;R1 to play?
       MOV R4, #32
 ROTAT RORS R1, #1
       BCS ONES
