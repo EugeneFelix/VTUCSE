@@ -25,7 +25,4 @@ NEXT  ADD R4, R4, #-1
       ADD R0, R0, #4
       STRB R3, [R0] 
 MEMOR DCD 0X40000000
-      ENt add .
-      Git commit -m commit
-      Git push origin main
-      D
+      END
