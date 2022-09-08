@@ -9,44 +9,38 @@ public class Subset {
 		System.out.println("Enter the value of n");
 		n = in.nextInt();
 		System.out.println("Enter the elements");
-		for (i = 1; i <= n; i++) {
+		for (i = 1; i <= n; i++)
 			w[i] = in.nextInt();
-		}
 		System.out.println("Enter the value of d");
 		d = in.nextInt();
-		for (i = 1; i <= n; i++) {
+		for (i = 1; i <= n; i++)
 			x[i] = 0;
-		}
-		for (i = 1; i <= n; i++) {
-			sum = sum + w[i];
-		}
+		for (i = 1; i <= n; i++)
+			sum += w[i];
 		if (d > sum) {
 			System.out.println("No Solution");
 		} else {
 			subset(0, 1, sum);
-			if (count == 0) {
+			if (count == 0)
 				System.out.println("No solution");
-			}
 		}
 	}
-	public void subset(int s, int k, int u) {
-		int i;
+	public void subset(int s, int k, int sum) {
 		x[k] = 1;
 		if (s + w[k] == d) {
 			count++;
 			System.out.println("Subset" + count);
-			for (i = 1; i <= k; i++) {
-				if (x[i] == 1) {
-					System.out.println(+w[i]);
-				}
-			}
-		}
-		else if(s + w[k] + w[k + 1] <= d) {
-			subset(s + w[k], k + 1, u - w[k]);
-		}
-		if ((s + u - w[k]) >= d && (s + w[k + 1]) <= d) {
+			for (int i = 1; i <= k; i++)
+				if (x[i] == 1)
+					System.out.println(w[i]);
+		} else
+				if (s + w[k] + w[k + 1] <= d)
+			subset(s + w[k], k + 1, sum - w[k]);
+
+
+		if ( d <= (s + sum - w[k])&& d >= (s + w[k + 1])) {
 			x[k] = 0;
-			subset(s, k + 1, u - w[k]);
+			subset(s, k + 1, sum - w[k]);
 		}
 	}
 }
