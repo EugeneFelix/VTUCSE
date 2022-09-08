@@ -10,12 +10,14 @@
       LDR R0, MEMOR
       LDR R1, [RO] ;R1 to play?
       MOV R4, #32
+
+
 ROTAT RORS R1, #1
       BCS ONES
       ADD R3, R3, #1
       B NEXT
 ONES  ADD R2, R2, #1
-NEXT  ADD R4, R4, #-1
+NEXT  SUB R4, R4, #1
       CMP R4, #0
       BNE ROTAT
 
