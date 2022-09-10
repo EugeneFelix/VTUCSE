@@ -29,10 +29,11 @@ public class Subset {
 		isSafe[k] = 1;
 		if (s + set[k] == d)
 			printSolution(k);
-		else if (s + set[k] + set[k + 1] <= d)
-			subset(s + set[k], k + 1, target - set[k]);
+		else
+			if (s + set[k] + set[k + 1] <= d)
+				subset(s + set[k], k + 1, target - set[k]);
 		if (d <= (s + target - set[k]) && d >= (s + set[k + 1])) {
-			isSafe[k] = 0;
+			isSafe[k] = 0; //do not include s[k]
 			subset(s, k + 1, target - set[k]);
 		}
 	}

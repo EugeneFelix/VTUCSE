@@ -19,33 +19,25 @@ public class knapSackDyn {
 		}
 		System.out.println("Enter the knapsack capacity");
 		capacity = in.nextInt();
-		
-		
 		knapsack(p, w, capacity, n);
 	}
-	
-	
+
+
 	static void knapsack(int p[], int w[], int capacity, int n) {
 		int v[][] = new int[10][10];
 		int x[] = new int[10];
-		
-		for (int i = 0; i <= n; i++) {
-			for (int j = 0; j <= capacity; j++) {
-				if (i == 0 || j == 0) {
+		for (int i = 0; i <= n; i++)
+			for (int j = 0; j <= capacity; j++)
+				if (i == 0 || j == 0)
 					v[i][j] = 0;
-				}
-				else if((j - w[i]) < 0) {
+				else if ((j - w[i]) < 0)
 					v[i][j] = v[i - 1][j];
-				} else {
+				else
 					v[i][j] = Math.max(v[i - 1][j], p[i] + v[i - 1][j - w[i]]);
-				}
-			}
-		}
 		System.out.println("Knapsack solution");
 		for (int i = 0; i <= n; i++) {
-			for (int j = 0; j <= capacity; j++) {
+			for (int j = 0; j <= capacity; j++)
 				System.out.print(v[i][j] + "\t");
-			}
 			System.out.print("\n");
 		}
 		System.out.println("The maximum profit is " + v[n][capacity]);
@@ -59,11 +51,9 @@ public class knapSackDyn {
 			i--;
 		}
 		System.out.print("Selected items are: ");
-		for (i = 1; i <= n; i++) {
-			if (x[i] == 1) {
+		for (i = 1; i <= n; i++)
+			if (x[i] == 1)
 				System.out.print(i + " ");
-			}
-		}
 		System.out.println();
 	}
 }

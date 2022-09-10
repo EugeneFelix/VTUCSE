@@ -12,25 +12,25 @@ public class MergeSort {
 			a[i] = rand.nextInt(500);
 		System.out.println("Array elements to be sorted are");
 		for (int i = 0; i < size; i++)
-			System.out.println("\t\t" + a[i] + "\t");
+			System.out.print("  " + a[i]);
+		System.out.println();
 		start = System.nanoTime();
-		
+
 		mergesort(a, size);
-		
+
 		end = System.nanoTime();
 		System.out.println("\tThe sorted elements are\n");
 		for (int i = 0; i < size; i++)
-			System.out.println("\t\t" + a[i]);
-		System.out.println("\nthe time taken to sort is " + (end - start) + "nS");
-		in.close();
+			System.out.print("  " + a[i]);
+		System.out.println();
+		System.out.println("\nThe time taken to sort is " + (end - start) + "nS");
 	}
 
 
 	static void mergesort(int a[], int n) {
-		if (n < 2) //base case.
+		if (n < 2)
 			return;
 		int mid = n / 2;
-		System.out.println("Mid is " + mid);
 		int left[] = new int[mid];
 		int right[] = new int[n - mid];
 		for (int i = 0; i < mid; i++)
@@ -55,12 +55,5 @@ public class MergeSort {
 			a[k++] = left[i++];
 		while (j < s)
 			a[k++] = right[j++];
-	}
-
-
-	static void copy(int a[], int x, int y, int b[], int k) {
-		while (x < y) {
-			b[k++] = a[x++];
-		}
 	}
 }

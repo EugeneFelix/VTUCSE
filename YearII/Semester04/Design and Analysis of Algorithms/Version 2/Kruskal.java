@@ -23,13 +23,12 @@ public class Kruskal {
 		int parent[] = new int[10];
 		ne = 0;
 		mincost = 0;
-		for (i = 1; i <= n; i++) {
+		for (i = 1; i <= n; i++)
 			parent[i] = 0;
-		}
 		while (ne != (n - 1)) {
 			min = 999;
-			for (i = 1; i <= n; i++) {
-				for (j = 1; j <= n; j++) {
+			for (i = 1; i <= n; i++)
+				for (j = 1; j <= n; j++)
 					if (c[i][j] < min) {
 						min = c[i][j];
 						v = i;
@@ -37,22 +36,18 @@ public class Kruskal {
 						a = i;
 						b = j;
 					}
-				}
-			}
-			while (parent[v] != 0) {
+			while (parent[v] != 0)
 				v = parent[v];
-			}
-			while (parent[u] != 0) {
+			while (parent[u] != 0)
 				u = parent[u];
-			}
 			if (v != u) {
-				ne = ne + 1;
-				mincost = mincost + min;
+				ne += 1;
+				mincost += min;
 				parent[u] = v;
 				System.out.println(a + "--->" + b + "=" + min);
 			}
 			c[a][b] = c[b][a] = 999;
 		}
-		System.out.println("Mincost=" + mincost);
+		System.out.println("Mincost = " + mincost);
 	}
 }

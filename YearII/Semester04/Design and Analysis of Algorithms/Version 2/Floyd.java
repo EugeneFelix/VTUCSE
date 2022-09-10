@@ -20,7 +20,6 @@ public class Floyd {
 			  System.out.print(a[i][j] + "\t");
 			System.out.println(" ");
 		}
-		in.close();
 	}
 	
 	static void floyd(int d[][], int n) {

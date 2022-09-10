@@ -72,7 +72,7 @@ public class KnapsackGreedy {
 		System.out.println("Fractions of item selected are");
 		for (int i = 1; i <= n; i++)
 			System.out.print(x[i] + "\t");
-		System.out.println("\nMaximum profit=" + profit);
+		System.out.println("\nMaximum profit = " + profit);
 	}
 	static void swap(float s[], int i) {
 		float temp = s[i];
