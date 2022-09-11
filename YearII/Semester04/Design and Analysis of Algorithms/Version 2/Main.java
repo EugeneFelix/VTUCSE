@@ -29,6 +29,7 @@ public class Main {
 			switch (choice) {
 			case 0:
 				System.out.println("You are officially kicked out, Goodbye!");
+				scanner.close();
 				System.exit(1);
 				break;
 			case 1:

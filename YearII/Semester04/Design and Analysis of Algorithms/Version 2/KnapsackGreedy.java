@@ -16,57 +16,46 @@ public class KnapsackGreedy {
 			p[i] = in.nextFloat();
 		System.out.println("\t\tEnter the knapsack capacity");
 		capacity = in.nextInt();
-		
-		// Create ratio array.
 		for (i = 1; i <= n; i++)
 			r[i] = p[i] / w[i];
-			
 		System.out.println("\t\tBefore sorting");
-		displayinfo(n, w, p, r);
-		
-		sortratio(n, w, p, r);
-		
+		print(n, w, p, r);
+		sortDescending(n, w, p, r);
 		System.out.println("\t\tAfter sorting");
-		displayinfo(n, w, p, r);
-		//Call him Greedy.
+		print(n, w, p, r);
 		knapsack(n, w, p, capacity);
 	}
-	static void displayinfo(int n, float w[], float p[], float r[]) {
+	static void print(int n, float w[], float p[], float r[]) {
 		System.out.println("Item\tWeight\tProfit\tRatio");
 		for (int i = 1; i <= n; i++)
 			System.out.println(i + "\t" + w[i] + "\t" + p[i] + "\t" + r[i]);
 	}
-	
-	static void sortratio(int n, float w[], float p[], float r[]) {
-		int i, j;
-		for (i = 1; i <= n; i++) {
-			for (j = 1; j <= n - i; j++) {
+	static void sortDescending(int n, float w[], float p[], float r[]) {
+		for (int i= 1; i <= n; i++)
+			for (int j = 1; j <= n - i; j++)
 				if (r[j] < r[j + 1]) {
 					swap(r, j);
 					swap(w, j);
 					swap(p, j);
 				}
-			}
-		}
 	}
-	
 	static void knapsack(int n, float w[], float p[], int capacity) {
 		float profit = 0, rc = capacity;
 		float x[] = new float[10];
-		
+
 		for (int i = 1; i <= n; i++)
 			x[i] = 0;
-			
+
 		for (int i = 1; i <= n; i++) {
 			if (w[i] > rc) {
 				x[i] = rc / w[i];
-				profit = profit + x[i] * p[i];
+				profit += (x[i] * p[i]);
 				///////////BrEaK!!/////////////
 				break;
 			} else {
 				x[i] = 1;
-				rc = rc - w[i];
-				profit = profit + x[i] * p[i];
+				rc -= w[i];
+				profit += (x[i] * p[i]);
 			}
 		}
 		System.out.println("Fractions of item selected are");
@@ -74,9 +63,16 @@ public class KnapsackGreedy {
 			System.out.print(x[i] + "\t");
 		System.out.println("\nMaximum profit = " + profit);
 	}
+	
+	
+	
+	
 	static void swap(float s[], int i) {
 		float temp = s[i];
-	           	s[i] = s[i + 1];
-	           	s[i + 1] = temp;
+		s[i] = s[i + 1];
+		s[i + 1] = temp;
+		/* temp = array[1];
+    array[1] = array[0];
+    array[0] = temp; */
 	}
 }

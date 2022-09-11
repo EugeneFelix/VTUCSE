@@ -32,10 +32,10 @@ public class Prim {
 							u = j;
 							}
 			if (!isVisited[u]) {
+				count++;
 				isVisited[u] = true;
 				totalCost += min;
 				System.out.println(u + "--->" + v + "=" + min);
-				count++;
 			}
 			c[u][v] = c[v][u] = 999;
 		}

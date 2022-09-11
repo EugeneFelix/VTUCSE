@@ -34,7 +34,7 @@ public class Kruskal {
 			while (parent[u] != 0)
 				u = parent[u];
 			if (v != u) {
-				edgeCount += 1;
+				edgeCount++;
 				mincost += min;
 				parent[u] = v;
 				System.out.println(a + " --->" + b + "=" + min);

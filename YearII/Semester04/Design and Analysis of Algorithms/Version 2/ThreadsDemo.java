@@ -11,7 +11,7 @@ class rThread extends Thread {
 			Thread thread3 = new cubeNum(a);
 			thread3.start();
 			try {
-				Thread.sleep(100);
+				Thread.sleep(1000);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
@@ -21,26 +21,27 @@ class rThread extends Thread {
 
 class squareNum extends Thread {
 	int n;
-	public squareNum(int a) {
+	squareNum(int a) {
 		n = a;
 	}
 	public void run() {
-		System.out.println("Square of a Number " + n + " is:" + Math.pow(n, 2));
+		System.out.println("Square of the number " + n + " is: " + Math.pow(n, 2));
 	}
 }
 
 class cubeNum extends Thread {
 	int n;
-	public cubeNum(int a) {
+	cubeNum(int a) {
 		n = a;
 	}
 	public void run() {
-		System.out.println("\nCube of a Number " + n + " is:" + Math.pow(n, 3));
+		System.out.println("\nCube of the number " + n + " is: " + Math.pow(n, 3));
 	}
-} 
+}
+
+
 public class ThreadsDemo {
 	public void main(String[] args) {
-		int a[] = new int[10];
 		Thread thread1 = new rThread();
 		thread1.start();
 	}

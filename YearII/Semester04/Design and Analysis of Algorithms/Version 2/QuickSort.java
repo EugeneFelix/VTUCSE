@@ -25,29 +25,32 @@ public class QuickSort {
 		System.out.println("\n\t\tThe sorted elements are");
 		for (i = 0; i < n; i++)
 			System.out.print(a[i] + "   ");
-			double time = end - start;
-			double ttime = time / 1_000_000_000;
-		System.out.println("\n\t\the time taken to sort is " + time+ "ns or " + ttime + "s");
+		double time = end - start;
+		double ttime = time / 1_000_000_000;
+		System.out.println("\n\t\the time taken to sort is " + time + "ns or " + ttime + "s");
 	}
 
 	static void quicksort(int a[], int lx, int rx) {
-		if (lx < rx) {
-			int pidx = partition(a, lx, rx);
-			quicksort(a, lx, pidx - 1);
-			quicksort(a, pidx + 1, rx);
-		}
+		if (lx > rx)
+			return;
+		int pidx = partition(a, lx, rx);
+		quicksort(a, lx, pidx - 1);
+		quicksort(a, pidx + 1, rx);
 	}
+	
+	
 	static int partition(int a[], int l, int r) {
-		int p = l;
+		int pidx = l;
 		for (int j = l + 1; j <= r; j++)
 			if (a[j] < a[l])
-				swap(a, j, ++p);
-		swap(a, l, p);
-		return p;
+				swap(a, j, ++pidx);
+		swap(a, l, pidx);
+		return pidx;
 	}
 	static void swap(int a[], int i, int j) {
-		int temp;
-		temp = a[i];
+		if (a[i] == a[j])
+			return;
+		int temp = a[i];
 		a[i] = a[j];
 		a[j] = temp;
 	}

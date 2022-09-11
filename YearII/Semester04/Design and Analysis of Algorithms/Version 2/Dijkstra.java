@@ -23,8 +23,6 @@ public class Dijkstra {
 			visited[i] = false;
 		for (int i = 1; i <= n; i++)
 			sptSet[i] = cost[src][i];
-		for (int i = 1; i <=n; i++)
-			System.out.print(sptSet[i] + "  ");
 		visited[src] = true;
 		sptSet[src] = 0;
 		count++;

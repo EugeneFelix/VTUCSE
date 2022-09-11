@@ -51,6 +51,7 @@ public class MergeSort {
 				a[k++] = left[i++];
 			else
 				a[k++] = right[j++];
+				
 		while (i < r)
 			a[k++] = left[i++];
 		while (j < s)
