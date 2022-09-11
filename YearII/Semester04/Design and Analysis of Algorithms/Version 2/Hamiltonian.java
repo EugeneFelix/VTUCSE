@@ -43,7 +43,10 @@ public class Hamiltonian {
 		while (true) {
 			nextSafe(k);
 
-			if (solution[k] == -1) return;
+			if (solution[k] == -1) {
+				System.out.println("No solution");
+				return;
+			}
 
 			if (k == n - 1)
 				printSol();
