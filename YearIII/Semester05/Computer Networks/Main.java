@@ -10,7 +10,7 @@ public class Main {
 			                   "...\n" + 
 			                   "\t\t0. Kick me out!\n\n" +
 			                   "\t\t7. CRC-CCIT\n" + 
-			                   "\t\t8. Stacks\n" +
+			                   "\t\t8. Bellman - Ford Algorithm\n" +
 			                   "\t\t9. Staff \n" + 
 			                   "\t\t10. Customer\n" + 
 			                   "\t\t11. Exceptions\n" + 
@@ -26,7 +26,7 @@ public class Main {
 				crcCCITT crc = new crcCCITT();
 				crc.main(null);
 				break;
-		/*	case 8:
+		/*  case 8:
 				ThreadsDemo td = new ThreadsDemo();
 				td.main(null);
 				break;
