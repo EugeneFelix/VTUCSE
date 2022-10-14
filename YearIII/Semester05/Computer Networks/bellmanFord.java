@@ -1,6 +1,6 @@
 import java.util.Scanner;
 public class bellmanFord {
-	public static final int MAX_VALUE = 999;
+	public static final int MAX_VALUE = 9999;
 	public void bellmanFords(int s, int cost[][], int n, int distance[]) {
 		for (int node = 1; node <= n; node++)
 			distance[node] = MAX_VALUE;
