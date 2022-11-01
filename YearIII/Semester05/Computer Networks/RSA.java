@@ -17,7 +17,7 @@ public class RSA {
 		q = sc.nextInt();
 		n = p * q;
 		z = (p - 1) * (q - 1);
-		System.out.println("Enter the value for e:");
+		System.out.println("Select a value for e:");
 		e = sc.nextInt();
 		System.out.println("Error message:");
 		message1 = br.readLine();

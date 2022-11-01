@@ -1,7 +1,7 @@
 import java.util.Scanner;
 public class leakyBucket {
 
-	public static void main(String[] args) {
+	public void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		int drop = 0, mini, n, cap, count = 0;
 		int inp[] = new int[25];

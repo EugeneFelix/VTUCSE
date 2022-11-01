@@ -4,12 +4,10 @@ class bellmanFord2 {
 		for (int i = 0; i < V; i++)
 			memo[i] = Integer.MAX_VALUE;
 		memo[src] = 0;
-		for (int i = 0; i < V - 1; i++) {
-			for (int j = 0; j < E; j++) {
+		for (int i = 0; i < V - 1; i++)
+			for (int j = 0; j < E; j++)
 				if (memo[graph[j][0]] != Integer.MAX_VALUE && memo[graph[j][0]] + graph[j][2] < memo[graph[j][1]])
 					memo[graph[j][1]] = memo[graph[j][0]] + graph[j][2];
-			}
-		}
 		for (int i = 0; i < E; i++) {
 			int x = graph[i][0];
 			int y = graph[i][1];

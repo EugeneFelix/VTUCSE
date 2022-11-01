@@ -10,11 +10,11 @@ public class Main {
 			                   "...\n" + 
 			                   "\t\t0. Kick me out!\n\n" +
 			                   "\t\t7. CRC-CCIT\n" + 
-			                   "\t\t8. Bellman - Ford Algorithm\n" +
-			                   "\t\t9. Staff \n" + 
-			                   "\t\t10. Customer\n" + 
-			                   "\t\t11. Exceptions\n" + 
-			                   "\t\t12. Threads\n");
+			                   "\t\t8. Bellman Ford\n" +
+			                   "\t\t9. TCP Protocol\n" + 
+			                   "\t\t10. UDP Protocol\n" + 
+			                   "\t\t11. RSA\n" + 
+			                   "\t\t12. Leaky Bucket\n");
 			choice = scanner.nextInt();
 			switch (choice) {
 			case 0:
@@ -26,25 +26,35 @@ public class Main {
 				crcCCITT crc = new crcCCITT();
 				crc.main(null);
 				break;
-		/*  case 8:
-				ThreadsDemo td = new ThreadsDemo();
-				td.main(null);
+		  	case 8:
+				bellmanFord2 bf = new bellmanFord2();
+				bf.main(null);
 				break;
 			case 9:
-				QuickSort qs = new QuickSort();
-				qs.main(null);
+			    System.out.println("1. TCP Client\n2. TCP Server");
+				int cht = scanner.nextInt();
+				switch(cht) {
+					case 1:
+		    			TCPClient client = new TCPClient();
+			        	client.main(null);
+	    	    		break;
+	    			case 2:
+	    				TCPServer server = new TCPServer();
+			        	server.main(null);
+	        			break;
+				}
 				break;
-			case 10:
-				MergeSort ms = new MergeSort();
+			/*case 10:
+				UDP udp = new UDP();
 				ms.main(null);
 				break;
 			case 11:
-				knapSackDyn kspD = new knapSackDyn();
-				kspD.main(null);
+				RSA  rsa = new RSA();
+				rsa.main(null);
 				break;
 			case 12:
-				KnapsackGreedy ksg = new KnapsackGreedy();
-				ksg.main(null);
+				leakyBucket lb = new leakyBucket();
+				lb.main(null);
 				break; */
 			default:
 				System.out.println("Invalid choice!");
