@@ -1,7 +1,12 @@
-import java.io.*;
-import java.net.*;
+import java.net.DatagramSocket;
+import java.net.DatagramPacket;
+import java.net.InetAddress;
+import java.io.IOException;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
 public class UDPServer {
-	public static void main(String[] args) throws IOException {
+	public void main(String[] args) throws IOException {
 		DatagramSocket serverSocket = new DatagramSocket(9876);
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		byte[] receiveData = new byte[1024];

@@ -2,8 +2,8 @@ import java.io.*;
 import java.net.*;
 
 public class UDPClient {
-	public static void main(String[] args) throws IOException {
-		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+	public void main(String[] args) throws IOException {
+		//BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 		DatagramSocket clientSocket = new DatagramSocket();
 		InetAddress IPAddress = InetAddress.getByName("localhost");
 		byte[] sendData = new byte[1024];

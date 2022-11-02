@@ -40,14 +40,12 @@ public class RSA {
 		for (int i = 0; i < msg.length; i++)
 			System.out.print((char) plainText[i]);
 		System.out.println();
-		sc.close();
 	}
 
 	static int mult(int x, int y, int n) {
 		int k = 1;
-		for (int i = 0; i < y; i++) {
+		for (int i = 0; i < y; i++)
 			k = (k * x) % n;
-		}
 		return k;
 	}
 }
