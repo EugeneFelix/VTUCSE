@@ -6,19 +6,24 @@ import java.util.Scanner;
 public class RSA {
 	public void main(String[] args) throws IOException {
 		Scanner sc = new Scanner(System.in);
-		InputStreamReader r = new InputStreamReader(System.in);
-		BufferedReader br = new BufferedReader(r);
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		String message1;
+		/*
+		-- Variablesá explained.
+		e: public key.
+		d: private key.
+		
+		*/
 		int[] plainText = new int[100];
 		int[] cipherText = new int[100];
-		int n, d, e, z, p, q;
+		int d;
 		System.out.println("Enter the values of p and q:");
-		p = sc.nextInt();
-		q = sc.nextInt();
-		n = p * q;
-		z = (p - 1) * (q - 1);
+		int p = sc.nextInt();
+		int q = sc.nextInt();
+		int n = p * q;
+		int z = (p - 1) * (q - 1);
 		System.out.println("Select a value for e:");
-		e = sc.nextInt();
+		int e = sc.nextInt();
 		System.out.println("Error message:");
 		message1 = br.readLine();
 		char[] msg = message1.toCharArray();
