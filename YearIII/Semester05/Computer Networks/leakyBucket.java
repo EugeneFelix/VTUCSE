@@ -3,22 +3,19 @@ public class leakyBucket {
 
 	public void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		int drop = 0, mini, n, cap, count = 0;
+		int drop = 0, count = 0, mini, i;
 		int inp[] = new int[25];
-		int process;
 		System.out.print("Enter the bucket size:");
-		cap = sc.nextInt();
+		int cap = sc.nextInt();
 		System.out.print("Enter the output rate:");
-		process = sc.nextInt();
+		int process = sc.nextInt();
 		System.out.print("Enter the number of packets:");
-		n = sc.nextInt();
+		int n = sc.nextInt();
 		System.out.println("Enter the size of the objects to be sent:");
-		int i;
-		for (i = 0; i < n; i++) {
+		for (i = 0; i < n; i++)
 			inp[i] = sc.nextInt();
-		}
 		System.out.println("\nSecond | Packet Received | Packet Sent | Packets Left | Packets Dropped | \n");
-		System.out.println("==============================================================");
+		System.out.println("==========================================================================");
 		for (i = 0; i < n; i++) {
 			count += inp[i];
 			if (count > cap) {
