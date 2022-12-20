@@ -9,7 +9,7 @@ public class RSA {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		String message1;
 		/*
-		-- Variablesá explained.
+		-- Variables explained.
 		e: public key.
 		d: private key.
 		
