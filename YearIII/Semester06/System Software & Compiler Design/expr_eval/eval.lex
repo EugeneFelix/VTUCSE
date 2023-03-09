@@ -1,6 +1,6 @@
 %{
-  #include"y.tab.h"
-  #include<math.h>
+  #include "expr_eval/eval.tab.h"
+  #include <math.h>
   extern yylval;
 %}
 
