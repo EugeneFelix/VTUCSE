@@ -1,7 +1,13 @@
 #include<stdio.h>
 #include<GL/glut.h>
 
-int x1,y1,x2,y2;
+int
+    x1,y1,x2,y2;
+
+void myInit();
+void draw_pixel(int x, int y);
+void draw_line(int x1, int x2, int y1, int y2);
+void myDisplay();
 
 void myInit()
 {
