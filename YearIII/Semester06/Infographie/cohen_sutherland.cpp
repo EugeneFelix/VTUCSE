@@ -1,11 +1,14 @@
+/*
+ * 1967, by Danny Cohen and Ican Sutherland
+ */
 #include<GL/glu.h>
 #include<GL/glut.h>
 #include<stdio.h>
 
-GLfloat xMin=-0.5,xMax=0.5,yMin=-0.5,yMax=0.5;
-GLfloat x1=-0.8,y1=-0.6,x2=0.7,y2=0.4;
+GLfloat xMin = -0.5, xMax = 0.5, yMin = -0.5, yMax = 0.5;
+GLfloat x1 = -0.8, y1 = -0.6, x2 = 0.7, y2=0.4;
 
-int Left=1,Right=2,Bot=4,Top=8;
+int Left = 1, Right = 2, Bot = 4, Top = 8;
 int C1,C2;
 int Clip_Flag = 0, Flag = 1;;
 
