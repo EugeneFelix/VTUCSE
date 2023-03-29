@@ -1,3 +1,5 @@
+.PHONY: clean
+
 eval: eval.yy.c
 	clang ./intr/eval.tab.c ./intr/eval.yy.c -o ./build/expr -lfl
 
