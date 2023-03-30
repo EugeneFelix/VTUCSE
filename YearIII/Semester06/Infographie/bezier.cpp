@@ -7,16 +7,13 @@ GLsizei winwidth = 600, winheight = 600;
 GLfloat xwcmin = 0.0, xwcmax = 130.0;
 GLfloat ywcmin = 0.0, ywcmax = 130.0;
 
-typedef struct wcpt3d
-{
+typedef struct wcpt3d {
     GLfloat x, y, z;
 };
 
-void bino(GLint n, GLint *C)
-{
+void bino(GLint n, GLint *C) {
     GLint k, j;
-    for(k=0;k<=n;k++)
-    {
+    for(k=0;k<=n;k++) {
         C[k] = 1;
         for(j=n; j>=k+1; j--)
             C[k] *= j;
@@ -124,7 +121,7 @@ int main(int argc, char **argv)
     glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB);
     glutInitWindowPosition(50, 50);
     glutInitWindowSize(winwidth, winheight);
-    glutCreateWindow("Bezier Curve");
+    glutCreateWindow("Drawing a Bezier Curve");
     glutDisplayFunc(displayfcn);
     glutReshapeFunc(winreshapefun);
     glutMainLoop();
