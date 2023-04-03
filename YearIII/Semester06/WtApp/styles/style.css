@@ -1,0 +1,26 @@
+vtu {
+  display: table;
+  border: solid 1px;
+}
+
+student {
+  display: table-row;
+  border: solid 1px;
+}
+
+student:before {
+  display: table-cell;
+  border: solid 1px;
+  content: attr(usn);
+}
+
+student:after {
+  display: table-cell;
+  border: solid 1px;
+  content: attr(college);
+}
+
+f, m, l, yoj, branch, email {
+  display: table-cell;
+  border: solid 1px;
+}

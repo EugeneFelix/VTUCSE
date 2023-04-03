@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/css" href="./styles/style.css"?>
+<!DOCTYPE vtu SYSTEM "./data/s.dtd">
+<vtu>
+    <student usn="4JN10CS001" college="jnnce">
+        <name>
+            <f>Asim</f>
+            <m> M </m>
+            <l> L </l>
+        </name>
+        <yoj> 2014 </yoj>
+        <branch> CSE </branch>
+        <email> asim@jnnce.ac.in </email>
+    </student>
+    <student usn="4JN10CS002" college="jnnce">
+        <name>
+            <f>Amar</f>
+            <m> M </m>
+            <l> L </l>
+        </name>
+        <yoj> 2014 </yoj>
+        <branch> CSE </branch>
+        <email> amar@jnnce.ac.in </email>
+    </student>
+    <student usn="4JN10CS003" college="jnnce">
+        <name>
+            <f>Azad</f>
+            <m> M </m>
+            <l> L </l>
+        </name>
+        <yoj> 2014 </yoj>
+        <branch> CSE </branch>
+        <email> azad@jnnce.ac.in </email>
+    </student>
+</vtu>

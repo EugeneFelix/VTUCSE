@@ -1,0 +1,25 @@
+<html>
+	<body onload=sc()>
+	<script>
+	function sc() {
+	rng = prompt("Enter firstNumber-lastNumber");
+	res = rng.split("-");
+	if (res.length != 2) {
+		alert("invalid range ");
+		return;
+	}
+	first = parseInt(res[0]);
+	second = parseInt(res[1]);
+	if (first > second) {
+		alert("Invalid range");
+		return;
+	}
+	str = "<table border=2><tr><th>Number</th> <th>Square</th><th>Cube</th></tr>";
+	for (i = first; i <= second; i++) {
+		str = str + "<tr><td>" + i + "<td>" + (i * i) + "<td>" + (i * i * i);
+	}
+	document.write(str);
+}
+	</script>
+	</body>
+</html>
