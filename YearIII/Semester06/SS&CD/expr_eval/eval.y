@@ -37,6 +37,7 @@ int main()
  return 0;
 }
 int yywrap() { return 0; }
+
 int yyerror()
 {
  printf("Error\n");
