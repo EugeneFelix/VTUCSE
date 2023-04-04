@@ -1,6 +1,6 @@
 %{
-  #include"eval.tab.h"
-  #include<math.h>
+  #include "eval.tab.h"
+  #include <math.h>
   extern yylval;
 %}
 
@@ -13,4 +13,3 @@
 [\t]+ ;
 [\n] {return 0;}
 . {return yytext[0];}
-%%
