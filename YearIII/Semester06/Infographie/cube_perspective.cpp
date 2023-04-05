@@ -4,8 +4,7 @@
 
 GLfloat Cx=0,Cy=0,Cz=3;
 
-void MyInit()
-{
+void init() {
     glClearColor(0,0,0,1);
     glEnable(GL_DEPTH_TEST);
 
@@ -86,7 +85,7 @@ int main(int argC,char *argV[])
     glutInitWindowPosition(100,150);
     glutInitDisplayMode(GLUT_RGB | GLUT_DOUBLE | GLUT_DEPTH);
     glutCreateWindow("Color Cube with Camera");
-    MyInit();
+    init();
     glutDisplayFunc(Draw);
     glutKeyboardFunc(Key);
     glutMainLoop();
