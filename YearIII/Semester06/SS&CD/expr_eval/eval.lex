@@ -5,7 +5,7 @@
 %}
 
 %%
-[0-9]+ { yylval=atoi(yytext);return NUM; }
+[0-9]+ { yylval = atoi(yytext); return NUM; }
 [+] { return '+'; }
 [-] { return '-'; }
 [*] { return '*'; }
