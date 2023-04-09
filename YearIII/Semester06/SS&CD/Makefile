@@ -12,3 +12,5 @@ eval.tab.c:
 clean:
 	rm ./build/*
 	rm ./intr/*
+	rm ./*.yy.c
+	rm ./*.tab.c
