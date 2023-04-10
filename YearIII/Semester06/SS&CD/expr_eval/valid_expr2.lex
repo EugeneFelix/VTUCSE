@@ -5,12 +5,12 @@ int v=0,op=0,id=0,flag=0;
 %}
 
 %%
-[0-9][0-9]* {id++;printf("\nIdentifier:");ECHO;}
-[\+\-\*\/\=] {op++;printf("\nOperartor:");ECHO;}
-"(" {v++;}
-")" {v--;}
-";" {flag=1;}
-.|\n {return 0;}
+[0-9][0-9]* { id++; printf("\nIdentifier:"); ECHO;}
+[\+\-\*\/\=] { op++; printf("\nOperartor:");.ECHO;}
+"(" { v++; }
+")" { v--; }
+";" { flag=1; }
+.|\n { return 0; }
 %%
 
 int main()
@@ -24,9 +24,5 @@ int main()
 	}
 	else
 		printf("\nExpression is Invalid\n");
-	return 1;
-}
-int yywrap()
-{
 	return 1;
 }

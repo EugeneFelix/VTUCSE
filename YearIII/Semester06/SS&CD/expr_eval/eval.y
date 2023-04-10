@@ -9,13 +9,13 @@
 
 %%
 
-start:exp {printf("%d\n",$$);}
-exp:exp'+'exp { $$ = $1+$3; }
-|exp'-'exp { $$ = $1-$3; }
-|exp'*'exp { $$ = $1*$3; }
+start:exp {printf("%d\n", $$);}
+exp:exp'+'exp { $$ = $1 + $3; }
+|exp'-'exp { $$ = $1 - $3; }
+|exp'*'exp { $$ = $1 * $3; }
 |exp'/'exp
 {
- if($3==0)
+ if($3 == 0)
  {
   yyerror();
   exit(0);
@@ -25,8 +25,8 @@ exp:exp'+'exp { $$ = $1+$3; }
   $$ = $1/$3;
  }
 }
-|'('exp')' { $$=$2; }
-|NUM { $$=$1; }
+|'('exp')' { $$ = $2; }
+|NUM { $$ = $1; }
 ;
 %%
 

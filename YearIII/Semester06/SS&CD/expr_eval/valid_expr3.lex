@@ -18,10 +18,7 @@ void invalid();
 . invalid();
 \n return 0;
 %%
-int yywrap()
-{
-    return 1;
-}
+
 void invalid()
 {
 	printf("Invalid Expression");
