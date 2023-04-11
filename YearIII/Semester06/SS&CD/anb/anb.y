@@ -6,19 +6,17 @@
 %token A B
 
 %%
-input:s'\n' {printf("Valid string\n");exit(0);}
+input:s'\n' { printf("Valid string\n"); exit(0); }
 s: A s1 B
 s1: ; | A s1
 %%
 
-int main()
-{
-  printf("Enter a string \n");
+int main() {
+  printf("Enter a string\n");
   yyparse();
 }
 
-int yyerror(void)
-{
+int yyerror(void) {
  printf("Invalid string\n");
  exit(0);
 }
