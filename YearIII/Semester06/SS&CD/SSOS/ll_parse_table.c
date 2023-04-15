@@ -14,9 +14,7 @@ int main() {
     fol[i][0] = '\0';
   for (s = 0; s < n; s++) {
     for (i = 0; i < n; i++) {
-      j = 3;
-      l = 0;
-      a = 0;
+      j = 3; l = 0; a = 0;
       l1: if (!((st[i][j] > 64) && (st[i][j] < 91))) {
         for (m = 0; m < l; m++) {
           if (ft[i][m] == st[i][j])
