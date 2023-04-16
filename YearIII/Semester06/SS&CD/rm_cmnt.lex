@@ -9,8 +9,8 @@
 
 int main()
 {
- yyin=fopen("in.c","r");
- yyout=fopen("out.c","w");
+ yyin = fopen("in.c","r");
+ yyout = fopen("out.c","w");
  yylex();
  fclose(yyin);
  fclose(yyout);
