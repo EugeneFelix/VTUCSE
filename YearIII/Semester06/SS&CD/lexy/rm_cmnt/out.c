@@ -1,8 +1,11 @@
-fbfjjf
-//djjfjd
-/* djfjbfbf */
+#include<stdio.h>
+
+
+
 
 int main() {
+    
+    
 
     return 0;
 }

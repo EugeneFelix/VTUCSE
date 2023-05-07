@@ -17,7 +17,7 @@ input:
 |OP {op++;} ;
 %%
 
-extern int yylex();
+extern "C" int yylex();
 extern int yyparse();
 extern FILE *yyin;
 int main()
@@ -40,5 +40,3 @@ int yyerror()
  printf("Error \n");
  exit(-1);
 }
-int yywrap()
-{ }

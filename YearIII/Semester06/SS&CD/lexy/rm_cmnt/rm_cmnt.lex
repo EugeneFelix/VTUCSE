@@ -1,4 +1,4 @@
- %option noyywrap
+%option noyywrap
 %{
 
 %}
@@ -10,7 +10,7 @@
 
 int main()
 {
- yyin = fopen("in.c","r");
+ yyin = fopen("./in.c","r");
  yyout = fopen("out.c","w");
  yylex();
  fclose(yyin);

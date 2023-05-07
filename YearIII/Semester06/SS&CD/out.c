@@ -1,8 +1,0 @@
-fbfjjf
-
-/ * djfjbfbf */
-
-main() {
-
-
-}
