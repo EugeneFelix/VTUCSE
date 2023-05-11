@@ -15,3 +15,8 @@ clean:
 	rm -rf ./*.yy.c
 	rm -rf ./*.tab.c
 	rm -f ./a.out
+
+rmc: 
+	flex ./lexy/rm_cmnt/rm_cmnt.lex
+	gcc -c lex.yy.c
+	./a.out ./lexy/rm_cmnt/in.c ./lexy/rm_cmnt/out.c
