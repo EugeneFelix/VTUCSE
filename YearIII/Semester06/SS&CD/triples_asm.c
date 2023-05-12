@@ -6,8 +6,8 @@ int count=0;
 void main()
 {
 	FILE *fp1,*fp2;
-	fp1=fopen("input.txt","r");
-	fp2=fopen("output.txt","w");
+	fp1=fopen("./inputs/asmin.c","r");
+	fp2=fopen("./inputs/asmout.a","w");
 	while(!feof(fp1) && count<4)
 	{
 		count ++;
