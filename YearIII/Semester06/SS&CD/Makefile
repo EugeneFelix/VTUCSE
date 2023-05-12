@@ -7,6 +7,12 @@ clean:
 	rm -rf ./*.tab.c
 	rm -f ./a.out
 
+<<<<<<< HEAD
+rmc: 
+	flex ./lexy/rm_cmnt/rm_cmnt.lex
+	gcc -c lex.yy.c
+	./a.out ./lexy/rm_cmnt/in.c ./lexy/rm_cmnt/out.c
+=======
 eval: eval.yy.c
 	clang ./intr/eval.tab.c ./intr/eval.yy.c -o ./build/expr
 
@@ -22,3 +28,4 @@ asm:
 robin:
 lruf:
 bank:
+>>>>>>> 9c3ad91f1b0df939a6cd213df87aaf093825e659
