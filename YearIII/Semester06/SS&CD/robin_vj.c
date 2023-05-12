@@ -63,9 +63,9 @@ int main() {
 	printf("Enter no of Processes : ");
 	scanf("%d",&n);
 	for(i=0; i<n; i++) {
-		printf("Enter arrival time for Process P%d : ",i+1);
+		printf("Enter arrival time for process P%d : ",i+1);
 		scanf("%d",&at[i]);
-		printf("Enter burst time for Process P%d :",i+1);
+		printf("Enter burst time for process P%d :",i+1);
 		scanf("%d",&bt[i]);
 		rt[i]=bt[i];
 	}
@@ -75,9 +75,7 @@ int main() {
 			break;
 		case 2:
 			srt();
-		break;
-		default:
-		printf("Invalid\n");
+			break;
 	}
 	return 0;
 }

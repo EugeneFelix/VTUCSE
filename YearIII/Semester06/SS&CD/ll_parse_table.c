@@ -4,7 +4,7 @@
 char
     prod[3][10] = {"A->aBa","B->bB","B->@"}, input[10], stack[25];
 int
-    top = -1; int j=0, k, l;
+    top = -1; int k, l;
 
 void push(char item) {
 	stack[++top]=item;
@@ -15,35 +15,24 @@ void pop() {
 }
 
 void display() {
-	int j;
-	for(j = top; j >= 0; j--)
-		printf("%c", stack[j]);
+	for(int i = top; i >= 0; i--)
+		printf("%c", stack[i]);
 }
 
 void stackpush(char p) {
 	if(p=='A') {
 		pop();
-		for(j = strlen(prod[0])-1; j >= 3; j--)
-			push(prod[0][j]);
+		for(int i = strlen(prod[0])-1; i >= 3; i--)
+			push(prod[0][i]);
 	}
 	else {
 		pop();
-		for(j=strlen(prod[1])-1; j >= 3; j--)
-			push(prod[1][j]);
+		for(int i = strlen(prod[1])-1; i >= 3; i--)
+			push(prod[1][i]);
 	}
 }
-
-int main() {
-	char c; int i;
-	printf("first(A)={a}\t");
-	printf("follow(A)={$}\n");
-	printf("first(B)={b,@}\t");
-	printf("follow(B)={a}\n\n");
-	printf("\t a \t b \t $ \n");
-	printf("A\t%s\n",prod[0]);
-	printf("B\t%s\t%s\n",prod[2],prod[1]);
-	printf("Enter the input string terminated with $ to parse:-");
-	scanf("%s",input);
+void incorrect_input() {
+	int i;
 	for(i=0;input[i]!='\0';i++) {
 		if((input[i]!='a')&&(input[i]!='b')&&(input[i]!='$')) {
 			printf("invalid string");
@@ -54,9 +43,30 @@ int main() {
 		printf("\n\nInput string entered without end marker $");
 		exit(0);
 	}
+}
+
+void check_valid(int i) {
+	if(stack[top]=='$' && input[i]=='$') {
+		printf("\n$\t$");
+		printf("\nValid string Accepted\n");
+	}
+	else
+		printf("\nInvalid string rejected\n"); 
+}
+int main() {
+	printf("first(A)={a}\t");
+	printf("follow(A)={$}\n");
+	printf("first(B)={b,@}\t");
+	printf("follow(B)={a}\n\n");
+	printf("\t a \t b \t $ \n");
+	printf("A\t%s\n",prod[0]);
+	printf("B\t%s\t%s\n",prod[2],prod[1]);
+	printf("Enter the input string terminated with $ to parse:-");
+	scanf("%s",input);
+	incorrect_input();
 	push('$');
 	push('A');
-	i=0;
+	int i = 0;
 	printf("\n\n");
 	printf("stack\tInput\taction");
 	printf("\n---------\n");
@@ -94,11 +104,6 @@ int main() {
 				break;
 		}
 	}
-	if(stack[top]=='$' && input[i]=='$') {
-		printf("\n$\t$");
-		printf("\nValid string Accepted\n");
-	}
-	else
-		printf("\nInvalid string rejected\n"); 
+	check_valid(i);
     return 0;
 }
