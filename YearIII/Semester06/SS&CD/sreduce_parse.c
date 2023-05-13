@@ -6,7 +6,7 @@ char shift[] = "SHIFT->";
 char reduce[] = "REDUCE";
 void check()
 {
-	for(z=0;z<c;z++)
+	for(z=0;z<strlen(input);z++)
 		if(stack[z]=='(' && stack[z+1]=='E'&& stack[z+2]==')') {
 			stack[z]='F';
 			stack[z+1]='\0';
@@ -14,14 +14,14 @@ void check()
 			printf("\n$%s\t%s$\t%s by F->(E)",stack,input, reduce);
 			i=i-2;
 		}
-	for(z=0;z<c;z++)
+	for(z=0;zstrlen(input);z++)
 		if(stack[z]=='i' && stack[z+1]=='d') {
 			stack[z]='F';
 			stack[z+1]='\0';
 			printf("\n$%s\t%s$\t%s by F->id",stack,input, reduce);
 			j++;
 		}
-	for(z=0;z<c;z++) {
+	for(z=0;zstrlen(input);z++) {
 		if(stack[z]=='T' && stack[z+1]=='*' && stack[z+2]=='F') {
 			stack[z]='T';
 			stack[z+1]='\0';
@@ -34,7 +34,7 @@ void check()
 			printf("\n$%s\t%s$\t%s by T->F",stack,input, reduce);
 		}
 	}
-	for(z=0;z<c;z++) {
+	for(z=0;zstrlen(input);z++) {
 		if(stack[z]=='E' && stack[z+1]=='+' && stack[z+2]=='T' && stack[z+3]=='*')
 			break;
 		if(stack[z]=='E' && stack[z+1]=='+' && stack[z+2]=='T')
@@ -62,7 +62,7 @@ int main() {
 	scanf("%s",input);
 	printf("Stack \t Input \t\t action\n");
 	printf("$\t %s$", input);
-	for(k = 0, i = 0; j < strlen(input); i++, j++, k++) {
+	for(int i = 0, j = 0, k = 0; j < strlen(input); i++, j++, k++) {
 		if(input[j]=='i' && input[j+1]=='d') {
 			stack[i]=input[j];
 			stack[i+1]=input[j+1];
