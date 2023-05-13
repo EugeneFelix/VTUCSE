@@ -4,6 +4,38 @@ int k=0,z=0,i=0,j=0,c=0;
 char input[25], stack[55];
 char shift[] = "SHIFT->";
 char reduce[] = "REDUCE";
+void check2() {
+	for(z=0; z < strlen(input); z++) 
+		if(stack[z]=='i' && stack[z+1]=='d') {
+			stack[z]='E';
+			stack[z+1]='\0';
+			printf("\n$%s\t%s$\t%s",stack, input, reduce);
+			j++;
+		}
+	for(z=0; z < strlen(input); z++)
+		if(stack[z]=='E' && stack[z+1]=='+' && stack[z+2]=='E') {
+			stack[z]='E';
+			stack[z+1]='\0';
+			stack[z+2]='\0';
+			printf("\n$%s\t%s$\t%s",stack, input, reduce);
+			i -= 2;
+		} 
+		for(z=0; z < strlen(input); z++)
+			if(stack[z]=='E' && stack[z+1]=='*' && stack[z+2]=='E') {
+				stack[z]='E'; stack[z+1]='\0';
+				stack[z+1]='\0';
+				printf("\n$%s\t%s$\t%s",stack, input, reduce);
+				i -= 2;
+			}
+	for(z=0; z < strlen(input); z++)
+		if(stack[z]=='(' && stack[z+1]=='E' && stack[z+2]==')') {
+			stack[z]='E';
+			stack[z+1]='\0'; 
+			stack[z+1]='\0';
+			printf("\n$%s\t%s$\t%s",stack, input, reduce);
+			i -= 2;
+		}
+}
 void check()
 {
 	for(z=0;z<strlen(input);z++)
@@ -70,13 +102,13 @@ int main() {
 			input[j]=' ';
 			input[j+1]=' ';
 			printf("\n$%s\t%s$\t%s id", stack, input, shift);
-			check();
+			check2();
 		} else {
 			stack[i]=input[j];
 			stack[i+1]='\0';
 			input[j]=' ';
 			printf("\n$%s\t%s$\t%s symbol",stack,input, shift);
-			check();
+			check2();
 		}
 	}
 	return 0;
