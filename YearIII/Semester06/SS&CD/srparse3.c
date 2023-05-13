@@ -1,9 +1,10 @@
 #include<stdio.h>
 #include<string.h>
 int i = 0, j = 0;
-char input[16], stack[50];
+char stack[50];
 char reduce[] = "REDUCE TO E";
 char shift[] = "SHIFT->";
+char input[] = "id+id*id";
 
 void check(int buflen) {
   for (int z = 0; z < buflen; z++)
@@ -39,10 +40,8 @@ void check(int buflen) {
 
 int main() {
   puts("GRAMMAR is E->E+E \n E->E*E \n E->(E) \n E->id");
-  puts("enter input string ");
-  scanf("%s", input);
-  int buflen = strlen(input);
   puts("stack \t input \t action");
+  int buflen = strlen(input);
   for (int k = 0, i = 0; j < buflen; k++, i++, j++) {
     if (input[j] == 'i' && input[j + 1] == 'd') {
       stack[i] = input[j];
