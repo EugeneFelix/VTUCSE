@@ -24,8 +24,7 @@ void stackpush(char p) {
 		pop();
 		for(int i = strlen(prod[0])-1; i >= 3; i--)
 			push(prod[0][i]);
-	}
-	else {
+	} else {
 		pop();
 		for(int i = strlen(prod[1])-1; i >= 3; i--)
 			push(prod[1][i]);
@@ -35,15 +34,16 @@ void incorrect_input() {
 	int i;
 	for(i=0;input[i]!='\0';i++) {
 		if((input[i]!='a')&&(input[i]!='b')&&(input[i]!='$')) {
-			printf("invalid string");
+			printf("Invalid string");
 			exit(0);
 		}
 	}
-	if(input[i-1]!='$') {
+	if(input[i - 1] != '$') {
 		printf("\n\nInput string entered without end marker $");
 		exit(0);
 	}
 }
+
 
 void check_valid(int i) {
 	if(stack[top]=='$' && input[i]=='$') {
@@ -81,14 +81,12 @@ int main() {
 		if(stack[top]=='A') {
 			printf("A->aBa");
 			stackpush('A');
-		}
-		else if(stack[top]=='B') {
+		} else if(stack[top]=='B') {
 			if(input[i]!='b') {
 				printf("B->@");
 				printf("\t matched @");
 				pop();
-			}
-			else {
+			} else {
 				printf("B->bB");
 				stackpush('B');
 			}
