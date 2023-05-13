@@ -42,7 +42,7 @@ int main() {
   puts("GRAMMAR is E->E+E \n E->E*E \n E->(E) \n E->id");
   puts("STACK \t INPUT \t ACTION");
   int buflen = strlen(input);
-  for (int k = 0, i = 0; j < buflen; k++, i++, j++) {
+  for (i = 0; j < buflen; i++, j++) {
     if (input[j] == 'i' && input[j + 1] == 'd') {
       stack[i] = input[j];
       stack[i + 1] = input[j + 1];

@@ -31,8 +31,7 @@ void stackpush(char p) {
 	}
 }
 void incorrect_input() {
-	int i;
-	for(i=0;input[i]!='\0';i++) {
+	for(int i=0;input[i]!='\0';i++) {
 		if((input[i]!='a')&&(input[i]!='b')&&(input[i]!='$')) {
 			printf("Invalid string");
 			exit(0);
