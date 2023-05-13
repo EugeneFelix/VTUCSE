@@ -4,33 +4,6 @@ int k=0,z=0,i=0,j=0,c=0;
 char input[25], stack[55];
 char shift[] = "SHIFT->";
 char reduce[] = "REDUCE";
-void check();
-int main() {
-	printf("Grammar: \n E->E+T|T \n T->T*F|F \n F->(E)|id\n");
-	printf("Enter the input string\n");
-	scanf("%s",input);
-	printf("Stack \t Input \t\t actionion\n");
-	printf("$\t %s$", input);
-	for(k = 0, i = 0; j < strlen(input); i++, j++, k++) {
-		if(input[j]=='i' && input[j+1]=='d') {
-			stack[i]=input[j];
-			stack[i+1]=input[j+1];
-			stack[i+2]='\0';
-			input[j]=' ';
-			input[j+1]=' ';
-			printf("\n$%s\t%s$\t%s id", stack, input, shift);
-			check();
-		} else {
-			stack[i]=input[j];
-			stack[i+1]='\0';
-			input[j]=' ';
-			printf("\n$%s\t%s$\t%s symbol",stack,input, shift);
-			check();
-		}
-	}
-	return 0;
-}
-
 void check()
 {
 	for(z=0;z<c;z++)
@@ -81,4 +54,30 @@ void check()
 				printf("\n$%s\t%s$\t%s by E->T",stack,input, reduce);
 			}
 		}
+}
+
+int main() {
+	printf("Grammar: \n E->E+T|T \n T->T*F|F \n F->(E)|id\n");
+	printf("Enter the input string\n");
+	scanf("%s",input);
+	printf("Stack \t Input \t\t action\n");
+	printf("$\t %s$", input);
+	for(k = 0, i = 0; j < strlen(input); i++, j++, k++) {
+		if(input[j]=='i' && input[j+1]=='d') {
+			stack[i]=input[j];
+			stack[i+1]=input[j+1];
+			stack[i+2]='\0';
+			input[j]=' ';
+			input[j+1]=' ';
+			printf("\n$%s\t%s$\t%s id", stack, input, shift);
+			check();
+		} else {
+			stack[i]=input[j];
+			stack[i+1]='\0';
+			input[j]=' ';
+			printf("\n$%s\t%s$\t%s symbol",stack,input, shift);
+			check();
+		}
+	}
+	return 0;
 }
