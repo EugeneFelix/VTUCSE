@@ -2,9 +2,9 @@
 #include<string.h>
 int i = 0, j = 0;
 char stack[50];
-char reduce[] = "REDUCE TO E";
-char shift[] = "SHIFT->";
-char input[] = "id+id*id";
+const char *reduce = "REDUCE TO E";
+const char *shift = "SHIFT->";
+char *input = "id+id*id";
 
 void check(int buflen) {
   for (int z = 0; z < buflen; z++)
