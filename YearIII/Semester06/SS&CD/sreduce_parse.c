@@ -14,14 +14,14 @@ void check()
 			printf("\n$%s\t%s$\t%s by F->(E)",stack,input, reduce);
 			i=i-2;
 		}
-	for(z=0;zstrlen(input);z++)
+	for(z=0;z < strlen(input);z++)
 		if(stack[z]=='i' && stack[z+1]=='d') {
 			stack[z]='F';
 			stack[z+1]='\0';
 			printf("\n$%s\t%s$\t%s by F->id",stack,input, reduce);
 			j++;
 		}
-	for(z=0;zstrlen(input);z++) {
+	for(z=0;z < strlen(input);z++) {
 		if(stack[z]=='T' && stack[z+1]=='*' && stack[z+2]=='F') {
 			stack[z]='T';
 			stack[z+1]='\0';
@@ -29,12 +29,12 @@ void check()
 			printf("\n$%s\t%s$\t%s by T->T*F",stack,input, reduce);
 			i=i-2;
 		}
-		else if(stack[z]=='F') {
-			stack[z]='T';
+		else if(stack[z] == 'F') {
+			stack[z] = 'T';
 			printf("\n$%s\t%s$\t%s by T->F",stack,input, reduce);
 		}
 	}
-	for(z=0;zstrlen(input);z++) {
+	for(z = 0; z < strlen(input); z++) {
 		if(stack[z]=='E' && stack[z+1]=='+' && stack[z+2]=='T' && stack[z+3]=='*')
 			break;
 		if(stack[z]=='E' && stack[z+1]=='+' && stack[z+2]=='T')
