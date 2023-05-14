@@ -20,11 +20,11 @@ void round_robin() {
     }
     if (rem_time[current_process] == 0 && flag == 1) {
       processes_remaining--;
+      printf("P[%d]\t\t|\t%d\t\t|\t%d\n", current_process + 1, time_lapsed - at[current_process], time_lapsed - at[current_process] - bt[current_process]);
       /****************************/
       total_wait_time += time_lapsed - at[current_process] - bt[current_process];
       total_turnaround_time += time_lapsed - at[current_process];
       /***************************/
-      printf("P[%d]\t\t|\t%d\t\t|\t%d\n", current_process + 1, total_turnaround_time, total_wait_time);
       flag = 0;
     }
     if (current_process == number_processes - 1)
