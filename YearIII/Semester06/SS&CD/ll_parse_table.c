@@ -1,5 +1,4 @@
 #include<stdlib.h>
-#include<string.h>
 #include<stdio.h>
 
 char
@@ -14,12 +13,12 @@ void pop() {
     --top;
 }
 
-void push(char p) {
+void push_production(char p) {
     if (p == 'A') {
         pop();
         for (int i = strlen(prod[0]) - 1; i >= 3; i--)
             stack[++top] = prod[0][i];
-    } else {
+    } else if (p == 'B') {
         pop();
         for (int i = strlen(prod[1]) - 1; i >= 3; i--)
             stack[++top] = prod[1][i];
@@ -68,14 +67,14 @@ int main() {
         printf("\t");
         if (stack[top] == 'A') {
             printf("A->aBa");
-            push('A');
+            push_production('A');
         } else if (stack[top] == 'B') {
             if (input[buflen] != 'b') {
                 printf("B->@\n\t Matched @");
                 pop();
             } else {
                 printf("B->bB");
-                push('B');
+                push_production('B');
             }
         } else {
             if (stack[top] == input[buflen]) {
