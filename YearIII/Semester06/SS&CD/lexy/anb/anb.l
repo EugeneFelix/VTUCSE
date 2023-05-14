@@ -1,3 +1,5 @@
+%option noyywrap
+
 %{
  #include "y.tab.h"
 %}
@@ -8,5 +10,3 @@ b {return B;}
 [_c-zC-Z] {return 0;}
 [\n] {return '\n';}
 %%
-
-int yywrap(void) {}
