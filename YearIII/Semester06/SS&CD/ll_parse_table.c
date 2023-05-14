@@ -3,18 +3,18 @@
 #include<stdio.h>
 
 char
-prod[3][6] = {
+prod[3][10] = {
     "A->aBa",
     "B->bB",
     "B->@"
 }, input[10], stack[25];
-int top = -1, i = 0;
+int top = -1, i = 0, k, l;
 
 void pop() {
     --top;
 }
 
-void push_production(char p) {
+void push(char p) {
     if (p == 'A') {
         pop();
         for (int i = strlen(prod[0]) - 1; i >= 3; i--)
@@ -60,25 +60,22 @@ int main() {
     printf("\n\nstack\tInput\taction\n\n----------\n");
     while (i != strlen(input) && stack[top] != '$') {
         printf("\n");
-        //column 1
-        for (int j = top; j >= 0; j--)
-            printf("%c", stack[j]);
+        for (l = top; l >= 0; l--)
+            printf("%c", stack[l]);
         printf("\t");
-        //column 2
-        for (int j = i; j < strlen(input); j++)
-            printf("%c", input[j]);
+        for (l = i; l < strlen(input); l++)
+            printf("%c", input[l]);
         printf("\t");
-        //End column 2
         if (stack[top] == 'A') {
             printf("A->aBa");
-            push_production('A');
+            push('A');
         } else if (stack[top] == 'B') {
             if (input[i] != 'b') {
-                printf("B->@\tMatched @");
+                printf("B->@\n\t Matched @");
                 pop();
             } else {
                 printf("B->bB");
-                push_production('B');
+                push('B');
             }
         } else {
             if (stack[top] == input[i]) {
