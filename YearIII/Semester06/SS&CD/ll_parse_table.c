@@ -1,7 +1,9 @@
+#include<stdlib.h>
+#include<string.h>
 #include<stdio.h>
 
 char
-prod[3][6] = {
+prod[3][10] = {
     "A->aBa",
     "B->bB",
     "B->@"
@@ -23,18 +25,17 @@ void push(char p) {
             stack[++top] = prod[1][i];
     }
 }
-int incorrect_input() {
+void incorrect_input() {
     for (int i = 0; input[i] != '\0'; i++) {
         if ((input[i] != 'a') && (input[i] != 'b') && (input[i] != '$')) {
             printf("Invalid string");
-            return -1;
+            exit(0);
         }
     }
     if (input[strlen(input) - 1] != '$') {
         printf("\n\nInput string entered without end marker $");
-        return -2;
+        exit(0);
     }
-    return 0;
 }
 
 void check_valid() {
