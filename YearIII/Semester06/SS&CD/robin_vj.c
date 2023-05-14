@@ -20,18 +20,14 @@ void round_robin() {
     }
     if (rem_time[current_process] == 0 && flag == 1) {
       processes_remaining--;
-      printf("P[%d]\t\t|\t%d\t\t|\t%d\n", current_process + 1, time_lapsed - at[current_process], time_lapsed - at[current_process] - bt[current_process]);
+      printf("P[%d]\t\t|\t%d\t\t|\t%d\n", current_process + 1, time_lapsed, time_lapsed - bt[current_process]);
       /****************************/
-      total_wait_time += time_lapsed - at[current_process] - bt[current_process];
-      total_turnaround_time += time_lapsed - at[current_process];
+      total_wait_time += time_lapsed - bt[current_process];
+      total_turnaround_time += time_lapsed;
       /***************************/
       flag = 0;
     }
     if (current_process == number_processes - 1)
-      current_process = 0;
-    else if (at[current_process + 1] <= time_lapsed)
-      current_process++;
-    else
       current_process = 0;
   }
   printf("\nAverage Waiting Time= %.2f\n", total_wait_time * 1.0 / number_processes);
