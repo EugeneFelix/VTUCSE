@@ -58,7 +58,7 @@ int main() {
     stack[++top] = '$';
     stack[++top] = 'A';
     printf("\n\nstack\tInput\taction\n\n----------\n");
-    while (buflen != strlen(input) && stack[top] != '$') {
+    while (i != strlen(input) && stack[top] != '$') {
         printf("\n");
         //column 1
         for (int j = top; j >= 0; j--)
@@ -85,7 +85,7 @@ int main() {
                 printf("POP %c", input[i]);
                 printf("\tMatched %c", input[i]);
                 pop();
-                buflen++;
+                i++;
             } else
                 break;
         }
