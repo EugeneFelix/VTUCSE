@@ -69,12 +69,12 @@ int main() {
             printf("A->aBa");
             push_production('A');
         } else if (stack[top] == 'B') {
-            if (input[buflen] != 'b') {
-                printf("B->@\n\t Matched @");
-                pop();
-            } else {
+            if (input[buflen] == 'b') {
                 printf("B->bB");
                 push_production('B');
+            } else {
+                printf("B->@\n\t Matched @");
+                pop();
             }
         } else {
             if (stack[top] == input[buflen]) {
