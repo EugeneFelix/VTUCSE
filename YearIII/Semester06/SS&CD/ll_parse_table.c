@@ -8,7 +8,7 @@ prod[3][6] = {
     "B->bB",
     "B->@"
 }, input[10], stack[25];
-int top = -1, buflen = 0;
+int top = -1, i = 0;
 
 void pop() {
     --top;
@@ -39,7 +39,7 @@ void incorrect_input() {
 }
 
 void check_valid() {
-    if (stack[top] == '$' && input[buflen] == '$')
+    if (stack[top] == '$' && input[i] == '$')
         printf("\n$\t$\nValid string Accepted\n");
     else
         printf("\nInvalid string rejected\n");
@@ -65,7 +65,7 @@ int main() {
             printf("%c", stack[j]);
         printf("\t");
         //column 2
-        for (int j = buflen; j < strlen(input); j++)
+        for (int j = i; j < strlen(input); j++)
             printf("%c", input[j]);
         printf("\t");
         //End column 2
@@ -73,7 +73,7 @@ int main() {
             printf("A->aBa");
             push_production('A');
         } else if (stack[top] == 'B') {
-            if (input[buflen] != 'b') {
+            if (input[i] != 'b') {
                 printf("B->@\tMatched @");
                 pop();
             } else {
@@ -81,9 +81,9 @@ int main() {
                 push_production('B');
             }
         } else {
-            if (stack[top] == input[buflen]) {
-                printf("POP %c", input[buflen]);
-                printf("\tMatched %c", input[buflen]);
+            if (stack[top] == input[i]) {
+                printf("POP %c", input[i]);
+                printf("\tMatched %c", input[i]);
                 pop();
                 buflen++;
             } else
