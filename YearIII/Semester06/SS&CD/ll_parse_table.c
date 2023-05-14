@@ -8,7 +8,7 @@ prod[3][10] = {
     "B->bB",
     "B->@"
 }, input[10], stack[25];
-int top = -1, buflen = 0, k, l;
+int top = -1, buflen = 0;
 
 void pop() {
     --top;
@@ -60,11 +60,11 @@ int main() {
     printf("\n\nstack\tInput\taction\n\n----------\n");
     while (buflen != strlen(input) && stack[top] != '$') {
         printf("\n");
-        for (l = top; l >= 0; l--)
-            printf("%c", stack[l]);
+        for (int j = top; j >= 0; j--)
+            printf("%c", stack[j]);
         printf("\t");
-        for (l = buflen; l < strlen(input); l++)
-            printf("%c", input[l]);
+        for (int j = buflen; j < strlen(input); j++)
+            printf("%c", input[j]);
         printf("\t");
         if (stack[top] == 'A') {
             printf("A->aBa");
