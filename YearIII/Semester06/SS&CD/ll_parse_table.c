@@ -39,7 +39,7 @@ void incorrect_input() {
 }
 
 void check_valid() {
-    if (stack[top] == '$' && input[strlen(input)] == '$')
+    if (stack[top] == '$' && input[buflen] == '$')
         printf("\n$\t$\nValid string Accepted\n");
     else
         printf("\nInvalid string rejected\n");
