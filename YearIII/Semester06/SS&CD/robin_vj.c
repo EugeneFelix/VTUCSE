@@ -20,7 +20,7 @@ void round_robin() {
     }
     if (rt[count] == 0 && flag == 1) {
       remain--;
-      printf("P[%d]\t|\t%d\t|\t%d\n", count + 1, time - at[count], time - at[count] - bt[count]);
+      printf("P[%d]\t\t|\t%d\t\t|\t%d\n", count + 1, time - at[count], time - at[count] - bt[count]);
       wait_time += time - at[count] - bt[count];
       turnaround_time += time - at[count];
       flag = 0;
@@ -59,14 +59,14 @@ void srt() {
 }
 int main() {
   printf("1.Round Robin \n2.SRTF \n");
-  scanf("%d", & choice);
+  scanf("%d", &choice);
   printf("Enter no of Processes : ");
-  scanf("%d", & number_processes);
+  scanf("%d", &number_processes);
   for (i = 0; i < number_processes; i++) {
     printf("Enter arrival time for process P%d : ", i + 1);
-    scanf("%d", & at[i]);
+    scanf("%d", &at[i]);
     printf("Enter burst time for process P%d :", i + 1);
-    scanf("%d", & bt[i]);
+    scanf("%d", &bt[i]);
     rt[i] = bt[i];
   }
   switch (choice) {
