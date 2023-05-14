@@ -8,7 +8,7 @@ prod[3][10] = {
     "B->bB",
     "B->@"
 }, input[10], stack[25];
-int top = -1, i = 0, k, l;
+int top = -1, buflen = 0, k, l;
 
 void pop() {
     --top;
@@ -39,7 +39,7 @@ void incorrect_input() {
 }
 
 void check_valid() {
-    if (stack[top] == '$' && input[i] == '$')
+    if (stack[top] == '$' && input[buflen] == '$')
         printf("\n$\t$\nValid string Accepted\n");
     else
         printf("\nInvalid string rejected\n");
@@ -58,19 +58,19 @@ int main() {
     stack[++top] = '$';
     stack[++top] = 'A';
     printf("\n\nstack\tInput\taction\n\n----------\n");
-    while (i != strlen(input) && stack[top] != '$') {
+    while (buflen != strlen(input) && stack[top] != '$') {
         printf("\n");
         for (l = top; l >= 0; l--)
             printf("%c", stack[l]);
         printf("\t");
-        for (l = i; l < strlen(input); l++)
+        for (l = buflen; l < strlen(input); l++)
             printf("%c", input[l]);
         printf("\t");
         if (stack[top] == 'A') {
             printf("A->aBa");
             push('A');
         } else if (stack[top] == 'B') {
-            if (input[i] != 'b') {
+            if (input[buflen] != 'b') {
                 printf("B->@\n\t Matched @");
                 pop();
             } else {
@@ -78,11 +78,11 @@ int main() {
                 push('B');
             }
         } else {
-            if (stack[top] == input[i]) {
-                printf("POP %c", input[i]);
-                printf("\tMatched %c", input[i]);
+            if (stack[top] == input[buflen]) {
+                printf("POP %c", input[buflen]);
+                printf("\tMatched %c", input[buflen]);
                 pop();
-                i++;
+                buflen++;
             } else
                 break;
         }
