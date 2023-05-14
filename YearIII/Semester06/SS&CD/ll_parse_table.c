@@ -73,7 +73,7 @@ int main() {
                 printf("B->bB");
                 push_production('B');
             } else {
-                printf("B->@\n\t Matched @");
+                printf("B->@\t Matched @");
                 pop();
             }
         } else {
