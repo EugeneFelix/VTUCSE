@@ -29,6 +29,8 @@ void round_robin() {
     }
     if (current_process == number_processes - 1)
       current_process = 0;
+     else
+     	current_process++;
   }
   printf("\nAverage Waiting Time= %.2f\n", total_wait_time * 1.0 / number_processes);
   printf("Avg Turnaround Time = %.2f\n", total_turnaround_time * 1.0 / number_processes);
