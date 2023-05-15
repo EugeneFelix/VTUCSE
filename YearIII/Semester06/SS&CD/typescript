@@ -1,115 +1,0 @@
-Script started on 2023-05-13 11:43:32+05:30 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="96" LINES="52"]
-[6 q
-[?25l[?7l[0m[32m[1m         -o          o-
-          +hydNNNNdyh+
-        +mMMMMMMMMMMMMm+
-      `dMM[37m[0m[1mm:[0m[32m[1mNMMMMMMN[37m[0m[1m:m[0m[32m[1mMMd`
-      hMMMMMMMMMMMMMMMMMMh
-  ..  yyyyyyyyyyyyyyyyyyyy  ..
-.mMMm`MMMMMMMMMMMMMMMMMMMM`mMMm.
-:MMMM-MMMMMMMMMMMMMMMMMMMM-MMMM:
-:MMMM-MMMMMMMMMMMMMMMMMMMM-MMMM:
-:MMMM-MMMMMMMMMMMMMMMMMMMM-MMMM:
-:MMMM-MMMMMMMMMMMMMMMMMMMM-MMMM:
--MMMM-MMMMMMMMMMMMMMMMMMMM-MMMM-
- +yy+ MMMMMMMMMMMMMMMMMMMM +yy+
-      mMMMMMMMMMMMMMMMMMMm
-      `/++MMMMh++hMMMM++/`
-          MMMMo  oMMMM
-          MMMMo  oMMMM
-          oNMm-  -mMNs[0m
-[18A[9999999D[35C[0m[1m[32m[1mu0_a407[0m@[32m[1mlocalhost[0m 
-[35C[0m-----------------[0m 
-[35C[0m[32m[1mOS[0m[0m:[0m Android 13 aarch64[0m 
-[35C[0m[32m[1mHost[0m[0m:[0m samsung SM-A325F[0m 
-[35C[0m[32m[1mKernel[0m[0m:[0m 4.14.186-25884040[0m 
-[35C[0m[32m[1mUptime[0m[0m:[0m 2 days, 19 hours, 8 mins[0m 
-[35C[0m[32m[1mPackages[0m[0m:[0m 426 (dpkg), 1 (pkg)[0m 
-[35C[0m[32m[1mShell[0m[0m:[0m fish 3.6.1[0m 
-[35C[0m[32m[1mTerminal[0m[0m:[0m script[0m 
-[35C[0m[32m[1mCPU[0m[0m:[0m MT6769V/CT (8) @ 1.800GHz[0m 
-[35C[0m[32m[1mMemory[0m[0m:[0m 4037MiB / 5655MiB[0m 
-
-[35C[30m[40m   [31m[41m   [32m[42m   [33m[43m   [34m[44m   [35m[45m   [36m[46m   [37m[47m   [m
-[35C[38;5;8m[48;5;8m   [38;5;9m[48;5;9m   [38;5;10m[48;5;10m   [38;5;11m[48;5;11m   [38;5;12m[48;5;12m   [38;5;13m[48;5;13m   [38;5;14m[48;5;14m   [38;5;15m[48;5;15m   [m
-
-
-
-
-
-[?25h[?7h _________________________________________ 
-/  _                                      \
-|                                         |
-| _ / \ o                                 |
-|                                         |
-| / \ | | o o o                           |
-|                                         |
-| | | | | _ o o o o                       |
-|                                         |
-| | \_| | / \ o o o                       |
-|                                         |
-| \__ | | | o o                           |
-|                                         |
-| | | | | ______ ~~~~ _____               |
-|                                         |
-| | |__/ | / ___--\\ ~~~ __/_____\__      |
-|                                         |
-| | ___/ / \--\\ \\ \ ___ <__ x x __\     |
-|                                         |
-| | | / /\\ \\ )) \ ( " )                 |
-|                                         |
-| | |                                     |
-| -------(---->>(@)--(@)-------\--------- |
-| -< >-----------                         |
-|                                         |
-| | | // | | //__________ / \ ____) (___  |
-| \\                                      |
-|                                         |
-| | | // __|_| ( --------- ) //// ______  |
-| /////\ \\                               |
-|                                         |
-| // | ( \ ______ / <<<< <>-----<<<<< /   |
-| \\                                      |
-|                                         |
-| // ( ) / / \` \__ \\                    |
-|                                         |
-| //------------------------------------- |
-| ------------------------\\              |
-|                                         |
-| Every now and then, when your life gets |
-| complicated and the weasels start       |
-| closing in, the only cure is to load up |
-| on heinous chemicals and then drive     |
-| like a bastard from Hollywood to Las    |
-| Vegas ... with the music at top volume  |
-| and at least a pint of ether.           |
-|                                         |
-| -- Hunter S. Thompson, "Fear and        |
-\ Loathing in Las Vegas"                  /
- ----------------------------------------- 
-        \   ^__^
-         \  (oo)\_______
-            (__)\       )\/\
-                ||----w |
-                ||     ||
-[?2004h]0;~/s/s/D/D/V/Y/S/SS&CD[30m(B[m[K
-(B[m(B[m[38;2;108;108;108m                                        [K
-(B[m [K[C]0;~/s/s/D/D/V/Y/S/SS&CD[30m(B[m[A[A[K
-(B[m(B[m(B[m(B[m(B[m(B[mﲎ[38;2;148;148;148m (B[m(B[m(B[m(B[m(B[m[38;2;0;135;175m ~/storage/shared/Data/Datum/[1m[38;2;0;175;255mVTUCSE(B[m(B[m(B[m[38;2;0;135;175m/YearIII/Semester06/[1m[38;2;0;175;255mSS&CD(B[m(B[m(B[m[38;2;0;135;175m[38;2;148;148;148m (B[m(B[m[38;2;95;215;0m [37m[38;2;95;215;0mmain[38;2;255;0;0m[38;2;95;215;0m[38;2;95;215;0m[38;2;255;0;0m[38;2;215;175;0m[38;2;215;175;0m !2[38;2;0;175;255m ?1(B[m(B[m(B[m (B[m(B[m[38;2;108;108;108m          (B[m(B[m(B[m (B[m(B[m[38;2;95;135;135m11:43:34(B[m(B[m(B[m[K
-[38;2;95;215;0m❯(B[m [K[C[Ce[3C[38;2;85;85;85mcho -e '\e[6 q';clear[3C[30m(B[m[38;2;0;95;215me[38;2;85;85;85mcho -e '\e[6 q';clear[3C[30m(B[mexit[K[6C[38;2;0;95;215mexit[6C[30m(B[m
-[30m(B[m[?2004l]0;~/s/s/D/D/V/Y/S/SS&CD[30m(B[mThere are still jobs active:
-
-   PID  Command
- 17980  $wakatime_path --write --plugin "$PLUGIN_NAME/$PLUGIN_VERSION" --entity-type app --project "$project" --entity (echo $history[1] | cut -d ' ' -f1) &> /dev/null&
-
-A second attempt to exit will terminate them.
-Use 'disown PID' to remove jobs from the list without terminating them.
-[2m⏎(B[m                                                                                               ⏎ [K[?2004h]0;~/s/s/D/D/V/Y/S/SS&CD[30m(B[m[K
-(B[m(B[m(B[m(B[m(B[m(B[mﲎ[38;2;148;148;148m (B[m(B[m(B[m(B[m(B[m[38;2;0;135;175m ~/storage/shared/Data/Datum/[1m[38;2;0;175;255mVTUCSE(B[m(B[m(B[m[38;2;0;135;175m/YearIII/Semester06/[1m[38;2;0;175;255mSS&CD(B[m(B[m(B[m[38;2;0;135;175m[38;2;148;148;148m (B[m(B[m[38;2;95;215;0m [37m[38;2;95;215;0mmain[38;2;255;0;0m[38;2;95;215;0m[38;2;95;215;0m[38;2;255;0;0m[38;2;215;175;0m[38;2;215;175;0m !2[38;2;0;175;255m ?1(B[m(B[m(B[m (B[m(B[m[38;2;108;108;108m          (B[m(B[m(B[m (B[m(B[m[38;2;95;135;135m11:43:34(B[m(B[m(B[m[K
-[38;2;95;215;0m❯(B[m [K[C[C]0;~/s/s/D/D/V/Y/S/SS&CD[30m(B[m[A[A[K
-(B[m(B[m(B[m(B[m(B[m(B[mﲎ[38;2;148;148;148m (B[m(B[m(B[m(B[m(B[m[38;2;0;135;175m ~/storage/shared/Data/Datum/[1m[38;2;0;175;255mVTUCSE(B[m(B[m(B[m[38;2;0;135;175m/YearIII/Semester06/[1m[38;2;0;175;255mSS&CD(B[m(B[m(B[m[38;2;0;135;175m[38;2;148;148;148m (B[m(B[m[38;2;95;215;0m [37m[38;2;95;215;0mmain[38;2;255;0;0m[38;2;95;215;0m[38;2;95;215;0m[38;2;255;0;0m[38;2;215;175;0m[38;2;215;175;0m !2[38;2;0;175;255m ?1(B[m(B[m(B[m (B[m(B[m[38;2;108;108;108m          (B[m(B[m(B[m (B[m(B[m[38;2;95;135;135m11:43:34(B[m(B[m(B[m[K
-[38;2;95;215;0m❯(B[m [K[C[C]0;~/s/s/D/D/V/Y/S/SS&CD[30m(B[m[A[A[K
-(B[m(B[m(B[m(B[m(B[m(B[mﲎ[38;2;148;148;148m (B[m(B[m(B[m(B[m(B[m[38;2;0;135;175m ~/storage/shared/Data/Datum/[1m[38;2;0;175;255mVTUCSE(B[m(B[m(B[m[38;2;0;135;175m/YearIII/Semester06/[1m[38;2;0;175;255mSS&CD(B[m(B[m(B[m[38;2;0;135;175m[38;2;148;148;148m (B[m(B[m[38;2;95;215;0m [37m[38;2;95;215;0mmain[38;2;255;0;0m[38;2;95;215;0m[38;2;95;215;0m[38;2;255;0;0m[38;2;215;175;0m[38;2;215;175;0m !2[38;2;0;175;255m ?1(B[m(B[m(B[m (B[m(B[m[38;2;108;108;108m          (B[m(B[m(B[m (B[m(B[m[38;2;95;135;135m11:43:43(B[m(B[m(B[m[K
-[38;2;95;215;0m❯(B[m [K[C[Ce[3C[38;2;85;85;85mxit[3C[30m(B[m[38;2;0;95;215me[38;2;85;85;85mxit[3C[30m(B[mexit[6C[38;2;0;95;215mexit[6C[30m(B[m
-[30m(B[m[?2004l]0;~/s/s/D/D/V/Y/S/SS&CD[30m(B[m[30m(B[m[?2004l
-Script done on 2023-05-13 11:43:43+05:30 [COMMAND_EXIT_CODE="0"]
