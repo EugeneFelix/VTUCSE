@@ -10,7 +10,7 @@
 [-] { return '-'; }
 [*] { return '*'; }
 [/] { return '/'; }
-[\t]+ ;
+[\t ]+ ;
 [\n] { return 0; }
 . { return yytext[0]; }
 %%
