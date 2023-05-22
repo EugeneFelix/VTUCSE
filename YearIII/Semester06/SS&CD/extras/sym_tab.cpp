@@ -6,9 +6,7 @@ const int MAX = 100;
 
 class Node {
 
-	string identifier,
-	scope,
-	type;
+	string identifier, scope, type;
 	int lineNo;
 	Node* next;
 
