@@ -4,13 +4,7 @@
 int
     x1,y1,x2,y2;
 
-void myInit();
-void draw_pixel(int x, int y);
-void draw_line(int x1, int x2, int y1, int y2);
-void myDisplay();
-
-void myInit()
-{
+void init() {
 	glClear(GL_COLOR_BUFFER_BIT);
 	glClearColor(0.0,0.0,0.0,1.0);
 	glMatrixMode(GL_PROJECTION);
@@ -102,7 +96,7 @@ int main(int argc, char **argv)
 	glutInitWindowSize(500,500);
 	glutInitWindowPosition(0,0);
 	glutCreateWindow("Bresenham's Line Drawing algorithm");
-	myInit();
+	init();
 	glutDisplayFunc(myDisplay);
 	glutMainLoop();
 	return 0;
