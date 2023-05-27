@@ -1,82 +1,80 @@
-<html> 
-</script> 
-<body> 
-<table border> 
-<tr > 
-<td colspan=4><input type=text id=res size=16 onfocus=""></td> 
-</tr> 
-<tr> 
-<td><input type=button id=b1 value=0 size=2 onclick=f('0')></td> 
-<td><input type=button id=b2 value=1 size=2 onclick=f('1')></td> 
-<td><input type=button id=b3 value=2 size=2 onclick=f('2')></td> 
-<td><input type=button id=b4 value=+ size=2 onclick=f('+')></td> 
-</tr> 
-<tr> 
-<td><input type=button id=b5 value=3 size=2 onclick=f('3')></td> 
-<td><input type=button id=b6 value=4 size=2 onclick=f('4')></td> 
-<td><input type=button id=b7 value=5 size=2 onclick=f('5')></td> 
-<td><input type=button id=b8 value=- size=2 onclick=f('-')></td> 
-</tr> 
-<tr> 
-<td><input type=button id=b9 value=6 size=2 onclick=f('6')></td> 
-<td><input type=button id=b10 value=7 size=2 onclick=f('7')></td> 
-<td><input type=button id=b11 value=8 size=2 onclick=f('8')></td> 
-<td><input type=button id=b12 value=* size=2 onclick=f('*')></td> 
-</tr> 
-<tr> 
-<td><input type=button id=b13 value=9 size=2 onclick=f('9')></td>
-<td><input type=button id=b14 value=+/- size=2 onclick=f('--')></td> 
-<td><input type=button id=b15 value='=' size=2 onclick=f('=')></td> 
-<td><input type=button id=b16 value='/' size=2 onclick=f('/')></td> 
-</tr> 
-<tr> 
-<td colspan=4 ><input type=button value=Clear size=16 onclick=f('c')></td> 
-</tr> 
- 
-</table> 
-<script>
-function f(d) {
-	if (d == 'c') {
-		document.getElementById('res').value = "";
-		return;
-	}
-	res = document.getElementById('res').value;
-	if (res == 0 && d == 0)
-		return;
-	if (d == '+' || d == '-' || d == '*' || d == '/') {
-		opr = d;
-		num = parseFloat(res);
-		document.getElementById('res').value = d;
-		return;
-	}
-	if (d == '=') {
-		num1 = parseFloat(res);
-		switch (opr) {
-			case '+':
-				ans = num + num1;
-				break;
-			case '-':
-				ans = num - num1;
-				break;
-			case '*':
-				ans = num * num1;
-				break;
-			case '/':
-				ans = parseInt(num / num1);
-				break;
-		}
-		document.getElementById('res').value = ans;
-		return;
-	}
-	if (d == '--') {
-		document.getElementById('res').value *= -1;
-		return;
-	}
-	if (!isNaN(document.getElementById('res').value))
-		document.getElementById('res').value += d;
-	else
-		document.getElementById('res').value = d;
-}
-</script>
-</body> 
-</html> 
+<html>
+<body>
+    <table border>
+        <tr>
+            <td colspan=4><input type=text id=res size=16 onfocus=""></td>
+        </tr>
+        <tr>
+            <td><input type=button id=b1 value=0 size=2 onclick=f( '0')></td>
+            <td><input type=button id=b2 value=1 size=2 onclick=f( '1')></td>
+            <td><input type=button id=b3 value=2 size=2 onclick=f( '2')></td>
+            <td><input type=button id=b4 value=+ size=2 onclick=f( '+')></td>
+        </tr>
+        <tr>
+            <td><input type=button id=b5 value=3 size=2 onclick=f( '3')></td>
+            <td><input type=button id=b6 value=4 size=2 onclick=f( '4')></td>
+            <td><input type=button id=b7 value=5 size=2 onclick=f( '5')></td>
+            <td><input type=button id=b8 value=- size=2 onclick=f( '-')></td>
+        </tr>
+        <tr>
+            <td><input type=button id=b9 value=6 size=2 onclick=f( '6')></td>
+            <td><input type=button id=b10 value=7 size=2 onclick=f( '7')></td>
+            <td><input type=button id=b11 value=8 size=2 onclick=f( '8')></td>
+            <td><input type=button id=b12 value=* size=2 onclick=f( '*')></td>
+        </tr>
+        <tr>
+            <td><input type=button id=b13 value=9 size=2 onclick=f( '9')></td>
+            <td><input type=button id=b14 value=+/- size=2 onclick=f( '--')></td>
+            <td><input type=button id=b15 value='=' size=2 onclick=f( '=')></td>
+            <td><input type=button id=b16 value='/' size=2 onclick=f( '/')></td>
+        </tr>
+        <tr>
+            <td colspan=4><input type=button value=Clear size=16 onclick=f( 'c')></td>
+        </tr>
+    </table>
+    <script>
+        function f(d) {
+        	if (d == 'c') {
+        		document.getElementById('res').value = "";
+        		return;
+        	}
+        	res = document.getElementById('res').value;
+        	if (res == 0 && d == 0)
+        		return;
+        if (d == '+' || d == '-' || d == '*' || d == '/') {
+        	opr = d;
+        	num = parseFloat(res);
+        	document.getElementById('res').value = d;
+        	return;
+        }
+        if (d == '=') {
+        	num1 = parseFloat(res);
+        	switch (opr) {
+        		case '+':
+        			ans = num + num1;
+        			break;
+        		case '-':
+        			ans = num - num1;
+        			break;
+        		case '*':
+        			ans = num * num1;
+        			break;
+        		case '/':
+        			ans = parseInt(num / num1);
+        			break;
+        	}
+        	document.getElementById('res').value = ans;
+        	return;
+        }
+        if (d == '--') {
+        	document.getElementById('res').value *= -1;
+        	return;
+        }
+        if (!isNaN(document.getElementById('res').value))
+        	document.getElementById('res').value += d;
+        else
+        	document.getElementById('res').value = d;
+        }
+    </script>
+</body>
+</html>
