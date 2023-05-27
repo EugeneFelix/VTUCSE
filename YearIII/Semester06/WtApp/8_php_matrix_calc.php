@@ -42,7 +42,7 @@ function mulMatrix($f, $s) {
 		}
 		print "Matrix A:<br>";
 		displayMatrix($f);
-		"Matrix B:<br>";
+		echo "Matrix B:<br>";
 		displayMatrix($s);
 		print "Prouct Matrix:<br>";
 		displayMatrix($prod);
@@ -57,7 +57,7 @@ function calc($num1, $num2, $opr) {
 			break;
 		case '*': echo "Product of $num1 and $num2 is ".($num1*$num2)."<br>";
 			break;
-		case '/': echo "Quotient of $num1 by $num2 is ".($num1/$num2)."<br>";
+		case '/': echo "Quotient of $num1 divided divided by $num2 is ".($num1/$num2)."<br>";
 			break;
 	}
 }
@@ -71,9 +71,9 @@ function transpose($mat) {
 	print "Given Matrix:<br>"; displayMatrix($mat); print
 	"Transpose of Matrix:<br>"; displayMatrix($transpose);
 }
-echo "Demonstration of Calculator...";
-$num1 = 15;
-$num2 = 5;
+echo "Demonstration of Calculator with argments (100, 300)<br>";
+$num1 = 100;
+$num2 = 300;
 calc($num1, $num2, '+');
 calc($num1, $num2, '-');
 calc($num1, $num2, '*');
@@ -83,7 +83,7 @@ $mat = array(array(1, 2), array(3, 4));
 transpose($mat);
 echo "<hr>";
 $fir = array(array(1, 2), array(3, 4));
-$sec = array(array(4, 3), array(5, 6));
+$sec = array(array(5, 6), array(7, 8));
 mulMatrix($fir, $sec);
 echo "<hr>";
 addMatrix($fir, $sec);
