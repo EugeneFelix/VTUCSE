@@ -39,14 +39,19 @@ if (isset($_POST['ins'])) {
 		echo "DB Error"." ". $e;
 	}
 }
-(isset($_POST['sname'])) {
+if (isset($_POST['sname'])) {
 	try {
 		$student_data = array();
 		$con = "mysql:host=localhost; dbname=studentdb";
-		$pdo = new PDO($con, "root", ""); $sql = "SELECT * from student";
-		$result = $pdo->query($sql); $cnt = 0; while (($row = $result->fetch())) {
+		$pdo = new PDO($con, "root", "");
+		$sql = "SELECT * from student";
+		$result = $pdo->query($sql); $cnt = 0;
+
+		while (($row = $result->fetch())) {
 			$student_data[$cnt][0] = $row['usn'];
-			$student_data[$cnt][1] = $row['name']; $student_data[$cnt][2] = $row['cgpa']; ++$cnt;
+			$student_data[$cnt][1] = $row['name']
+			$student_data[$cnt][2] = $row['cgpa'];
+			++$cnt;
 		} $student_data = selection_sort($student_data, 1);
 		echo "<table border><tr><th>USN<th>Name<th>CGPA</tr>"; for ($j = 0; $j < $cnt; $j++) {
 			$usn = $student_data[$j][0]; $name = $student_data[$j][1];
@@ -61,7 +66,8 @@ if (isset($_POST['smarks'])) {
 	try {
 		$student_data = array();
 		$con = "mysql:host=localhost; dbname=studentdb";
-		$pdo = new PDO($con, "root", ""); $sql = "SELECT * from student";
+		$pdo = new PDO($con, "root", "");
+		$sql = "SELECT * from student";
 		$result = $pdo->query($sql); $cnt = 0; while (($row = $result->fetch())) {
 			$student_data[$cnt][0] = $row['usn']; $student_data[$cnt][1] = $row['name']; $student_data[$cnt][2] = $row['cgpa']; ++$cnt;
 		}

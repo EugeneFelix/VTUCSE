@@ -67,7 +67,7 @@ else if(outcodeOut & BOTTOM)
 			}
 		}
 	}while(!done);
-	
+
 glColor3f(1.0,0.0,0.0);
 	glBegin(GL_LINE_LOOP);
 	glVertex2f(xvmin,yvmin);
@@ -76,7 +76,7 @@ glColor3f(1.0,0.0,0.0);
 	glVertex2f(xvmin,yvmax);
 	glEnd();
 	printf("\n%f   %f :  %f   %f",x0,y0,x1,y1);
-	
+
 if(accept)
 	{
 		double sx=(xvmax-xvmin)/(xmax-xmin);
@@ -85,8 +85,8 @@ if(accept)
 		double vy0=yvmin+(y0-ymin)*sy;
 		double vx1=xvmin+(x1-xmin)*sx;
 		double vy1=yvmin+(y1-ymin)*sy;
-			
-		
+
+
 glColor3f(0.0,0.0,1.0);
 		glBegin(GL_LINES);
 		glVertex2d(vx0,vy0);
@@ -138,15 +138,14 @@ void myinit()
 	gluOrtho2D(0.0,499.0,0.0,499.0);
 }
 
-int main(int argc,char** argv)
+int handler()
 {
 	printf("Enter end points : ");
 	scanf("%f%f%f%f",&X0,&Y0,&X1,&Y1);
-	glutInit(&argc,argv);
 	glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
 	glutInitWindowSize(500,500);
 	glutInitWindowPosition(0,0);
-	glutCreateWindow("Cohen Sutherland Line Clipping Algorithm");
+	glutCreateWindow("Cohen - Sutherland Line Clipping Algorithm");
 	glutDisplayFunc(display);
 	myinit();
 	glutMainLoop();

@@ -1,4 +1,4 @@
-#include "cube_spin.h"
+#include "tetra.h"
 
 int main(int argc, char** argv) {
     glutInit(&argc, argv);

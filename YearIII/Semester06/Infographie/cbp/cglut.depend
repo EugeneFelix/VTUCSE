@@ -952,3 +952,17 @@
 	<GL/gl.h>
 	<stdio.h>
 
+1685176292 source:d:\prg\cbp\main.cpp
+	"tetra.h"
+
+1685175294 d:\prg\cbp\cohen_line.h
+	<stdio.h>
+	<GL/glut.h>
+
+1685175445 d:\prg\cbp\teapot.h
+	<GL/glut.h>
+
+1685176302 d:\prg\cbp\tetra.h
+	<stdio.h>
+	<GL/glut.h>
+
