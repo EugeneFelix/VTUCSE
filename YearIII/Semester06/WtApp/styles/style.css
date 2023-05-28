@@ -1,6 +1,8 @@
 vtu {
   display: table;
-  border: solid 1px;
+  margin: 100px;
+  padding: 10px;
+  font-size: 35px;
 }
 
 student {
@@ -8,13 +10,13 @@ student {
   border: solid 1px;
 }
 
-student:before {
+student::before {
   display: table-cell;
   border: solid 1px;
   content: attr(usn);
 }
 
-student:after {
+student::after {
   display: table-cell;
   border: solid 1px;
   content: attr(college);
@@ -22,5 +24,7 @@ student:after {
 
 f, m, l, yoj, branch, email {
   display: table-cell;
+  margin: 15px;
+  padding: 15px;
   border: solid 1px;
 }

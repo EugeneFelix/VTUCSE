@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <?xml-stylesheet type="text/css" href="./styles/style.css"?>
-<!DOCTYPE vtu SYSTEM "./data/s.dtd">
+<!DOCTYPE vtu [
+<!ELEMENT vtu (student+)>
+<!ELEMENT student (name,yoj,branch,email*)>
+<!ELEMENT name (f,m,l)>
+<!ELEMENT yoj (#PCDATA)>
+<!ELEMENT branch (#PCDATA)>
+<!ELEMENT email (#PCDATA)>
+<!ELEMENT f (#PCDATA)>
+<!ELEMENT m (#PCDATA)>
+<!ELEMENT l (#PCDATA)>
+<!ATTLIST student usn CDATA #REQUIRED>
+<!ATTLIST student college CDATA #IMPLIED>
+]>
 <vtu>
     <student usn="4JN10CS001" college="jnnce">
         <name>

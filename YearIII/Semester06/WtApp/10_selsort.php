@@ -1,7 +1,8 @@
 <?php
 function selection_sort($data, $pos) {
 	for ($i = 0; $i < count($data)-1; $i++) {
-		$min = $i; for ($j = $i+1; $j < count($data); $j++) {
+		$min = $i;
+		for ($j = $i+1; $j < count($data); $j++) {
 			if ($data[$j][$pos] < $data[$min][$pos]) {
 				$min = $j;
 			}
@@ -46,13 +47,21 @@ if (isset($_POST['sname'])) {
 	try {
 		$student_data = array();
 		$con = "mysql:host=localhost; dbname=studentdb";
-		$pdo = new PDO($con, "root", ""); $sql = "SELECT * from student";
-		$result = $pdo->query($sql); $cnt = 0; while (($row = $result->fetch())) {
+		$pdo = new PDO($con, "root", "");
+		$sql = "SELECT * from student";
+		$result = $pdo->query($sql);
+		$cnt = 0;
+		while (($row = $result->fetch())) {
 			$student_data[$cnt][0] = $row['usn'];
-			$student_data[$cnt][1] = $row['name']; $student_data[$cnt][2] = $row['cgpa']; ++$cnt;
-		} $student_data = selection_sort($student_data, 1);
-		echo "<table border><tr><th>USN<th>Name<th>CGPA</tr>"; for ($j = 0; $j < $cnt; $j++) {
-			$usn = $student_data[$j][0]; $name = $student_data[$j][1];
+			$student_data[$cnt][1] = $row['name'];
+			$student_data[$cnt][2] = $row['cgpa'];
+			++$cnt;
+		}
+		$student_data = selection_sort($student_data, 1);
+		echo "<table border><tr><th>USN<th>Name<th>CGPA</tr>";
+		for ($j = 0; $j < $cnt; $j++) {
+			$usn = $student_data[$j][0];
+			$name = $student_data[$j][1];
 			$marks = $student_data[$j][2];
 			echo "<tr><td>$usn<td>$name<td>$marks";
 		}
@@ -79,7 +88,7 @@ if (isset($_POST['smarks'])) {
 			$usn = $student_data[$j][0];
 			$name = $student_data[$j][1];
 			$marks = $student_data[$j][2];
-		echo "<tr><td>$usn<td>$name<td>$marks";
+			echo "<tr><td>$usn<td>$name<td>$marks";
 		}
 	} catch(Exception $e) {
 		echo "DB Error";

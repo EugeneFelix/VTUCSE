@@ -1,24 +1,29 @@
-<html> <head>
-<meta charset="UTF-8"> <title>Demonstrating Java script functions</title>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Demonstrating Java script functions</title>
 </head>
-<script type=text/javascript src=p4.js> </script>
-<body> <section>
-<h1>Finding left most vowel</h1> <p>Enter a string: <input type=text id=t1></p> <input type=button value=Find onclick =
-alert(findLMV(document.getElementById('t1').value))> </section> <hr> <section>
-<h1>Reverse of a number</h1> <p>Enter a number: <input type=text id=t2></p> <input type=button value=Reverse onclick=
-alert(reverse(document.getElementById('t2').value))> </section>
-<script>
-	function findLMV(str) {
-for(i=0;i<str.length;i++) {
-if(str.charAt(i)=='a' || str.charAt(i)=='e' || str.charAt(i)=='i' ||str.charAt(i)=='o' || str.charAt(i)=='u' ) return ("Left most vowel of " + str + " is at location " + (i+1) );
-} return ("No vowels found for string "+ str);
-}
-function reverse(num) {
-rnum=0; temp=num; if(isNaN(num)) {
-return "invalid number"; }
-while(num!=0) {
-rnum *= 10; rnum+= num % 10; = num % 10; num =
-Math.floor(num/10); } return "Reverse of num "+ temp + " is " + rnum;
-}
-</script>
-</body> </html>
+<body>
+	<section>
+		<h1>Finding left most vowel</h1>
+		<p>Enter a string: <input type=text id=t1></p>
+		<input type=button value=Find onclick=reglmv(document.getElementById('t1').value)>
+	</section>
+	<hr>
+	<section>
+		<h1>Reverse of a number</h1>
+		<p> Enter a number: <input type=text id=t2></p>
+		<input type=button value=Reverse onclick=alert(document.getElementById('t2').value.split('').reverse().join(''))>
+	</section>
+	<script>
+		"use strict";
+		function reglmv(wrd) {
+			const match = /[aeiouAEIOU]/.exec(wrd);
+			if (match != null)
+				alert("The first Vowel is " + match)
+			else
+				alert("No match found")
+		}
+	</script>
+</body>
+</html>

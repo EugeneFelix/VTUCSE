@@ -1,5 +1,6 @@
 <!ELEMENT vtu (student+)>
-<!ELEMENT student (name,yoj,branch,email*)> <!ELEMENT name (f,m,l)>
+<!ELEMENT student (name,yoj,branch,email*)>
+<!ELEMENT name (f,m,l)>
 <!ELEMENT yoj (#PCDATA)>
 <!ELEMENT branch (#PCDATA)>
 <!ELEMENT email (#PCDATA)>

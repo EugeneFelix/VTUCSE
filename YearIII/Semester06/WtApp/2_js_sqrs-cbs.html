@@ -2,10 +2,9 @@
 	<body onload=sc()>
 	<script>
 	function sc() {
-	rng = prompt("Enter firstNumber-lastNumber");
-	res = rng.split("-");
+	res = prompt("Enter firstNumber-lastNumber").split("-");
 	if (res.length != 2) {
-		alert("invalid range ");
+		alert("Invalid range ");
 		return;
 	}
 	first = parseInt(res[0]);
@@ -14,9 +13,9 @@
 		alert("Invalid range");
 		return;
 	}
-	str = "<table border=2><tr><th>Number</th> <th>Square</th><th>Cube</th></tr>";
+	str = "<table><tr><th>Number<th>Square<th>Cube</tr>";
 	for (i = first; i <= second; i++) {
-		str = str + "<tr><td>" + i + "<td>" + (i * i) + "<td>" + (i * i * i);
+		str += "<tr><td>" + i + "<td>" + (i * i) + "<td>" + (i * i * i);
 	}
 	document.write(str);
 }
