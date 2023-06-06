@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<records>
+	<place>
+		<name>Mysore</name>
+		<lat>12.295</lat>
+		<long>76.639</long>
+		<temperature>22</temperature>
+		<humidity>90%</humidity>
+	</place>
+	<place>
+		<name>Bangalore</name>
+		<lat>13.295</lat>
+		<long>77.639</long>
+		<temperature>25</temperature>
+		<humidity>74%</humidity>
+	</place>
+</records>
+
+[
+	{
+		"name":"HASSAN", "lat":"12.295", "long":"76.639", "temperature":"22", "humidity":"92%"
+}, {
+"name":"MANDYA", "lat":"10.11", "long":"66.639", "temperature":"24", "humidity":"82%"
+}]
