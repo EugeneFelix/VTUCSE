@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
+#include<stdbool.h>
 
 void FIFO(char sequence[], int sequence_length, int num_frames) {
     char frames[num_frames];
