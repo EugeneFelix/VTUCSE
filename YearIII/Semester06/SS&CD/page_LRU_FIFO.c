@@ -1,59 +1,36 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-void fifoPageReplacement(int pages[], int page_count, int frame_count) {
-    int frame[frame_count];
-    int front = 0, rear = 0;
-    int page_faults = 0;
-
-    for (int i = 0; i < page_count; i++) {
-        int page = pages[i];
-        int found = 0;
-
-        for (int j = 0; j < frame_count; j++) {
-            if (frame[j] == page) {
-                found = 1;
+void FIFO(char sequence[], int sequence_length, int num_frames) {
+    char frames[num_frames];
+    int next_frame_index = 0;
+    bool present = false;
+    printf("PAGE\tFRAMES\tFAULTS");
+    for(int i = 0; i < sequence_length; i++) {
+        for(int k = 0; k < num_frames; k++) {
+            if(frames[k] == sequence[i]) {
+                present = true;
                 break;
             }
         }
-
-        if (!found) {
-            if (rear < frame_count) {
-                frame[rear++] = page;
-            } else {
-                printf("Page Fault - Replace %d\n", frame[front]);
-                frame[front++] = page;
-                if (front == frame_count)
-                    front = 0;
-            }
-
-            page_faults++;
-            printf("Page %d -> ", page);
-            printf("Frame: ");
-            for (int j = 0; j < frame_count; j++) {
-                printf("%d ", frame[j]);
-            }
-            printf("  Fault\n");
-        } else {
-            printf("Page %d -> ", page);
-            printf("Frame: ");
-            for (int j = 0; j < frame_count; j++) {
-                printf("%d ", frame[j]);
-            }
-            printf("  Hit\n");
+        printf("\n%c\t", sequence[i]);
+        if(!present) {
+            frames[next_frame_index++] = sequence[i];
+            printf("%s", frames);
+            printf("\tPage Fault");
         }
+        else {
+            present = !present;
+            printf("%s", frames);
+            printf("\tPage Hit");
+        }
+        if(next_frame_index == num_frames)
+            next_frame_index = 0;
     }
-
-    printf("Total page faults: %d\n", page_faults);
 }
 
 void LRU(char sequence[], char frames[], int sequence_length, int num_frames) {
-	int i,
-	j = 0,
-	k,
-	m,
-	flag = 0,
-	top = 0;
+	int i, j = 0, k, m, flag = 0, top = 0;
 	printf("\nPAGE\tFRAMES\tFAULTS");
 	for(i = 0; i < sequence_length; i++) {
 		for(k = 0; k < num_frames; k++)
@@ -89,14 +66,19 @@ void LRU(char sequence[], char frames[], int sequence_length, int num_frames) {
 }
 
 int main() {
-	static int sequence_length = 10;
-	static int num_frames = 3;
-	static int frames[10];
-	static int sequence[25] = {1, 2, 4, 5, 4, 6, 7, 3, 6, 2};
+    static int sequence_length = 5;
+    static int num_frames = 3;
+    static char frames[10];
+    static char sequence[25] = "hello";
 
-	printf("PAGE REPLACEMENT ALGORITHMS\n");
-	printf("\nFIFO Algorithm:\n");
-	fifoPageReplacement(sequence, sequence_length, num_frames);
-	
-	return 0;
+    printf("PAGE REPLACEMENT ALGORITHMS\n");
+    printf("\nFIFO Algorithm:\n");
+    FIFO(sequence, sequence_length, num_frames);
+
+    printf("\n\nLRU Algorithm:\n");
+    for (int i = 0; i < num_frames; i++) //NEEDED!
+    	frames[i] = -1;
+    LRU(sequence, frames, sequence_length, num_frames);
+
+    return 0;
 }
