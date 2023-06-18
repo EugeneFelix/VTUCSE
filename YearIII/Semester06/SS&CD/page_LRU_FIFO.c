@@ -16,6 +16,7 @@ void FIFO(char sequence[], int sequence_length, int num_frames) {
         printf("\n%c\t", sequence[i]);
         if(!present) {
             frames[next_frame_index++] = sequence[i];
+            frames[next_frame_index + 1] = '\0';
             printf("%s", frames);
             printf("\tPage Fault");
         }
