@@ -2,13 +2,11 @@
 #include<stdlib.h>
 #include<string.h>
 char op[2], arg1[5], arg2[5], result[5];
-int count = 0;
-void main() {
+int main() {
 	FILE *fp1, *fp2;
 	fp1 = fopen("./inputs/asmin.c", "r");
 	fp2 = fopen("./inputs/asmout.a", "w");
-	while(!feof(fp1) && count < 4) {
-		count ++;
+	while(!feof(fp1)) {
 		fscanf(fp1, "%s%s%s%s", result, arg1, op, arg2);
 		if(strcmp(op, "+") == 0) {
 			fprintf(fp2, "\nMOV R0,%s", arg1);
@@ -37,4 +35,5 @@ void main() {
 	}
 	fclose(fp1);
 	fclose(fp2);
+	return 0;
 }
