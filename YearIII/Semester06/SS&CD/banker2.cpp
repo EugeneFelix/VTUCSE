@@ -43,8 +43,8 @@ int main() {
 						break;
 					}
 				if (safe) {
-					for (int k = 0; k < num_resources; k++)
-						available[k] += allocation[i][k];
+					for (int j = 0; j < num_resources; j++)
+						available[j] += allocation[i][j];
 					finish[i] = true;
 					safe_sequence[count++] = i;
 					found = true;
