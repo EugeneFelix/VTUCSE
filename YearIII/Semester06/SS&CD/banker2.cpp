@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdbool.h>
-
+#include <iostream>
 #define MAX_RESOURCES 10
 #define MAX_PROCESSES 10
 
@@ -31,7 +31,11 @@ int main() {
 	for (int i = 0; i < num_processes; i++)
 		for (int j = 0; j < num_resources; j++)
 			need[i][j] = maximum[i][j] - allocation[i][j];
-
+	for (int i = 0; i < num_processes; i++) {
+		for (int j = 0; j < num_resources; j++)
+			std::cout << need[i][j] << " ";
+		std::cout << endl;
+	}
 	while (count < num_processes) {
 		bool found = false;
 		for (int i = 0; i < num_processes; i++) {
