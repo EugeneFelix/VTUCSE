@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdbool.h>
-#include <iostream>
+
 #define MAX_RESOURCES 10
 #define MAX_PROCESSES 10
 
