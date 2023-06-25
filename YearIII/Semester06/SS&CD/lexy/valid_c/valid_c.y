@@ -36,9 +36,6 @@ DIG input {
 };
 %%
 
-extern int yylex();
-extern int yyparse();
-extern FILE *yyin;
 int main() {
 	FILE *fp = fopen("eg.c", "r");
 	if(!fp) {
@@ -48,7 +45,7 @@ int main() {
 	yyin = fp;
 	do {
 		yyparse();
-	}while(!feof(yyin));
+	} while(!feof(yyin));
 	printf("Numbers = %d\n Operators = %d\n Identifiers = %d\n Keywords = %d\n", dig, op, id, key);
 }
 
