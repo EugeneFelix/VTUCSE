@@ -31,7 +31,11 @@ int main() {
 	for (int i = 0; i < num_processes; i++)
 		for (int j = 0; j < num_resources; j++)
 			need[i][j] = maximum[i][j] - allocation[i][j];
-
+	for (int i = 0; i < num_processes; i++) {
+		for (int j = 0; j < num_resources; j++)
+			std::cout << need[i][j] << " ";
+		std::cout << endl;
+	}
 	while (count < num_processes) {
 		bool found = false;
 		for (int i = 0; i < num_processes; i++) {
@@ -43,8 +47,8 @@ int main() {
 						break;
 					}
 				if (safe) {
-					for (int k = 0; k < num_resources; k++)
-						available[k] += allocation[i][k];
+					for (int j = 0; j < num_resources; j++)
+						available[j] += allocation[i][j];
 					finish[i] = true;
 					safe_sequence[count++] = i;
 					found = true;

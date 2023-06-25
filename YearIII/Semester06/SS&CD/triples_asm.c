@@ -1,39 +1,46 @@
-#include<stdio.h>
-#include<stdlib.h>
-#include<string.h>
-char op[2], arg1[5], arg2[5], result[5];
+#include <iostream>
+#include <fstream>
+#include <string>
+
+using namespace std;
+
 int main() {
-	FILE *fp1, *fp2;
-	fp1 = fopen("./inputs/asmin.c", "r");
-	fp2 = fopen("./inputs/asmout.a", "w");
-	while(!feof(fp1)) {
-		fscanf(fp1, "%s%s%s%s", result, arg1, op, arg2);
-		if(strcmp(op, "+") == 0) {
-			fprintf(fp2, "\nMOV R0,%s", arg1);
-			fprintf(fp2, "\nADD R0,%s", arg2);
-			fprintf(fp2, "\nMOV %s,R0", result);
-		}
-		if(strcmp(op, "*") == 0) {
-			fprintf(fp2, "\nMOV R0,%s", arg1);
-			fprintf(fp2, "\nMUL R0,%s", arg2);
-			fprintf(fp2, "\nMOV %s,R0", result);
-		}
-		if(strcmp(op, "-") == 0) {
-			fprintf(fp2, "\nMOV R0,%s", arg1);
-			fprintf(fp2, "\nSUB R0,%s", arg2);
-			fprintf(fp2, "\nMOV %s,R0", result);
-		}
-		if(strcmp(op, "/") == 0) {
-			fprintf(fp2, "\nMOV R0,%s", arg1);
-			fprintf(fp2, "\nDIV R0,%s", arg2);
-			fprintf(fp2, "\nMOV %s,R0", result);
-		}
-		if(strcmp(op, "=") == 0) {
-			fprintf(fp2, "\nMOV R0,%s", arg1);
-			fprintf(fp2, "\nMOV %s,R0", result);
+	ifstream inputFile("./inputs/asmin.c");
+	ofstream outputFile("./inputs/asmout.a");
+
+	string op, arg1, arg2, result;
+	while (inputFile >> result >> arg1 >> op >> arg2) {
+		switch (op[0]) {
+			case '+':
+				outputFile << "\nMOV R0," << arg1;
+				outputFile << "\nADD R0," << arg2;
+				outputFile << "\nMOV " << result << ",R0";
+				break;
+			case '*':
+				outputFile << "\nMOV R0," << arg1;
+				outputFile << "\nMUL R0," << arg2;
+				outputFile << "\nMOV " << result << ",R0";
+				break;
+			case '-':
+				outputFile << "\nMOV R0," << arg1;
+				outputFile << "\nSUB R0," << arg2;
+				outputFile << "\nMOV " << result << ",R0";
+				break;
+			case '/':
+				outputFile << "\nMOV R0," << arg1;
+				outputFile << "\nDIV R0," << arg2;
+				outputFile << "\nMOV " << result << ",R0";
+				break;
+			case '=':
+				outputFile << "\nMOV R0," << arg1;
+				outputFile << "\nMOV " << result << ",R0";
+				break;
+			default:
+				break;
 		}
 	}
-	fclose(fp1);
-	fclose(fp2);
+
+	inputFile.close();
+	outputFile.close();
 	return 0;
 }
