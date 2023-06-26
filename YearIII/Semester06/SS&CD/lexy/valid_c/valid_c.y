@@ -36,7 +36,6 @@ DIG input {
 };
 %%
 
-<<<<<<< HEAD
 extern int yylex();
 extern int yyparse();
 extern FILE *yyin;
@@ -45,15 +44,14 @@ int yyerror() {
 	printf("Error \n");
 	exit(-1);
 }
-=======
->>>>>>> 57ca01295f279772804ecb28cee247132c017d92
+
 int main() {
-	FILE *fp = fopen("eg.c", "r");
-	if(!fp) {
+	FILE *inFile = fopen("./../../inputs/valid_c.c", "r");
+	if(!inFile) {
 		printf("File not found\n");
 		return -1;
 	}
-	yyin = fp;
+	yyin = inFile;
 	do {
 		yyparse();
 	} while(!feof(yyin));
