@@ -8,8 +8,8 @@ int main() {
 	ifstream inputFile("./inputs/asmin.c");
 	ofstream outputFile("./inputs/asmout.a");
 
-	string op, arg1, arg2, result;
-	while (inputFile >> result >> arg1 >> op >> arg2) {
+	string op, arg1, arg2, result, eq;
+	while (inputFile >> result >> eq >> arg1 >> op >> arg2) {
 		switch (op[0]) {
 			case '+':
 				outputFile << "\nMOV R0," << arg1;
