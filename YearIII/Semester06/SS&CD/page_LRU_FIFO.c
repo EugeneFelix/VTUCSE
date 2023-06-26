@@ -17,8 +17,7 @@ void FIFO(char sequence[], int sequence_length, int num_frames) {
 		if(!present) {
 			frames[next_frame_index++] = sequence[i];
 			printf("%s\t Page Fault", frames);
-		}
-		else {
+		} else {
 			printf("%s\t Page Hit", frames);
 			present = !present;
 		}
@@ -28,34 +27,36 @@ void FIFO(char sequence[], int sequence_length, int num_frames) {
 }
 
 void LRU(char sequence[], char frames[], int sequence_length, int num_frames) {
-	int i, filled_frames = 0, k, m, flag = 0, oldest_frame_index = 0;
+	int filled_frames = 0, oldest_frame_index = 0;
+	bool present = false;
 	printf("\nPAGE\tFRAMES\tFAULTS");
-	for (i = 0; i < sequence_length; i++) {
-		for (k = 0; k < num_frames; k++)
+	for (int i = 0; i < sequence_length; i++) {
+		for (int k = 0; k < num_frames; k++)
 			if (frames[k] == sequence[i])
-				flag = 1;
+				present = true;
 		printf("\n%c\t", sequence[i]);
-		if (filled_frames != num_frames && flag != 1) {
+		if (!present && filled_frames != num_frames) {
 			frames[oldest_frame_index] = sequence[i];
 			if (++filled_frames != num_frames)
 				oldest_frame_index++;
 		} else {
-			if (flag != 1) {
+			int k;
+			if (!present) {
 				for (k = 0; k < oldest_frame_index; k++)
 					frames[k] = frames[k + 1];
 				frames[oldest_frame_index] = sequence[i];
 			} else {
-				for (m = k; m < oldest_frame_index; m++)
+				for (int m = k; m < oldest_frame_index; m++)
 					frames[m] = frames[m + 1];
 				frames[oldest_frame_index] = sequence[i];
 			}
 		}
 		printf("%s", frames);
-		if (flag == 0)
+		if (present)
 			printf("\tPage Fault");
 		else
 			printf("\tPage Hit");
-		flag = 0;
+		present = 0;
 	}
 }
 
