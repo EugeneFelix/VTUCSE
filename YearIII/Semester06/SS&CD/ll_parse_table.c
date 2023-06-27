@@ -17,11 +17,11 @@ void push_production(char p) {
 	if (p == 'A') {
 		pop();
 		for (int i = strlen(prod[0]) - 1; i >= 3; i--)
-			stack[++top] = prod[0][i];
+		stack[++top] = prod[0][i];
 	} else if (p == 'B') {
 		pop();
 		for (int i = strlen(prod[1]) - 1; i >= 3; i--)
-			stack[++top] = prod[1][i];
+		stack[++top] = prod[1][i];
 	}
 }
 void incorrect_input() {
@@ -39,9 +39,9 @@ void incorrect_input() {
 
 void check_valid() {
 	if (stack[top] == '$' && input[buflen] == '$')
-	printf("\n$\t$\nValid string Accepted\n");
+		printf("\n$\t$\nValid string Accepted\n");
 	else
-	printf("\nInvalid string rejected\n");
+		printf("\nInvalid string rejected\n");
 }
 int main() {
 	printf("first(A)={a}\t");
@@ -52,7 +52,7 @@ int main() {
 	printf("A\t%s\n", prod[0]);
 	printf("B\t%s\t%s\n", prod[2], prod[1]);
 	printf("Enter the input string terminated with $ to parse:-");
-	scanf("%s", input);
+	strcpy(input, "abba");
 	incorrect_input();
 	stack[++top] = '$';
 	stack[++top] = 'A';
@@ -60,10 +60,10 @@ int main() {
 	while (buflen != strlen(input) && stack[top] != '$') {
 		printf("\n");
 		for (int j = top; j >= 0; j--)
-			printf("%c", stack[j]);
+		printf("%c", stack[j]);
 		printf("\t");
 		for (int j = buflen; j < strlen(input); j++)
-			printf("%c", input[j]);
+		printf("%c", input[j]);
 		printf("\t");
 		if (stack[top] == 'A') {
 			printf("A->aBa");
