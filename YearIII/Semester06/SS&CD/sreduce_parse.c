@@ -39,7 +39,7 @@ void check(int buflen) {
 }
 
 int main() {
-  puts("GRAMMAR is\nE->E+E \n E->E*E \n E->(E) \n E->id");
+  puts("The Grammar is\nE->E+E \n E->E*E \n E->(E) \n E->id");
   puts("STACK \t INPUT \t ACTION");
   int buflen = strlen(input);
   for (i = 0; j < buflen; i++, j++) {
