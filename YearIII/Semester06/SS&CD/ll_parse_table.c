@@ -17,7 +17,7 @@ void pop() {
 
 void pushProduction(char nonTerminal) {
 	int productionIndex = (nonTerminal == 'A') ? 0 : 1;
-	pop();
+	pop(); // top--
 	for (int i = strlen(productions[productionIndex]) - 1; i >= 3; i--)
 		stack[++top] = productions[productionIndex][i];
 }
