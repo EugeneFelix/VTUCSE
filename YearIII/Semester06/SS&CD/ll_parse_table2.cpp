@@ -14,25 +14,19 @@ public:
 	bool parse(const std::string& input) {
 		stack.push('$');
 		stack.push(startSymbol[0]);
-
 		size_t inputIndex = 0;
 		while (!stack.empty()) {
 			char top = stack.top();
 			stack.pop();
-
 			if (top == endMarker[0] && input[inputIndex] == endMarker[0]) {
-				// Reached the end of both stack and input
 				return true;
-			} else if (top == input[inputIndex]) {
-				// Matched a terminal symbol
+			} else if (top == input[inputIndex])
 				inputIndex++;
 			} else if (isNonTerminal(top)) {
-				// Expand non-terminal using production rules
 				if (!expandNonTerminal(top)) {
 					return false;
 				}
 			} else {
-				// Mismatch between stack and input
 				return false;
 			}
 		}
@@ -65,8 +59,7 @@ private:
 };
 
 int main() {
-	std::string input = "abba";  // Hardcoded input string
-
+	std::string input = "abba";
 	CFGParser parser("A", "$");
 
 	if (parser.parse(input)) {
