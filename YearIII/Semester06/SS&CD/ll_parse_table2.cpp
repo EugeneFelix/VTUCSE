@@ -59,7 +59,7 @@ private:
 };
 
 int main() {
-	std::string input = "abba";
+	std::string input = "abba$";
 	CFGParser parser("A", "$");
 
 	if (parser.parse(input)) {
