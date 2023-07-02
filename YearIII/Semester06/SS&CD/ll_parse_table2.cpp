@@ -63,9 +63,9 @@ int main() {
 	CFGParser parser("A", "$");
 
 	if (parser.parse(input)) {
-		std::cout << "Valid string accepted!" << std::endl;
+		std::cout << "Valid string, accepted!" << std::endl;
 	} else {
-		std::cout << "Invalid string rejected!" << std::endl;
+		std::cout << "Invalid string, rejected!" << std::endl;
 	}
 
 	return 0;
