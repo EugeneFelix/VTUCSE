@@ -6,7 +6,7 @@ int main() {
     completed[10], safeSequence[10];
   int p, r, i, j, process, count;
   count = 0;
-  printf("Enter the no of processes : ");
+  printf("Enter the number of processes : ");
   scanf("%d", & p);
   for (i = 0; i < p; i++)
     completed[i] = 0;
