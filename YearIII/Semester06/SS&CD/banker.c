@@ -10,7 +10,7 @@ int main() {
   scanf("%d", & p);
   for (i = 0; i < p; i++)
     completed[i] = 0;
-  printf("\n\nEnter the no of resources : ");
+  printf("\n\nEnter the number of resources : ");
   scanf("%d", & r);
   printf("\n\nEnter the Max Matrix for each process : ");
   for (i = 0; i < p; i++) {
