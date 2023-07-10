@@ -3,6 +3,7 @@ package com.nono.wally;
 /*
 * <uses-permission android:name="android.permission.SET_WALLPAPER" />
 */
+
 import androidx.appcompat.app.AppCompatActivity;
 import android.app.WallpaperManager;
 import android.graphics.Bitmap;
