@@ -18,7 +18,8 @@ import java.net.URI;
 public class MainActivity extends AppCompatActivity {
 	EditText phoneNumberEditText;
 	Button clearBtn, saveBtn, callBtn;
-	@Override protected void onCreate(Bundle savedInstanceState) {
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		phoneNumberEditText = findViewById(R.id.phoneNumberEditText);
@@ -26,12 +27,14 @@ public class MainActivity extends AppCompatActivity {
 		callBtn = findViewById(R.id.callBtn);
 		saveBtn = findViewById(R.id.saveBtn);
 		clearBtn.setOnClickListener(new View.OnClickListener() {
-			@Override public void onClick(View v) {
+			@Override
+			public void onClick(View v) {
 				phoneNumberEditText.setText("");
 			}
 		});
 		callBtn.setOnClickListener(new View.OnClickListener() {
-			@Override public void onClick(View v) {
+			@Override
+			public void onClick(View v) {
 				String phoneNumber = phoneNumberEditText.getText().toString();
 				Intent intent = new Intent(Intent.ACTION_DIAL);
 				intent.setData(Uri.parse("tel:" + phoneNumber));
@@ -39,7 +42,8 @@ public class MainActivity extends AppCompatActivity {
 			}
 		});
 		saveBtn.setOnClickListener(new View.OnClickListener() {
-			@Override public void onClick(View v) {
+			@Override
+			public void onClick(View v) {
 				String phoneNumber = phoneNumberEditText.getText().toString();
 				Intent intent = new Intent(Intent.ACTION_INSERT);
 				intent.setType(ContactsContract.Contacts.CONTENT_TYPE);
