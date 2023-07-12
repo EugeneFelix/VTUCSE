@@ -40,6 +40,7 @@
 		- setType CONTENT_TYPE
 		- putExtra Intents.Insert.PHONE num
 		- setData Uri.parse(tel)
+	+ Cast to Button and setText()
 
 ### Général
 1. edittext.getText().toString();
