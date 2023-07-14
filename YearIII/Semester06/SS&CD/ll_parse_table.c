@@ -1,7 +1,6 @@
 #include <iostream>
 #include <string>
 #include <vector>
-
 using namespace std;
 
 vector<string> productions = {
@@ -9,7 +8,6 @@ vector<string> productions = {
 	"B->bB",
 	"B->@"
 };
-
 string inputString;
 vector<char> stack;
 size_t inputIndex = 0;
