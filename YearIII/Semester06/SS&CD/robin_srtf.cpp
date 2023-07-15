@@ -2,21 +2,18 @@
 #define MAX_PROCESSES 10
 using namespace std;
 
-int current_process, number_processes, time_lapsed, time_quantum;
+int current_process = 0, number_processes = 5, time_lapsed = 0, time_quantum = 2;
 int total_wait_time = 0, total_turnaround_time = 0;
 int endTime, smallest;
 int processes_remaining = 0, sum_wait = 0, sum_turnaround = 0;
 int at[MAX_PROCESSES] = {0, 2, 4, 6, 8};
 int bt[MAX_PROCESSES] = {5, 7, 3, 2, 6};
-int rem_time[MAX_PROCESSES] = {0};
+int rem_time[MAX_PROCESSES] = {5, 7, 3, 2, 6};
 
 void round_robin() {
-	time_quantum = 2;
 	processes_remaining = number_processes;
 	cout << "\nProcess Time | Turnaround Time | Waiting Time" << endl;
 	bool finished = false;
-	time_lapsed = 0;
-	current_process = 0;
 	while(!finished) {
 		if (rem_time[current_process] <= time_quantum && rem_time[current_process] > 0) {
 			time_lapsed += rem_time[current_process];
@@ -44,14 +41,16 @@ void round_robin() {
 	cout << "Average Turnaround Time = " << total_turnaround_time * 1.0 / number_processes << endl;
 }
 
-void srt() {
+void srtf() {
 	current_process = 0;
 	cout << "\nProcess | Turnaround Time | Waiting Time" << endl;
 	rem_time[9] = 9999;
 	for (time_lapsed = 0; current_process != number_processes; time_lapsed++) {
 		smallest = 9;
 		for (int i = 0; i < number_processes; i++)
-			if (at[i] <= time_lapsed && rem_time[i] < rem_time[smallest] && rem_time[i] > 0)
+			if (at[i] <= time_lapsed &&
+				rem_time[i] < rem_time[smallest] &&
+				rem_time[i] > 0)
 				smallest = i;
 		rem_time[smallest]--;
 		if (rem_time[smallest] == 0) {
@@ -67,10 +66,7 @@ void srt() {
 }
 
 int main() {
-	number_processes = 5;
-	for (int i = 0; i < number_processes; i++)
-		rem_time[i] = bt[i];
-	round_robin();
-	srt();
+	//round_robin();
+	srtf();
 	return 0;
 }
