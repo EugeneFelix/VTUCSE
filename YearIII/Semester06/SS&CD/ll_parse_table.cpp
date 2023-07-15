@@ -32,11 +32,11 @@ void validateInputString() {
 	}
 }
 
-void checkValidity() {
+void checkAcceptance() {
 	if (stack.back() == '$' && inputString[inputIndex] == '$')
-		cout << "\n$\t$\nValid string Accepted\n";
+		cout << "\n$\t$\nString Accepted\n";
 	else
-		cout << "\nInvalid string rejected\n";
+		cout << "\nString rejected\n";
 }
 
 int main() {
@@ -73,6 +73,6 @@ int main() {
 		}
 	}
 
-	checkValidity();
+	checkAcceptance();
 	return 0;
 }
