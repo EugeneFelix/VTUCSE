@@ -1,7 +1,6 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-
 using namespace std;
 
 int main() {
@@ -19,16 +18,6 @@ int main() {
 			case '*':
 				outputFile << "\nMOV R0, " << arg1;
 				outputFile << "\nMUL R0, " << arg2;
-				outputFile << "\nMOV " << result << ", R0";
-				break;
-			case '-':
-				outputFile << "\nMOV R0, " << arg1;
-				outputFile << "\nSUB R0, " << arg2;
-				outputFile << "\nMOV " << result << ", R0";
-				break;
-			case '/':
-				outputFile << "\nMOV R0, " << arg1;
-				outputFile << "\nDIV R0, " << arg2;
 				outputFile << "\nMOV " << result << ", R0";
 				break;
 			case '=':

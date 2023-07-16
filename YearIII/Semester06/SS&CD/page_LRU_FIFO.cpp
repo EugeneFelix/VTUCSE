@@ -47,8 +47,8 @@ void LRU(char sequence[], char frames[]) {
 				oldest_frame_index++;
 		} else {
 			if (!present) {
-				for (int k = 0; k < oldest_frame_index; k++)
-					frames[k] = frames[k + 1];
+				for (int j = 0; j < oldest_frame_index; j++)
+					frames[j] = frames[j + 1];
 			}
 			frames[oldest_frame_index] = sequence[i];
 		}
