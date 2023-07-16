@@ -15,7 +15,7 @@
 	yylval = atoi(yytext); printf("Number is %d\n", yylval); return DIG;
 }
 
-int|char|bool|float|void|for|do|while|if|else|return|void {
+int|char|bool|float|void|for|do|while|if|else|return|auto|const {
 	printf("Keyword is %s\n", yytext); return KEY;
 }
 

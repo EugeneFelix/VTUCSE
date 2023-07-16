@@ -44,7 +44,7 @@ void check() {
 int main() {
 	puts("Input Grammar is\nE->E+E \n E->E*E \n E->(E) \n E->id");
 	puts("STACK \t INPUT \t ACTION");
-	for (i = 0; j < buflen; i++, j++) {
+	for (i = 0, j = 0; j < buflen; i++, j++) {
 		if (input[j] == 'i' && input[j + 1] == 'd') {
 			stack[i] = input[j];
 			stack[i + 1] = input[j + 1];
@@ -57,7 +57,7 @@ int main() {
 			stack[i] = input[j];
 			stack[i + 1] = '\0';
 			input[j] = ' ';
-			printf("\n$%s\t%s$\t%ssymbols", stack, input, shift);
+			printf("\n$%s\t%s$\t%ssymbol", stack, input, shift);
 			check();
 		}
 	}

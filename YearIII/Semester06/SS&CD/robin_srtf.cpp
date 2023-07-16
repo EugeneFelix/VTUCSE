@@ -5,7 +5,6 @@ using namespace std;
 
 int current_process = 0, NUM_PROCESSES = 3, time_lapsed = 0, slice = 4;
 int total_wait_time = 0, total_turnaround_time = 0;
-int endTime, smallest;
 int processes_remaining = 0, sum_wait = 0, sum_turnaround = 0;
 int at[MAX_PROCESSES] = {1, 2, 4};
 int bt[MAX_PROCESSES] = {24, 3, 3};
@@ -15,7 +14,7 @@ void round_robin() {
 	processes_remaining = NUM_PROCESSES;
 	cout << "\nProcess Time | Turnaround Time | Waiting Time" << endl;
 	bool finished = false;
-	while(!finished && processes_remaining != 0) {
+	while(processes_remaining != 0) {
 		if (rem_time[current_process] <= slice && rem_time[current_process] > 0) {
 			time_lapsed += rem_time[current_process];
 			rem_time[current_process] = 0; //Line 27
@@ -68,7 +67,7 @@ void srtf() {
 	}
 }
 int main() {
-	round_robin(); // Call only one at a time! GLOBALITY!
-	//srtf();
+	//round_robin(); // Call only one at a time! GLOBALITY!
+	srtf();
 	return 0;
 }

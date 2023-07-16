@@ -2,10 +2,6 @@
 #include<stdlib.h>
 #include<stdbool.h>
 
-#include<stdio.h>
-#include<stdlib.h>
-#include<stdbool.h>
-
 static int sequence_length = 5;
 static int num_frames = 3;
 
@@ -50,16 +46,11 @@ void LRU(char sequence[], char frames[]) {
 			if (++filled_frames != num_frames)
 				oldest_frame_index++;
 		} else {
-			int k;
 			if (!present) {
-				for (k = 0; k < oldest_frame_index; k++)
+				for (int k = 0; k < oldest_frame_index; k++)
 					frames[k] = frames[k + 1];
-				frames[oldest_frame_index] = sequence[i];
-			} else {
-				for (int m = k; m < oldest_frame_index; m++)
-					frames[m] = frames[m + 1];
-				frames[oldest_frame_index] = sequence[i];
 			}
+			frames[oldest_frame_index] = sequence[i];
 		}
 		printf("%s", frames);
 		if (present)
@@ -72,8 +63,8 @@ void LRU(char sequence[], char frames[]) {
 
 int main() {
 	char frames[3] = {-1, -1, -1};
-	static char sequence[5] = "hello";
-	FIFO(sequence, frames);
+	static char sequence[6] = "hello";
+	//FIFO(sequence, frames);
 	for (int i = 0; i < num_frames; i++) //NEEDED!
 		frames[i] = -1;
 	LRU(sequence, frames);

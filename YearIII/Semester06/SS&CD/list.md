@@ -22,3 +22,10 @@
 #### -> SRTF
 
 * shortest_time, shortest_process, end_time
+
+* ct++, ct++, rem_time[current]--
+
+#### Shift and Reduce
+
+* shift: TERMINAL from input to stack.
+* reduce: Replace substr with NON-TERMINAL from G
