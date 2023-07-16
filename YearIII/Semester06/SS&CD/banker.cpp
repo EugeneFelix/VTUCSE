@@ -5,8 +5,8 @@ using namespace std;
 #define MAX_RESOURCES 10
 #define MAX_PROCESSES 10
 
-static int num_resources = 3;
-static int num_processes = 5;
+static int NUM_RESOURCES = 3;
+static int NUM_PROCESSES = 5;
 int completed_processes = 0;
 static int available[MAX_RESOURCES] = {3, 3, 2};
 static int maximum[MAX_PROCESSES][MAX_RESOURCES] = {
@@ -29,31 +29,31 @@ bool finish[MAX_PROCESSES] = {false};
 int safe_sequence[MAX_PROCESSES];
 
 int main() {
-	for (int i = 0; i < num_processes; i++) {
-		for (int j = 0; j < num_resources; j++) {
+	for (int i = 0; i < NUM_PROCESSES; i++) {
+		for (int j = 0; j < NUM_RESOURCES; j++) {
 			need[i][j] = maximum[i][j] - allocation[i][j];
 			cout << need[i][j] << " ";
 		}
 		cout << endl;
 	}
-	
-	while (completed_processes < num_processes) {
+
+	while (completed_processes < NUM_PROCESSES) {
 		bool found = false;
-		for (int i = 0; i < num_processes; i++) {
+		for (int i = 0; i < NUM_PROCESSES; i++) {
 			if (!finish[i]) {
 				bool safe = true;
-				for (int j = 0; j < num_resources; j++)
+				for (int j = 0; j < NUM_RESOURCES; j++)
 					if (need[i][j] > available[j]) {
 						safe = false;
 						break;
 					}
 				if (safe) {
-					for (int j = 0; j < num_resources; j++)
+					for (int j = 0; j < NUM_RESOURCES; j++)
 						available[j] += allocation[i][j];
 					finish[i] = true;
 					safe_sequence[completed_processes++] = i;
 					found = true;
-					cout << "Process " << i << " runs to completion!" << endl;
+					cout << "Process " << i + 1<< " runs to completion!" << endl;
 				}
 			}
 		}
@@ -61,10 +61,10 @@ int main() {
 			break;
 	}
 
-	if (completed_processes == num_processes) {
+	if (completed_processes == NUM_PROCESSES) {
 		cout << "Safe sequence: ";
-		for (int i = 0; i < num_processes; i++)
-			cout << safe_sequence[i] << " ";
+		for (int i = 0; i < NUM_PROCESSES; i++)
+			cout << safe_sequence[i] + 1<< " ";
 		cout << endl;
 	} else {
 		cout << "Unsafe state" << endl;
