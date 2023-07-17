@@ -21,3 +21,6 @@ eval.yy.c: eval.tab.c
 eval.tab.c:
 	yacc -d ./expr_eval/eval.y -o ./intr/eval.tab.c
 
+rr:
+	gcc robin_srtf.cpp
+	./a.out
