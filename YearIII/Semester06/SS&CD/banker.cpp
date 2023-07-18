@@ -1,5 +1,4 @@
 #include <iostream>
-
 using namespace std;
 
 #define MAX_RESOURCES 10
@@ -62,7 +61,7 @@ int main() {
 	}
 
 	if (completed_processes == NUM_PROCESSES) {
-		cout << "Safe sequence: ";
+		cout << "Safe sequence is: ";
 		for (int i = 0; i < NUM_PROCESSES; i++)
 			cout << safe_sequence[i] + 1<< " ";
 		cout << endl;
