@@ -34,7 +34,7 @@ def a_star(start_node, stop_node):
 					hange parent of m to n
 						parents[m] = n
 
-					f m in closed set,remove and add to open
+					if m in closed set, remove and add to open
 						if m in closed_set:
 							closed_set.remove(m)
 							open_set.add(m)
