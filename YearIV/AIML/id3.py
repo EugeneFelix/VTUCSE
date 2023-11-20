@@ -52,7 +52,7 @@ def build_id3_tree(examples, attributes):
 	return root
 
 def print_tree(root, depth=0):
-	print("\t" * depth + root.attribute_value, "->", root.predicted_label if root.is_leaf else "")
+	print("\t" * depth + root.attribute_value, "->", root.predicted_label if root.is_leaf else "<NOTLEAF>")
 	for child in root.child_nodes:
 		print_tree(child, depth + 1)
 
@@ -60,7 +60,7 @@ def classify_example(root, new_example):
 	for child in root.child_nodes:
 		if child.attribute_value == new_example[root.attribute_value]:
 			if child.is_leaf:
-				print("Predicted Label for new example", new_example, " is:", child.predicted_label)
+				# print("Predicted Label for new example", new_example, " is:", child.predicted_label)
 				return
 			else:
 				classify_example(child.child_nodes[0], new_example)
@@ -68,11 +68,12 @@ def classify_example(root, new_example):
 data = read_csv("./data/id3.csv")
 input_features = list(data[0].keys())
 input_features.remove("answer")
+print(input_features)
 
 id3_tree = build_id3_tree(data, input_features)
-print("Decision Tree is:")
+# print("Decision Tree is:")
 print_tree(id3_tree)
-print("------------------")
+# print("------------------")
 
 new_sample = {"outlook": "sunny", "temperature": "hot", "humidity": "normal", "wind": "strong"}
 classify_example(id3_tree, new_sample)

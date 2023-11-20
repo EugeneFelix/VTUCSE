@@ -1,6 +1,6 @@
 import csv
 
-path = '.././data/candidate_elim.csv'
+path = './data/candidate_elimination.csv'
 data = []
 
 with open(path, 'r') as file:
