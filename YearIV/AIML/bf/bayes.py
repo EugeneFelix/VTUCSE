@@ -94,7 +94,7 @@ def getaccuracy(testset, predictions):
 	return (correct/float(len(testset))) * 100.0
  
 def main():
-	filename = 'naivedata.csv'
+	filename = '../data/bayes.csv'
 	splitratio = 0.67
 	dataset = loadcsv(filename);
 	 

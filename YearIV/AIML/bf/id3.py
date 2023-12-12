@@ -2,7 +2,7 @@ import pandas as pd
 import math
 import numpy as np
 
-data = pd.read_csv("Dataset/4-dataset.csv")
+data = pd.read_csv("../data/id3.csv")
 features = [feat for feat in data]
 features.remove("answer")
 
