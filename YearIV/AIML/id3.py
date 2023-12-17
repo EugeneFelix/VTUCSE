@@ -1,4 +1,3 @@
-import csv
 import math
 
 class Node:
@@ -7,11 +6,6 @@ class Node:
 		self.attribute_value = ""
 		self.is_leaf = False
 		self.predicted_label = ""
-
-def read_csv(file_path):
-	with open(file_path, 'r') as file:
-		reader = csv.DictReader(file)
-		return [row for row in reader]
 
 def calculate_entropy(examples):
 	counts = {"yes": 0, "no": 0}
@@ -60,20 +54,32 @@ def classify_example(root, new_example):
 	for child in root.child_nodes:
 		if child.attribute_value == new_example[root.attribute_value]:
 			if child.is_leaf:
-				# print("Predicted Label for new example", new_example, " is:", child.predicted_label)
+				print("Predicted Label for new example", new_example, " is:", child.predicted_label)
 				return
 			else:
 				classify_example(child.child_nodes[0], new_example)
 
-data = read_csv("./data/id3.csv")
-input_features = list(data[0].keys())
-input_features.remove("answer")
-print(input_features)
+data = [
+	{"outlook": "sunny", "temperature": "hot", "humidity": "high", "wind": "weak", "answer": "no"},
+	{"outlook": "sunny", "temperature": "hot", "humidity": "high", "wind": "strong", "answer": "no"},
+	{"outlook": "overcast", "temperature": "hot", "humidity": "high", "wind": "weak", "answer": "yes"},
+	{"outlook": "rain", "temperature": "mild", "humidity": "high", "wind": "weak", "answer": "yes"},
+	{"outlook": "rain", "temperature": "cool", "humidity": "normal", "wind": "weak", "answer": "yes"},
+	{"outlook": "rain", "temperature": "cool", "humidity": "normal", "wind": "strong", "answer": "no"},
+	{"outlook": "overcast", "temperature": "cool", "humidity": "normal", "wind": "strong", "answer": "yes"},
+	{"outlook": "sunny", "temperature": "mild", "humidity": "high", "wind": "weak", "answer": "no"},
+	{"outlook": "sunny", "temperature": "cool", "humidity": "normal", "wind": "weak", "answer": "yes"},
+	{"outlook": "rain", "temperature": "mild", "humidity": "normal", "wind": "weak", "answer": "yes"},
+	{"outlook": "sunny", "temperature": "mild", "humidity": "normal", "wind": "strong", "answer": "yes"},
+	{"outlook": "overcast", "temperature": "mild", "humidity": "high", "wind": "strong", "answer": "yes"},
+	{"outlook": "overcast", "temperature": "hot", "humidity": "normal", "wind": "weak", "answer": "yes"},
+	{"outlook": "rain", "temperature": "mild", "humidity": "high", "wind": "strong", "answer": "no"}
+]
+
+input_features = list(data[0].keys())[:-1]
 
 id3_tree = build_id3_tree(data, input_features)
-# print("Decision Tree is:")
 print_tree(id3_tree)
-# print("------------------")
 
 new_sample = {"outlook": "sunny", "temperature": "hot", "humidity": "normal", "wind": "strong"}
 classify_example(id3_tree, new_sample)
