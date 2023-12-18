@@ -4,7 +4,8 @@ def a_star(start, stop):
 
 	while open_set:
 		current = min(open_set, key=lambda node: g[node] + heuristic(node))
-		if current == stop or current not in graph_nodes: pass
+		if current == stop or current not in graph_nodes:
+			pass
 		else:
 			for neighbor, weight in get_neighbors(current):
 				if neighbor not in open_set and neighbor not in closed_set:
@@ -12,8 +13,9 @@ def a_star(start, stop):
 					parents[neighbor] = current
 					g[neighbor] = g[current] + weight
 				elif g[neighbor] > g[current] + weight:
-					g[neighbor], parents[neighbor] = g[current] + weight, current
 					open_set.add(neighbor)
+					parents[neighbor] = current
+					g[neighbor] = g[current] + weight
 					closed_set.discard(neighbor)
 		if not current:
 			print('Path does not exist!')
@@ -51,4 +53,5 @@ graph_nodes = {
 	'I': [('E', 5), ('J', 3)]
 }
 
+# f(n) = g(n) + h(n)
 a_star('A', 'J')

@@ -39,8 +39,6 @@ def learn(concepts, target):
 		print("Specific Bundary after ", i+1, "Instance is ", specific_h) 
 		print("Generic Boundary after ", i+1, "Instance is ", general_h)
 		print("\n")
-
-	indices = [i for i, val in enumerate(general_h) if val == ['?', '?', '?', '?', '?', '?']]
-	for i in indices:   
-		general_h.remove(['?', '?', '?', '?', '?', '?']) 
+	# Filter redundant structures
+	general_h = [val for val in general_h if val != ['?', '?', '?', '?', '?', '?']]
 	return specific_h, general_h 
