@@ -8,22 +8,18 @@ def loadcsv(filename):
 	for i in range(len(dataset)):
 		dataset[i] = [float(x) for x in dataset[i]]
 	return dataset
- 
+
 def splitdataset(dataset, splitratio):
-	
 	trainsize = int(len(dataset) * splitratio);
 	trainset = []
 	copy = list(dataset);
 	while len(trainset) < trainsize:
-
 		index = random.randrange(len(copy));
 		trainset.append(copy.pop(index))
 	return [trainset, copy]
  
 def separatebyclass(dataset):
 	separated = {} 
-
-
 	for i in range(len(dataset)):
 		vector = dataset[i]
 		if (vector[-1] not in separated):
@@ -46,11 +42,8 @@ def summarize(dataset):
  
 def summarizebyclass(dataset):
 	separated = separatebyclass(dataset); 
-	
 	summaries = {}
 	for classvalue, instances in separated.items(): 
-
-
 		summaries[classvalue] = summarize(instances) 
 	return summaries
  
@@ -98,10 +91,7 @@ def main():
 	 
 	trainingset, testset = splitdataset(dataset, splitratio)
 	print('Split {0} rows into train={1} and test={2} rows'.format(len(dataset), len(trainingset), len(testset)))
-	
 	summaries = summarizebyclass(trainingset);	
-	
-	
 	predictions = getpredictions(summaries, testset) 
 	accuracy = getaccuracy(testset, predictions)
 	print('Accuracy of the classifier is : {0}%'.format(accuracy))

@@ -11,7 +11,7 @@ def aStarAlgo(start_node, stop_node):
 		for v in open_set:
 			if n == None or g[v] + heuristic(v) < g[n] + heuristic(n):
 				n = v
-		if n == stop_node or Graph_nodes[n] == None:
+		if n == stop_node or n not in Graph_nodes:
 			pass
 		else:
 			for (m, weight) in get_neighbors(n):
@@ -40,11 +40,11 @@ def aStarAlgo(start_node, stop_node):
 			path.append(start_node)
 			path.reverse()
 			print('Path found: {}'.format(path))
-			return path
+			return
 		open_set.remove(n)
 		closed_set.add(n)
 	print('Path does not exist!')
-	return None
+	return
 
 def get_neighbors(v):
 	if v in Graph_nodes:

@@ -3,11 +3,12 @@ def a_star(start, stop):
 	g, parents = {start: 0}, {start: start}
 
 	while open_set:
-		current = min(open_set, key=lambda node: g[node] + heuristic(node))
+		current = min(open_set, key=lambda node: g[node] + H_dist.get(node, None))
 		if current == stop or current not in graph_nodes:
 			pass
 		else:
-			for neighbor, weight in get_neighbors(current):
+			for neighbor, weight in graph_nodes.get(current, None):
+				print(neighbor)
 				if neighbor not in open_set and neighbor not in closed_set:
 					open_set.add(neighbor)
 					parents[neighbor] = current
@@ -21,7 +22,7 @@ def a_star(start, stop):
 			print('Path does not exist!')
 			return
 		if current == stop:
-			path = []
+			path: List = []
 			while parents[current] != current:
 				path.append(current)
 				current = parents[current]
@@ -34,12 +35,18 @@ def a_star(start, stop):
 	print('Path does not exist!')
 	return None
 
-def get_neighbors(node):
-	return graph_nodes.get(node, None)
-
-def heuristic(node):
-	H_dist = {'A': 10, 'B': 8, 'C': 5, 'D': 7, 'E': 3, 'F': 6, 'G': 5, 'H': 3, 'I': 1, 'J': 0}
-	return H_dist.get(node, 0)
+H_dist = {
+		  'A': 10,
+		  'B': 8,
+		  'C': 5,
+		  'D': 7,
+		  'E': 3,
+		  'F': 6,
+		  'G': 5,
+		  'H': 3,
+		  'I': 1,
+		  'J': 0
+		}
 
 graph_nodes = {
 	'A': [('B', 6), ('F', 3)],
