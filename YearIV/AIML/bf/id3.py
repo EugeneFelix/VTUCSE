@@ -54,7 +54,6 @@ def info_gain(examples, attr):
 		gain -= (float(len(subdata)) / float(len(examples))) * sub_e
 	return gain
 
-
 def ID3(examples, attrs):
 	root = Node()
 	max_gain, max_feat = 0, ""

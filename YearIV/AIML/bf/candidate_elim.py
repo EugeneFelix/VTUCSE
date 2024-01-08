@@ -16,7 +16,10 @@ def learn(concepts, target):
 	specific_h = concepts[0].copy()
 	print("\nInitialization of specific_h and genearal_h")
 	print("\nSpecific Boundary: ", specific_h)
-	general_h = [["?" for i in range(len(specific_h))] for i in range(len(specific_h))]
+	general_h = [
+				  ["?" for i in range(len(specific_h))]
+				  for i in range(len(specific_h))
+				]
 	print("\nGeneric Boundary: ",general_h)  
 
 	for i, h in enumerate(concepts):
@@ -40,5 +43,6 @@ def learn(concepts, target):
 		print("Generic Boundary after ", i+1, "Instance is ", general_h)
 		print("\n")
 	# Filter redundant structures
-	general_h = [val for val in general_h if val != ['?', '?', '?', '?', '?', '?']]
+	general_h = [val for val in general_h
+				  if val != ['?', '?', '?', '?', '?', '?']]
 	return specific_h, general_h 
